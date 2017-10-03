@@ -25,6 +25,16 @@ var fortunes2 = [
     "What do you call a fake noodle? An impasta",
     "Why did a banana go to the doctor? It wasn't peeling well!",
     "ERROR 404: No more puns found. Max reached. jk",
+    "I wasn't originally going to get a brain transplant, but then I changed my mind."
+    "Yesterday I accidentally swallowed some food coloring. The doctor says I'm OK, but I feel like I've dyed a little inside.",
+    "Did you hear about the guy whose whole left side was cut off? He's all right now.",
+    "I'd tell you a chemistry joke but I know I wouldn't get a reaction.",
+    "I wondered why the baseball was getting bigger. Then it hit me.",
+    "Why don't some couples go to the gym? Because some relationships don't work out.",
+    "A friend of mine tried to annoy me with bird puns, but I soon realized that toucan play at that game.",
+    "Have you ever tried to eat a clock? It's very time consuming.",
+    "Did you hear about the guy who got hit in the head with a can of soda? He was lucky it was a soft drink.",
+    "When notes get in treble, bass-ically they get put behind bars. The alto-nate punishment is to push them off a clef and hope they land flat on sharp objects.",
 ];    
 
 var bot = new Discord.Client(); 

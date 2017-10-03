@@ -50,7 +50,6 @@ bot.on("message", function(message) {
                 .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
                 .setDescription("Prefix: <o/!")
                 .setFooter("Made by Vanished#3101")
-                .setThumbnail(lol.png)
                 message.channel.sendEmbed(embed);
             break;
         case "8ball":

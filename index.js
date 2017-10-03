@@ -47,7 +47,7 @@ bot.on("message", function(message) {
         case "info":
             var embed = new Discord.RichEmbed()
                 .addField("Info", "-help (Sends this message)")
-                .addField("-8ball (The magic 8ball)", "-lol (Send a random pic of something funny.)")
+                .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
                 .setDescription("Prefix: <o/!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);

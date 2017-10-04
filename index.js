@@ -25,7 +25,7 @@ var fortunes2 = [
     "What do you call a fake noodle? An impasta",
     "Why did a banana go to the doctor? It wasn't peeling well!",
     "ERROR 404: No more puns found. Max reached. jk",
-    "I wasn't originally going to get a brain transplant, but then I changed my mind."
+    "I wasn't originally going to get a brain transplant, but then I changed my mind.",
     "Yesterday I accidentally swallowed some food coloring. The doctor says I'm OK, but I feel like I've dyed a little inside.",
     "Did you hear about the guy whose whole left side was cut off? He's all right now.",
     "I'd tell you a chemistry joke but I know I wouldn't get a reaction.",

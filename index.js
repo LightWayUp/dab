@@ -76,6 +76,9 @@ bot.on("message", function(message) {
         message.channel.sendMessage("Can't read that")
         }
             break;
+        case "avatar":
+        message.channel.sendMessage(message.author.avatarURL);
+            break;
         default:
             message.channel.sendMessage("Invalid command");
     }

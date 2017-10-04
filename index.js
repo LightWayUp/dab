@@ -41,6 +41,7 @@ var bot = new Discord.Client();
 
 bot.on("ready", function() {
     console.log("Ready");
+
 });
 
 bot.on("message", function(message) {
@@ -58,7 +59,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Info", "-help (Sends this message)")
                 .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
-                .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "Comin' Soon bud!")
+                .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
                 .setDescription("Prefix: <o/!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -74,14 +75,21 @@ bot.on("message", function(message) {
         if (args[0]) {
             message.channel.sendMessage(fortunes2[Math.floor(Math.random() * fortunes2.length)]);
         } else {
-        message.channel.sendMessage("Can't read that")
+        message.channel.sendMessage("Hm.")
         }
             break;
         case "avatar":
         message.channel.sendMessage(message.author.avatarURL);
             break;
+        case "noticeme":
+        if (args[0]) {
+            message.channel.sendMessage("Nope, son.");
+        } else {
+        message.channel.sendMessage("smh")
+        }
+            break;
         default:
-            message.channel.sendMessage("Invalid command");
+            message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
     }
 });
 

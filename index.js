@@ -58,6 +58,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Info", "-help (Sends this message)")
                 .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
+                .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "Comin' Soon bud!")
                 .setDescription("Prefix: <o/!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);

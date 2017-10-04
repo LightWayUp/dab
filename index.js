@@ -41,6 +41,8 @@ var bot = new Discord.Client();
 
 bot.on("ready", function() {
     console.log("Ready");
+    
+bot.user.setGame("Hai!")
 
 });
 

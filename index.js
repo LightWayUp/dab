@@ -95,6 +95,9 @@ bot.on("message", function(message) {
         case "invite":
             message.channel.sendMessage("https://discordapp.com/oauth2/authorize?client_id=364399994242859008&scope=bot&permissions=20040010000");
             break;
+        case "george"
+            message.channel.sendMessage("GeorgeDgamer399@gmail.com!");
+            message.channel.sendMessage("GeorgeDgamer399@gmail.com!");
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
     }

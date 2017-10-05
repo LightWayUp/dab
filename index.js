@@ -42,7 +42,7 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log("Ready");
     
-bot.user.setGame("Use <o/!info for help!")
+bot.user.setGame("Invite me on obot.cf!")
 
 });
 

@@ -97,7 +97,7 @@ bot.on("message", function(message) {
             break;
         case "george"
             message.channel.sendMessage("GeorgeDgamer399@gmail.com!");
-            message.channel.sendMessage("GeorgeDgamer399@gmail.com!");
+            break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
     }

@@ -55,7 +55,7 @@ bot.on("message", function(message) {
 
     switch (args[0].toLowerCase())  {
         case "ping":
-            message.channel.sendMessage("Pong!");
+            message.channel.sendMessage("Pong! :ping_pong:");
             break;
         case "info":
             var embed = new Discord.RichEmbed()

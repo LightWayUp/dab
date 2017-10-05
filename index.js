@@ -42,7 +42,7 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log("Ready");
     
-bot.user.setGame("Invite me on obot.cf!")
+bot.user.setGame("Do <o/!info for info!")
 
 });
 
@@ -63,6 +63,7 @@ bot.on("message", function(message) {
                 .addField("Info", "-help (Sends this message)")
                 .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
                 .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
+                .addField("-ping (Ping! Pong!)", "Comin soon bud!")
                 .setDescription("Prefix: <o/!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);

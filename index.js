@@ -96,7 +96,7 @@ bot.on("message", function(message) {
             message.channel.sendMessage("https://discordapp.com/oauth2/authorize?client_id=364399994242859008&scope=bot&permissions=20040010000");
             break;
         case "pingz":
-            message.channel.send("Pong!" + "`" + bot.ping + "ms" + "`" + ":ping_pong:" );
+            message.channel.send("**Pong!**" + bot.ping + "ms" + );
             break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");

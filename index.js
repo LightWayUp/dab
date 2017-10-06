@@ -46,6 +46,11 @@ bot.user.setGame("Do <o/!info for info!")
 
 });
 
+bot.on("guildMemberAdd", function(member) {
+    member.guild.channels.find("name", "general").sendMessage(member.toString() + "Welcome to this server!");
+
+});
+
 bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
 

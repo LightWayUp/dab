@@ -100,6 +100,13 @@ bot.on("message", function(message) {
         case "invite":
             message.channel.sendMessage("https://discordapp.com/oauth2/authorize?client_id=364399994242859008&scope=bot&permissions=20040010000");
             break;
+        case "dmspam":
+        if (args[1]) {
+            message.channel.send("**Damn, son...** " + args[1] + " got DM spammed by <@" + message.author.id + "> 0-0");
+        } else {
+        message.channel.sendMessage(":face_palm: Mention someone, son!")
+        }
+            break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
     }

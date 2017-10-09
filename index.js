@@ -110,10 +110,16 @@ bot.on("message", function(message) {
         }
             break;
         case "profile":
-            var embed = new Discord.RichEmbed()
+                message.delete()
+                message.channel.sendMessage("...")
+             var embed = new Discord.RichEmbed()
                 .addField("<o/", "Profile card for <@" + message.author.id + ">")
-                .addField("Last message:", + message.author.content)
-                message.channel.sendEmbed(embed);
+                .setThumbnail(message.author.avatarURL)
+                .addField("Discord Username:", message.author.username)
+                .addField("Discord #:", message.author.tag)
+                .addField("Last message sent:", message.author.lastMessage)
+                .addField("Discord User ID:", message.author.id)
+                message.channel.send(embed)
             break;
         case "dmhelp":
             var embed = new Discord.RichEmbed()
@@ -130,6 +136,7 @@ bot.on("message", function(message) {
             break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
+            break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
     }

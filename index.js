@@ -68,7 +68,9 @@ bot.on("message", function(message) {
                 .addField("Info", "-help (Sends this message)")
                 .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
                 .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
-                .addField("-ping (Ping! Pong!)", "Comin soon bud!")
+                .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command. :wink:)")
+                .addField("-profile (A profile command.) **BETA**", "-invite (Gives you the link to invite me.")
+                .addField("-test (A testing command :wink:)", "Coming soon, bud!")
                 .setDescription("Prefix: <o/!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -118,6 +120,9 @@ bot.on("message", function(message) {
                 .addField("Info", "-help (Sends this message)")
                 .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
                 .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
+                .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command. :wink:)")
+                .addField("-profile (A profile command.) **BETA**", "-invite (Gives you the link to invite me.")
+                .addField("-test (A testing command :wink:)", "Coming soon, bud!")
                 .setDescription("Prefix: <o/!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);

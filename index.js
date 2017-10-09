@@ -70,7 +70,7 @@ bot.on("message", function(message) {
                 .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
                 .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command.)")
                 .addField("-profile (A profile command. *Beta*)", "-invite (Gives you the link to invite me.")
-                .addField("-test (A testing command)", "Coming soon, bud!")
+                .addField("-funny (Send a funny gif/pic.)", "Comin soon!")
                 .setDescription("Prefix: <o/!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -136,6 +136,14 @@ bot.on("message", function(message) {
             break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
+            break;
+        case "funny":
+        if (args[0]) {
+            message.channel.sendMessage(funny[Math.floor(Math.random() * funny.length)]);
+            message.channel.sendMessage(":joy:")
+        } else {
+        message.channel.sendMessage("FUNNEYZ LOL")
+        }
             break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");

@@ -107,6 +107,24 @@ bot.on("message", function(message) {
         message.channel.sendMessage(":face_palm: Mention someone, son!")
         }
             break;
+        case "profile":
+            var embed = new Discord.RichEmbed()
+                .addField("<o/", "Profile card for <@" + message.author.id + ">")
+                .addField("Last message:", + message.author.content)
+                message.channel.sendEmbed(embed);
+            break;
+        case "dmhelp":
+            var embed = new Discord.RichEmbed()
+                .addField("Info", "-help (Sends this message)")
+                .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
+                .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
+                .setDescription("Prefix: <o/!")
+                .setFooter("Made by Vanished#3101")
+                message.author.sendEmbed(embed);
+                message.channel.sendMessage("Help sent in dms! :wink:")
+            break;
+        case "test":
+            message.channel.sendMessage("Zis iz a testz :wink:")
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
     }

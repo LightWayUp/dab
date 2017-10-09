@@ -35,7 +35,32 @@ var fortunes2 = [
     "Have you ever tried to eat a clock? It's very time consuming.",
     "Did you hear about the guy who got hit in the head with a can of soda? He was lucky it was a soft drink.",
     "When notes get in treble, bass-ically they get put behind bars. The alto-nate punishment is to push them off a clef and hope they land flat on sharp objects.",
-];    
+];
+var funny = [
+    "https://i.imgur.com/zlWQJhx.gif",
+    "https://i.imgur.com/Byx8snE.gifv",
+    "https://i.imgur.com/hyKq3.gif",
+    "https://i.imgur.com/kxCQ45H.gif",
+    "https://i.imgur.com/2J59oyN.gif",
+    "https://i.imgur.com/SdCGqW4.gif",
+    "https://i.imgur.com/LbXQT.gif",
+    "https://imgur.com/BsmAFmi",
+    "https://imgur.com/nnnw3JF",
+    "https://imgur.com/URDe5ps",
+    "https://i.imgur.com/1xN7Hmv.gif",
+    "https://i.imgur.com/ZYXMkP1.gif",
+    "https://i.imgur.com/hEn5ffE.gif",
+    "https://imgur.com/kKI054R",
+    "https://imgur.com/tVrlkSH",
+    "https://i.imgur.com/sF66Yv5.jpg",
+    "https://imgur.com/fPs0Ien",
+    "https://i.imgur.com/2yu8zDa.jpg",
+    "https://imgur.com/dyA2OWJ",
+    "https://i.imgur.com/aDMJODQ.gif",
+    "https://imgur.com/tunarZ1",
+    "https://i.imgur.com/Un1beKw.jpg",
+    "https://imgur.com/dt8ISHk",
+];
 
 var bot = new Discord.Client(); 
 
@@ -137,11 +162,12 @@ bot.on("message", function(message) {
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
             break;
-        case "punsz":
+        case "funny":
         if (args[0]) {
-            message.channel.sendMessage(fortunes2[Math.floor(Math.random() * fortunes2.length)]);
+            message.channel.sendMessage(funny[Math.floor(Math.random() * funny.length)]);
+            message.channel.sendMessage(":joy:")
         } else {
-        message.channel.sendMessage("Hm.")
+        message.channel.sendMessage("FUNNEYZ LOL")
         }
             break;
         default:

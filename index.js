@@ -137,6 +137,13 @@ bot.on("message", function(message) {
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
             break;
+        case "funny":
+        if (args[0]) {
+            message.channel.sendMessage(funny[Math.floor(Math.random() * funny.lenght)]);
+        } else {
+        message.channel.sendMessage(":joy:")
+        }
+             break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
     }

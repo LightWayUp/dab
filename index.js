@@ -76,6 +76,11 @@ bot.on("guildMemberAdd", function(member) {
 
 });
 
+bot.on("guildMemberRemove", function(member) {
+    member.guild.channels.find("name", "general").sendMessage(member.toString() + " smh... damn dat dood/gal...");
+
+});
+
 bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
 
@@ -178,8 +183,18 @@ bot.on("message", function(message) {
         message.channel.sendMessage(":face_palm: Mention someone...")
         }
             break;
+        case "botstatus":
+            var embed = new Discord.RichEmbed()
+                .addField("Bot Info", "<o/")
+                .addField("Bot Status", "Stable", true)
+                .addField("Memory Status", "Stable", true)
+                .addField("GitHub Repo Status", "Updated")
+                .setDescription("<o/")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
+            break;
         default:
-            message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
+            message.channel.sendMessage("I do not recognize that. Use <!info to get the list of commands.");
     }
 });
 

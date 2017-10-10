@@ -184,6 +184,7 @@ bot.on("message", function(message) {
         }
             break;
         case "botstatus":
+        case "botinfo":
             var embed = new Discord.RichEmbed()
                 .addField("Bot Info", "<o/")
                 .addField("Bot Status", "Stable", true)
@@ -191,7 +192,7 @@ bot.on("message", function(message) {
                 .addField("GitHub Repo Status", "Updated")
                 .setDescription("<o/")
                 .setFooter("<o/")
-                message.author.sendEmbed(embed);
+                message.channel.sendEmbed(embed);
             break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <!info to get the list of commands.");

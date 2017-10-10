@@ -129,6 +129,7 @@ bot.on("message", function(message) {
             break;
         case "dmspam":
         if (args[1]) {
+            message.author.sendMessage("**SPAM REVENGE!!!**")
             message.channel.send("**Damn, son...** " + args[1] + " got DM spammed by <@" + message.author.id + "> 0-0");
         } else {
         message.channel.sendMessage(":face_palm: Mention someone, son!")
@@ -168,6 +169,13 @@ bot.on("message", function(message) {
             message.channel.sendMessage(":joy:")
         } else {
         message.channel.sendMessage("FUNNEYZ LOL")
+        }
+            break;
+        case "roundhousekick":
+        if (args[1]) {
+            message.channel.send("<@" + message.author.id + "> roundhousekicked" + args[1] + " WOW...");
+        } else {
+        message.channel.sendMessage(":face_palm: Mention someone...")
         }
             break;
         default:

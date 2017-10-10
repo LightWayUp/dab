@@ -67,7 +67,7 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log("Ready");
     
-bot.user.setGame("<o/!info | Donate: paypal.me/VanishedP")
+bot.user.setGame("<!info | Donate: paypal.me/VanishedP")
 
 });
 

@@ -37,12 +37,12 @@ var fortunes2 = [
     "When notes get in treble, bass-ically they get put behind bars. The alto-nate punishment is to push them off a clef and hope they land flat on sharp objects.",
 ];
 var funny = [
-    "https://i.imgur.com/zlWQJhx.gif"
-    "https://i.imgur.com/Byx8snE.gifv"
-    "https://i.imgur.com/hyKq3.gif"
-    "https://i.imgur.com/kxCQ45H.gif"
-    "https://i.imgur.com/2J59oyN.gif"
-    "https://i.imgur.com/SdCGqW4.gif"
+    "https://i.imgur.com/zlWQJhx.gif",
+    "https://i.imgur.com/Byx8snE.gifv",
+    "https://i.imgur.com/hyKq3.gif",
+    "https://i.imgur.com/kxCQ45H.gif",
+    "https://i.imgur.com/2J59oyN.gif",
+    "https://i.imgur.com/SdCGqW4.gif",
     "https://i.imgur.com/LbXQT.gif",
     "https://imgur.com/BsmAFmi",
     "https://imgur.com/nnnw3JF",

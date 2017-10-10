@@ -178,6 +178,17 @@ bot.on("message", function(message) {
         message.channel.sendMessage(":face_palm: Mention someone...")
         }
             break;
+        case "botinfo"
+             var embed = new Discord.RichEmbed()
+                .addField("Bot Status Card", "<o/")
+                .addField("Memory Status", "Very Good")
+                .addField("CPU Usage Status", "Stable")
+                .addField("GitHub Repo Code Status", "Updated")
+                .addField("Bot Status", "Stable")
+                .addField("Bot Host Status", "Online")
+                .setFooter("<o/")
+                message.channel.send(embed)
+            break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <o/!info to get the list of commands.");
     }

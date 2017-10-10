@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-const TOKEN = "MzY0Mzk5OTk0MjQyODU5MDA4.DLz-6w.UmHDyyvLiZC-DJzwWZJnthJD6mo";
+const TOKEN = "MzY0Mzk5OTk0MjQyODU5MDA4.DLz-6w.UmHDyyvLiZC-DJzwWZJnthJD6moHEHE";
 const PREFIX = "<!";
 
 var fortunes = [
@@ -96,7 +96,7 @@ bot.on("message", function(message) {
                 .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command.)")
                 .addField("-profile (A profile command. *Beta*)", "-invite (Gives you the link to invite me.")
                 .addField("-funny (Send a funny gif/pic.)", "Comin soon!")
-                .setDescription("Prefix: <o/!")
+                .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
             break;
@@ -155,7 +155,7 @@ bot.on("message", function(message) {
                 .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command.)")
                 .addField("-profile (A profile command. *Beta*)", "-invite (Gives you the link to invite me.")
                 .addField("-test (A testing command)", "Coming soon, bud!")
-                .setDescription("Prefix: <o/!")
+                .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
                 message.channel.sendMessage("Help sent in dms! :wink:")
@@ -173,7 +173,7 @@ bot.on("message", function(message) {
             break;
         case "roundhousekick":
         if (args[1]) {
-            message.channel.send("<@" + message.author.id + "> roundhousekicked" + args[1] + " WOW...");
+            message.channel.send("<@" + message.author.id + "> roundhousekicked " + args[1] + " **WOW...**");
         } else {
         message.channel.sendMessage(":face_palm: Mention someone...")
         }

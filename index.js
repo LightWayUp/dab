@@ -1,18 +1,4 @@
 const Discord = require("discord.js");
-const dbl = require(`discord-bot-list`)
-
-const client = new dbl({
-   token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2NDM5OTk5NDI0Mjg1OTAwOCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTA3NzI4NzA1fQ.3zFSPSkjAAo550TMIVp_CJ-1YcgOi-Rgcj6NI3gy16E",
-   id: "364399994242859008"
-})
-
-client.postStats(5, (err, res) => {
-    if(err) {
-        console.error(err)
-    } else {
-        console.log(res)
-    }
-})
 
 const TOKEN = "MzY0Mzk5OTk0MjQyODU5MDA4.DLz-6w.UmHDyyvLiZC-DJzwWZJnthJD6mo";
 const PREFIX = "<!";

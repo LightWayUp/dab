@@ -92,6 +92,7 @@ bot.on("message", function(message) {
         case "ping":
                 message.channel.send("**Pinging...**");
                 message.channel.send("**Pong!**" + "`" + bot.ping + "ms" + "`");
+                message.react("\👻")
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -100,10 +101,12 @@ bot.on("message", function(message) {
                 .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
                 .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command.)")
                 .addField("-profile (A profile command. *Beta*)", "-invite (Gives you the link to invite me.")
-                .addField("-funny (Send a funny gif/pic.)", "Comin soon!")
+                .addField("-funny (Send a funny gif/pic.)", "-botinfo (Sends the bot info and status.)")
+                .addField("-donate (Get the donate link.)", "-roundhousekick (A roleplay command.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
+                message.react("\👻")
             break;
         case "8ball":
             if (args[1]) {
@@ -121,6 +124,7 @@ bot.on("message", function(message) {
             break;
         case "avatar":
         message.channel.sendMessage(message.author.avatarURL);
+        message.react("\👻")
             break;
         case "noticeme":
         if (args[0]) {
@@ -131,6 +135,7 @@ bot.on("message", function(message) {
             break;
         case "invite":
             message.channel.sendMessage("https://discordapp.com/oauth2/authorize?client_id=364399994242859008&scope=bot&permissions=20040010000");
+            message.react("\👻")
             break;
         case "dmspam":
         if (args[1]) {
@@ -151,6 +156,7 @@ bot.on("message", function(message) {
                 .addField("Last message sent:", message.author.lastMessage)
                 .addField("Discord User ID:", message.author.id)
                 message.channel.send(embed)
+                message.react("\👻")
             break;
         case "dmhelp":
             var embed = new Discord.RichEmbed()
@@ -159,14 +165,18 @@ bot.on("message", function(message) {
                 .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
                 .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command.)")
                 .addField("-profile (A profile command. *Beta*)", "-invite (Gives you the link to invite me.")
-                .addField("-test (A testing command)", "Coming soon, bud!")
+                .addField("-funny (Send a funny gif/pic.)", "-botinfo (Sends the bot info and status.)")
+                .addField("-donate (Get the donate link.)", "-roundhousekick (A roleplay command.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
+                message.react("\👻")
                 message.channel.sendMessage("Help sent in dms! :wink:")
+                message.react("\👻")
             break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
+            message.react("\👻")
             break;
         case "funny":
         if (args[0]) {
@@ -191,6 +201,22 @@ bot.on("message", function(message) {
                 .addField("Memory Status", "Stable", true)
                 .addField("GitHub Repo Status", "Updated")
                 .setDescription("<o/")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
+        case "donate":
+            var embed = new Discord.RichEmbed()
+                .addField("<o/", "Donate to us via PayPal!")
+                .addField("PayPal Link:", "https://www.paypal.me/VanishedP")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
+        case "invite":
+            var embed = new Discord.RichEmbed()
+                .addField("<o/", "Invite me to your server!")
+                .addField("Invite Link:","https://discordbots.org/bot/364399994242859008")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;

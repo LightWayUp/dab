@@ -110,7 +110,7 @@ bot.on("message", function(message) {
             break;
         case "info":
             var embed = new Discord.RichEmbed()
-                .addField("Info", "-help (Sends this message)")
+                .addField("Info", "-info (Sends this message)")
                 .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
                 .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
                 .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command.)")

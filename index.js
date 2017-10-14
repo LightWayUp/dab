@@ -136,11 +136,6 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-    if (message.content.startsWith("<:tractor:368787965335568384>")) message.channel.sendMessage("*tractor sound*") ;
-
-});
-
-bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
 
     if (!message.content.startsWith(PREFIX)) return;
@@ -299,8 +294,8 @@ bot.on("message", function(message) {
                 message.react("\👻")
             break;
         case "afk":
-        if (args[5]) {
-            message.channel.sendMessage("<@" + message.author.id + "> I set your **AFK**:" + " " + args[1] + args[2] + args[3] + args[4] + args[5])
+        if (args[1]) {
+            message.channel.sendMessage("<@" + message.author.id + "> I set your **AFK**:" + " " + args[1])
             message.react("\👻")
         } else {
             message.channel.sendMessage(":face_palm: You gotta tell me why u are gonna be **AFK**!")

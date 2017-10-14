@@ -302,10 +302,6 @@ bot.on("message", function(message) {
             message.react("\👻")
         }
             break;
-        case "channelmsg":
-            message.channel.fetchMessages({limit: 1000000})
-                message.channel.sendMessage("Received" + ${messages.size} + "messages")
-            break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <!info to get the list of commands.");
             message.react("\👻")

@@ -136,6 +136,11 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
+    if (message.content.startsWith(":tractor:")) message.channel.sendMessage("*tractor sound*") ;
+
+});
+
+bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
 
     if (!message.content.startsWith(PREFIX)) return;

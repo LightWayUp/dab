@@ -96,6 +96,36 @@ bot.on("guildMemberRemove", function(member) {
 });
 
 bot.on("message", function(message) {
+    if (message.content.startsWith("S: ")) message.react("❌") + message.react("⭕") ;
+
+});
+
+bot.on("message", function(message) {
+    if (message.content.startsWith("back")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
+
+});
+
+bot.on("message", function(message) {
+    if (message.content.startsWith("Back")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
+
+});
+
+bot.on("message", function(message) {
+    if (message.content.startsWith("BACK")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
+
+});
+
+bot.on("message", function(message) {
+    if (message.content.startsWith("bAck")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
+
+});
+
+bot.on("message", function(message) {
+    if (message.content.startsWith("baCk")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
+
+});
+
+bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
 
     if (!message.content.startsWith(PREFIX)) return;
@@ -233,6 +263,13 @@ bot.on("message", function(message) {
                 .addField("Invite Link:","https://discordbots.org/bot/364399994242859008")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
+            break;
+        case "afk":
+        if (args[1]) {
+            message.channel.sendMessage("<@" + message.author.id + "> I set your **AFK**:" + " " + args[1])
+        } else {
+            message.channel.sendMessage(":face_palm: You gotta tell me why u are gonna be **AFK**!")
+        }
             break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <!info to get the list of commands.");

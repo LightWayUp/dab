@@ -155,24 +155,30 @@ bot.on("message", function(message) {
         case "8ball":
             if (args[1]) {
                 message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
+                message.react("\👻")
             } else {
             message.channel.sendMessage("Can't read that")
+            message.react("\👻")
             }
             break;
         case "puns":
         if (args[0]) {
             message.channel.sendMessage(fortunes2[Math.floor(Math.random() * fortunes2.length)]);
+            message.react("\👻")
         } else {
         message.channel.sendMessage("Hm.")
+        message.react("\👻")
         }
             break;
         case "avatar":
         message.channel.sendMessage(message.author.avatarURL);
         message.react("\👻")
+        message.react("\👻")
             break;
         case "noticeme":
         if (args[0]) {
             message.channel.sendMessage("Nope, son.");
+            message.react("\👻")
         } else {
         message.channel.sendMessage("smh")
         }
@@ -180,13 +186,16 @@ bot.on("message", function(message) {
         case "invite":
             message.channel.sendMessage("https://discordapp.com/oauth2/authorize?client_id=364399994242859008&scope=bot&permissions=20040010000");
             message.react("\👻")
+            message.react("\👻")
             break;
         case "dmspam":
         if (args[1]) {
             message.author.sendMessage("**SPAM REVENGE!!!**")
             message.channel.send("**Damn, son...** " + args[1] + " got DM spammed by <@" + message.author.id + "> 0-0");
+            message.react("\👻")
         } else {
         message.channel.sendMessage(":face_palm: Mention someone, son!")
+        message.react("\👻")
         }
             break;
         case "profile":
@@ -200,6 +209,7 @@ bot.on("message", function(message) {
                 .addField("Last message sent:", message.author.lastMessage)
                 .addField("Discord User ID:", message.author.id)
                 message.channel.send(embed)
+                message.react("\👻")
                 message.react("\👻")
             break;
         case "dmhelp":
@@ -217,24 +227,30 @@ bot.on("message", function(message) {
                 message.react("\👻")
                 message.channel.sendMessage("Help sent in dms! :wink:")
                 message.react("\👻")
+                message.react("\👻")
             break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
+            message.react("\👻")
             message.react("\👻")
             break;
         case "funny":
         if (args[0]) {
             message.channel.sendMessage(funny[Math.floor(Math.random() * funny.length)]);
             message.channel.sendMessage(":joy:")
+            message.react("\👻")
         } else {
         message.channel.sendMessage("FUNNEYZ LOL")
+        message.react("\👻")
         }
             break;
         case "roundhousekick":
         if (args[1]) {
             message.channel.send("<@" + message.author.id + "> roundhousekicked " + args[1] + " **WOW...**");
+            message.react("\👻")
         } else {
         message.channel.sendMessage(":face_palm: Mention someone...")
+        message.react("\👻")
         }
             break;
         case "botstatus":
@@ -248,6 +264,7 @@ bot.on("message", function(message) {
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
+                message.react("\👻")
             break;
         case "donate":
             var embed = new Discord.RichEmbed()
@@ -256,6 +273,7 @@ bot.on("message", function(message) {
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
+                message.react("\👻")
             break;
         case "invite":
             var embed = new Discord.RichEmbed()
@@ -263,16 +281,20 @@ bot.on("message", function(message) {
                 .addField("Invite Link:","https://discordbots.org/bot/364399994242859008")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
+                message.react("\👻")
             break;
         case "afk":
         if (args[1]) {
             message.channel.sendMessage("<@" + message.author.id + "> I set your **AFK**:" + " " + args[1])
+            message.react("\👻")
         } else {
             message.channel.sendMessage(":face_palm: You gotta tell me why u are gonna be **AFK**!")
+            message.react("\👻")
         }
             break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <!info to get the list of commands.");
+            message.react("\👻")
     }
 });
 

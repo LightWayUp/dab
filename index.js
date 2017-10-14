@@ -136,7 +136,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-    if (message.content.startsWith(":tractor:")) message.channel.sendMessage("*tractor sound*") ;
+    if (message.content.startsWith("<:tractor:368787965335568384>")) message.channel.sendMessage("*tractor sound*") ;
 
 });
 

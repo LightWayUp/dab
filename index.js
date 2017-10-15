@@ -216,22 +216,99 @@ bot.on("message", function(message) {
                 message.channel.send(embed)
                 message.react("\👻")
             break;
-        case "dmhelp":
+        case "dminfo":
             var embed = new Discord.RichEmbed()
-                .addField("Info", "-help (Sends this message)")
-                .addField("-8ball (The magic 8ball)", "-puns (Send a random pun. Duh.)")
-                .addField("-avatar (Send a pic of your profile pic. Yes, that makes sense.)", "-noticeme (Notices you. wink wink)")
-                .addField("-ping (Ping! Pong!)", "-dmspam (A roleplay command.)")
-                .addField("-profile (A profile command. *Beta*)", "-invite (Gives you the link to invite me.")
-                .addField("-funny (Send a funny gif/pic.)", "-botinfo (Sends the bot info and status.)")
-                .addField("-donate (Get the donate link.)", "-roundhousekick (A roleplay command.)")
+                .addField("Info", "`<!info-general` (Get the list of general commands.)")
+                .addField("-", "`<!info-general` (Get the list of general commands.)")
+                .addField("-", "`<!info-misc` (Get the list of misc commands.)")
+                .addField("-", "`<!info-info` (Get the list of info commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
                 message.react("\👻")
-                message.channel.sendMessage("Help sent in dms! :wink:")
+        case "info-general":
+            var embed = new Discord.RichEmbed()
+                .addField("General Commands", "`<!info` (Send the list of commands.)")
+                .addField("-", "`<!invite` (Sends you the link to invite <o/.)")
+                .addField("-", "`<!donate` (Send you the donate link to support <o/.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
                 message.react("\👻")
+        case "info-misc":
+            var embed = new Discord.RichEmbed()
+                .addField("Misc Commands", "`<!avatar` (Gives you a nice pic of your avatar.)")
+                .addField("-", "`<!8ball` (The magic 8ball!.)")
+                .addField("-", "<!puns` (Sends a pun. Duh.)")
+                .addField("-", "`<!profile` (Shows your profile card.)")
+                .addField("-", "`<!ping` (Check your ping!)")
+                .addField("-", "`<!noticeme` (It simply notices you.")
+                .addField("-", "`<!funny` (Sends a random pic of something funny.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
                 message.react("\👻")
+        case "info-rp":
+            var embed = new Discord.RichEmbed()
+                .addField("Roleplay Commands", "`<!dmspam` (A roleplay command.)")
+                .addField("-", "`<!roundhousekick` (A roleplay command.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
+                message.react("\👻")
+        case "info-info":
+            var embed = new Discord.RichEmbed()
+                .addField("Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
+                .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
+                message.react("\👻")
+            break;
+        case "infoz":
+            var embed = new Discord.RichEmbed()
+                .addField("Info", "`<!info-general` (Get the list of general commands.)")
+                .addField("-", "`<!info-general` (Get the list of general commands.)")
+                .addField("-", "`<!info-misc` (Get the list of misc commands.)")
+                .addField("-", "`<!info-info` (Get the list of info commands.)")
+                .setDescription("Prefix: <!")
+                .setFooter("Made by Vanished#3101")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
+        case "info-general":
+            var embed = new Discord.RichEmbed()
+                .addField("General Commands", "`<!info` (Send the list of commands.)")
+                .addField("-", "`<!invite` (Sends you the link to invite <o/.)")
+                .addField("-", "`<!donate` (Send you the donate link to support <o/.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
+        case "info-misc":
+            var embed = new Discord.RichEmbed()
+                .addField("Misc Commands", "`<!avatar` (Gives you a nice pic of your avatar.)")
+                .addField("-", "`<!8ball` (The magic 8ball!.)")
+                .addField("-", "<!puns` (Sends a pun. Duh.)")
+                .addField("-", "`<!profile` (Shows your profile card.)")
+                .addField("-", "`<!ping` (Check your ping!)")
+                .addField("-", "`<!noticeme` (It simply notices you.")
+                .addField("-", "`<!funny` (Sends a random pic of something funny.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
+        case "info-rp":
+                var embed = new Discord.RichEmbed()
+                    .addField("Roleplay Commands", "`<!dmspam` (A roleplay command.)")
+                    .addField("-", "`<!roundhousekick` (A roleplay command.)")
+                    .setFooter("<o/")
+                    message.channel.sendEmbed(embed);
+                    message.react("\👻")
+            break;
+        case "info-info":
+                var embed = new Discord.RichEmbed()
+                    .addField("Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
+                    .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
+                    .setFooter("<o/")
+                    message.channel.sendEmbed(embed);
+                    message.react("\👻")
             break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
@@ -295,6 +372,20 @@ bot.on("message", function(message) {
             message.channel.sendMessage(":face_palm: You gotta tell me why u are gonna be **AFK**!")
             message.react("\👻")
         }
+            break;
+        case "hoststatus":
+        case "hostinfo":
+            var embed = new Discord.RichEmbed()
+                .addField("Host Status", "<o/")
+                .addField("Host:", "Heroku", true)
+                .addField("Slug Size:", "14.9 MB of 500 MB", true)
+                .addField("Framework:", "Node.js", true)
+                .addField("Web Status:", "OFF", true)
+                .addField("Worker Status", "ON", true)
+                .addField("Owner(s):", "Vanished#3101", true)
+                .setFooter("Made by Vanished#3101")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
             break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <!info to get the list of commands.");

@@ -86,12 +86,12 @@ bot.user.setGame("<!info | Donate: paypal.me/VanishedP")
 });
 
 bot.on("guildMemberAdd", function(member) {
-    member.guild.channels.find("name", "general").send(member.toString() + " Welcome to this server! :ok_hand:");
+    member.guild.channels.find("name", "general").sendMessage(member.toString() + " Welcome to this server!");
 
 });
 
 bot.on("guildMemberRemove", function(member) {
-    member.guild.channels.find("name", "general").send(member.toString() + " smh... damn dat dood/gal...");
+    member.guild.channels.find("name", "general").sendMessage(member.toString() + " smh... damn dat dood/gal...");
 
 });
 

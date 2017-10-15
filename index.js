@@ -215,7 +215,6 @@ bot.on("message", function(message) {
                 .addField("Discord User ID:", message.author.id)
                 message.channel.send(embed)
                 message.react("\👻")
-                message.react("\👻")
             break;
         case "dmhelp":
             var embed = new Discord.RichEmbed()

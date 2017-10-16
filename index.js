@@ -14,7 +14,6 @@ client.postStats(7, (err, res) => {
     }
 })
 
-const TOKEN = "MzY0Mzk5OTk0MjQyODU5MDA4.DLz-6w.UmHDyyvLiZC-DJzwWZJnthJD6mo";
 const PREFIX = "<!";
 
 var fortunes = [

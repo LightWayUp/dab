@@ -336,6 +336,14 @@ bot.on("message", function(message) {
                 message.react("\👻")
                 message.react("\👻")
             break;
+        case "repo":
+            var embed = new Discord.RichEmbed()
+                .addField("<o/", "Open Source Code")
+                .addField("GitHub Link:", "https://github.com/VanishedP/dab")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
         case "invite":
             var embed = new Discord.RichEmbed()
                 .addField("<o/", "Invite me to your server!")

@@ -125,11 +125,6 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-    if (message.content.startsWith("<@364399994242859008>")) message.channel.sendMessage("Go away pls.") ;
-
-});
-
-bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
 
     if (!message.content.startsWith(PREFIX)) return;

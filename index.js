@@ -6,7 +6,7 @@ const client = new dbl({
    id: "364399994242859008"
 })
 
-client.postStats(7, (err, res) => {
+client.postStats(11, (err, res) => {
     if(err) {
         console.error(err)
     } else {

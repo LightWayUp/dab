@@ -6,7 +6,7 @@ const client = new dbl({
    id: "364399994242859008"
 })
 
-client.postStats(11, (err, res) => {
+client.postStats(12, (err, res) => {
     if(err) {
         console.error(err)
     } else {
@@ -202,6 +202,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-general` (Get the list of general commands.)")
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
+                .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -221,7 +222,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!puns` (Sends a pun. Duh.)")
                 .addField("-", "`<!profile` (Shows your profile card.)")
                 .addField("-", "`<!ping` (Check your ping!)")
-                .addField("-", "`<!noticeme` (It simply notices you.")
+                .addField("-", "`<!noticeme` (It simply notices you.)")
                 .addField("-", "`<!funny` (Sends a random pic of something funny.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
@@ -247,6 +248,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-general` (Get the list of general commands.)")
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
+                .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -282,9 +284,9 @@ bot.on("message", function(message) {
                     message.channel.sendEmbed(embed);
                     message.react("\👻")
             break;
-        case "info-info":
+        case "info-bot":
                 var embed = new Discord.RichEmbed()
-                    .addField("Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
+                    .addField("Bot Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
                     .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);

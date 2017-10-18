@@ -201,7 +201,7 @@ bot.on("message", function(message) {
                 .addField("Info", "`<!info-general` (Get the list of general commands.)")
                 .addField("-", "`<!info-general` (Get the list of general commands.)")
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
-                .addField("-", "`<!info-info` (Get the list of info commands.)")
+                .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -218,7 +218,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Misc Commands", "`<!avatar` (Gives you a nice pic of your avatar.)")
                 .addField("-", "`<!8ball` (The magic 8ball!.)")
-                .addField("-", "<!puns` (Sends a pun. Duh.)")
+                .addField("-", "`<!puns` (Sends a pun. Duh.)")
                 .addField("-", "`<!profile` (Shows your profile card.)")
                 .addField("-", "`<!ping` (Check your ping!)")
                 .addField("-", "`<!noticeme` (It simply notices you.")
@@ -235,7 +235,7 @@ bot.on("message", function(message) {
                 message.react("\👻")
         case "11113":
             var embed = new Discord.RichEmbed()
-                .addField("Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
+                .addField("Bot Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
                 .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
@@ -246,7 +246,7 @@ bot.on("message", function(message) {
                 .addField("Info", "`<!info-general` (Get the list of general commands.)")
                 .addField("-", "`<!info-general` (Get the list of general commands.)")
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
-                .addField("-", "`<!info-info` (Get the list of info commands.)")
+                .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);

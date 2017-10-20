@@ -226,6 +226,14 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Roleplay Commands", "`<!dmspam` (A roleplay command.)")
                 .addField("-", "`<!roundhousekick` (A roleplay command.)")
+                .addField("-", "`<!poop` (A roleplay command.)")
+                .addField("-", "`<!cry` (A roleplay command.)")
+                .addField("-", "`<!kick` (A roleplay command.)")
+                .addField("-", "`<!punch` (A roleplay command.)")
+                .addField("-", "`<!eat` (A roleplay command.)")
+                .addField("-", "`<!drink` (A roleplay command.)")
+                .addField("-", "`<!sneeze` (A roleplay command.)")
+                .addField("-", "`<!dab` (A roleplay command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
                 message.react("\👻")
@@ -275,6 +283,14 @@ bot.on("message", function(message) {
                 var embed = new Discord.RichEmbed()
                     .addField("Roleplay Commands", "`<!dmspam` (A roleplay command.)")
                     .addField("-", "`<!roundhousekick` (A roleplay command.)")
+                    .addField("-", "`<!poop` (A roleplay command.)")
+                    .addField("-", "`<!cry` (A roleplay command.)")
+                    .addField("-", "`<!kick` (A roleplay command.)")
+                    .addField("-", "`<!punch` (A roleplay command.)")
+                    .addField("-", "`<!eat` (A roleplay command.)")
+                    .addField("-", "`<!drink` (A roleplay command.)")
+                    .addField("-", "`<!sneeze` (A roleplay command.)")
+                    .addField("-", "`<!dab` (A roleplay command.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
                     message.react("\👻")
@@ -378,7 +394,7 @@ bot.on("message", function(message) {
             message.channel.send("<@" + message.author.id + "> kicked " + args[1] + " in the face! OoOoOoO");
             message.react("👻")
         } else {
-        message.channel.sendMessage("face_palm You cannot kick yourself! Ofc not...")
+        message.channel.sendMessage(":face_palm: You cannot kick yourself! Ofc not...")
         message.react("👻")
         }
             break;
@@ -387,16 +403,16 @@ bot.on("message", function(message) {
             message.channel.send("<@" + message.author.id + "> BoOoOoOoOoOoOo-ed at " + args[1] + "!");
             message.react("👻")
         } else {
-        message.channel.sendMessage("face_palm You cannot boo at yourself...")
+        message.channel.sendMessage(":face_palm: You cannot boo at yourself...")
         message.react("👻")
         }
             break;
         case "punch": 
         if (args[1]) {
-            message.channel.send("<@" + message.author.id + "> punched " + args[1] + " right_facing_fist");
+            message.channel.send("<@" + message.author.id + "> punched " + args[1] + " :right_facing_fist:");
             message.react("👻")
         } else {
-        message.channel.sendMessage("face_palm You cannot punch yourself...")
+        message.channel.sendMessage(":face_palm: You cannot punch yourself...")
         message.react("👻")
         }
             break;
@@ -425,7 +441,7 @@ bot.on("message", function(message) {
                 message.channel.send("<@" + message.author.id + "> is eating " + args[1]);
                 message.react("👻")
             } else {
-            message.channel.sendMessage("face_palm Tell me what you want to eat!")
+            message.channel.sendMessage(":face_palm: Tell me what you want to eat!")
             message.react("👻")
             }
             break;

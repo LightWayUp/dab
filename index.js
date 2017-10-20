@@ -6,7 +6,7 @@ const client = new dbl({
    id: "364399994242859008"
 })
 
-client.postStats(12, (err, res) => {
+client.postStats(18, (err, res) => {
     if(err) {
         console.error(err)
     } else {
@@ -313,6 +313,7 @@ bot.on("message", function(message) {
                 .addField("Bot Status", "Stable", true)
                 .addField("Memory Status", "Stable", true)
                 .addField("GitHub Repo Status", "Updated")
+                .addField("Server Count:", bot.guilds.size)
                 .setDescription("<o/")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);

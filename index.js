@@ -84,16 +84,6 @@ bot.user.setGame("<!info | Donate: paypal.me/VanishedP")
 
 });
 
-bot.on("guildMemberAdd", function(member) {
-    member.guild.channels.find("name", "general").sendMessage(member.toString() + " Welcome to this server!");
-
-});
-
-bot.on("guildMemberRemove", function(member) {
-    member.guild.channels.find("name", "general").sendMessage(member.toString() + " smh... damn dat dood/gal...");
-
-});
-
 bot.on("message", function(message) {
     if (message.content.startsWith("S: ")) message.react("❌") + message.react("⭕") ;
 
@@ -376,6 +366,9 @@ bot.on("message", function(message) {
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
+            break;
+        case "size":
+            message.channel.sendMessage(bot.guilds.size)
             break;
         default:
             message.channel.sendMessage("I do not recognize that. Use <!info to get the list of commands.");

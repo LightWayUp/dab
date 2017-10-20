@@ -368,11 +368,7 @@ bot.on("message", function(message) {
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
             break;
-        case "size":
-            message.channel.sendMessage(bot.guilds.size)
-            break;
         default:
-            message.channel.sendMessage("I do not recognize that. Use <!info to get the list of commands.");
             message.react("\👻")
     }
 });

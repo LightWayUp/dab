@@ -312,8 +312,8 @@ bot.on("message", function(message) {
                 .addField("Bot Info", "<o/")
                 .addField("Bot Status", "Stable", true)
                 .addField("Memory Status", "Stable", true)
-                .addField("GitHub Repo Status", "Updated")
-                .addField("Server Count:", bot.guilds.size)
+                .addField("GitHub Repo Status", "Updated", true)
+                .addField("Server Count:", bot.guilds.size, true)
                 .setDescription("<o/")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);

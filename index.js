@@ -78,14 +78,14 @@ var funny = [
 var bot = new Discord.Client(); 
 
 bot.on("ready", function() {
-    console.log("Ready");
+    console.log("<o/");
     
 bot.user.setGame("<!info | Donate: paypal.me/VanishedP")
 
 });
 
 bot.on("ready", function() {
-    console.log("Server Count:" + bot.guilds.size);
+    console.log("Server Count: " + bot.guilds.size);
 
 });
 

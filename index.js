@@ -79,6 +79,9 @@ var bot = new Discord.Client();
 
 bot.on("ready", function() {
     console.log("Ready");
+
+bot.on("ready", function() {
+    console.log("Server Count:" + bot.guilds.size);
     
 bot.user.setGame("<!info | Donate: paypal.me/VanishedP")
 

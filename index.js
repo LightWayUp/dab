@@ -373,6 +373,71 @@ bot.on("message", function(message) {
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
             break;
+        case "kick":
+        if (args[1]) {
+            message.channel.send("<@" + message.author.id + "> kicked " + args[1] + " in the face! OoOoOoO");
+            message.react("👻")
+        } else {
+        message.channel.sendMessage("face_palm You cannot kick yourself! Ofc not...")
+        message.react("👻")
+        }
+            break;
+        case "boo":
+        if (args[1]) {
+            message.channel.send("<@" + message.author.id + "> BoOoOoOoOoOoOo-ed at " + args[1] + "!");
+            message.react("👻")
+        } else {
+        message.channel.sendMessage("face_palm You cannot boo at yourself...")
+        message.react("👻")
+        }
+            break;
+        case "punch": 
+        if (args[1]) {
+            message.channel.send("<@" + message.author.id + "> punched " + args[1] + " right_facing_fist");
+            message.react("👻")
+        } else {
+        message.channel.sendMessage("face_palm You cannot punch yourself...")
+        message.react("👻")
+        }
+            break;
+        case "cry":
+            message.channel.send("Be ready for a flood of tears! <@" + message.author.id + "> cries...");
+            message.react("👻")
+            break;
+        case "dab":
+            message.channel.send("<@" + message.author.id + "> Dabbed <o/ ");
+            message.react("👻")
+            break;
+        case "sneeze":
+            message.channel.send("<@" + message.author.id + "> sneezed... Stay away from that person...");
+            message.react("👻")
+            break;
+        case "poop":
+            message.channel.send("welp... it looks like <@" + message.author.id + "> pooped... i quit.");
+            message.react("👻")
+            break;
+        case "breath":
+            message.channel.send("<@" + message.author.id + "> is breathing!");
+            message.react("👻")
+            break;
+        case "eat":
+            if (args[1]) {
+                message.channel.send("<@" + message.author.id + "> is eating " + args[1]);
+                message.react("👻")
+            } else {
+            message.channel.sendMessage("face_palm Tell me what you want to eat!")
+            message.react("👻")
+            }
+            break;
+        case "drink":
+            if (args[1]) {
+                message.channel.send("<@" + message.author.id + "> is drinking " + args[1]);
+                message.react("👻")
+            } else {
+            message.channel.sendMessage(":face_palm: Tell me what you want to drink!")
+            message.react("👻")
+            }
+            break;
         default:
             message.react("\👻")
     }

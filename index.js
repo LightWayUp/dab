@@ -423,7 +423,7 @@ bot.on("message", function(message) {
             message.react("👻")
             break;
         case "dab":
-            message.channel.send("<@" + message.author.id + "> Dabbed **<o/** <:pugdab:371345503042011136>");
+            message.channel.send("<@" + message.author.id + "> Dabbed **<o/** <:pugdab:371345447870005249>");
             message.react("👻")
             break;
         case "sneeze":

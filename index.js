@@ -431,7 +431,7 @@ bot.on("message", function(message) {
             message.react("👻")
             break;
         case "poop":
-            message.channel.send("It looks like <@" + message.author.id + "> pooped... <:cewlthonk:371345946820214784>");
+            message.channel.send("It looks like <@" + message.author.id + "> pooped... <:cewlthonk:366636445391126528>");
             message.react("👻")
             break;
         case "breath":

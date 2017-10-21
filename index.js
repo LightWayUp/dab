@@ -6,7 +6,7 @@ const client = new dbl({
    id: "364399994242859008"
 })
 
-client.postStats(19, (err, res) => {
+client.postStats(21, (err, res) => {
     if(err) {
         console.error(err)
     } else {
@@ -423,7 +423,7 @@ bot.on("message", function(message) {
             message.react("👻")
             break;
         case "dab":
-            message.channel.send("<@" + message.author.id + "> Dabbed <o/ ");
+            message.channel.send("<@" + message.author.id + "> Dabbed **<o/** <:pugdab:371345503042011136>");
             message.react("👻")
             break;
         case "sneeze":
@@ -431,16 +431,16 @@ bot.on("message", function(message) {
             message.react("👻")
             break;
         case "poop":
-            message.channel.send("It looks like <@" + message.author.id + "> pooped...");
+            message.channel.send("It looks like <@" + message.author.id + "> pooped... <:cewlthonk:371345946820214784>");
             message.react("👻")
             break;
         case "breath":
-            message.channel.send("<@" + message.author.id + "> is breathing!");
+            message.channel.send("<@" + message.author.id + "> is breathing the **oxygen**!");
             message.react("👻")
             break;
         case "eat":
             if (args[1]) {
-                message.channel.send("<@" + message.author.id + "> is eating **" + args[1]);
+                message.channel.send("<@" + message.author.id + "> is eating **" + args[1] + "**");
                 message.react("👻")
             } else {
             message.channel.sendMessage(":face_palm: Tell me what you want to eat!")

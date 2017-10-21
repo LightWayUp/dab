@@ -71,7 +71,7 @@ var funny = [
     "https://imgur.com/dyA2OWJ",
     "https://i.imgur.com/aDMJODQ.gif",
     "https://imgur.com/tunarZ1",
-    "https://i.imgur.com/Un1beKw.jpg",
+    "https://i.imgur.com/Un1beKw.jpg"
     "https://imgur.com/dt8ISHk",
 ];
 
@@ -80,7 +80,7 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log("<o/");
     
-bot.user.setGame("<!info | Dabbing for" + bot.guilds.size + " servers.")
+bot.user.setGame("<!info | Dabbing for " + bot.guilds.size + " servers.")
 
 });
 

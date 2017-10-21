@@ -100,6 +100,11 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
+    if (message.content.startsWith("<@364399994242859008>help")) message.channel.send("Hello! To get the list of my commands type in: **<!info**!") ;
+
+});
+
+bot.on("message", function(message) {
     if (message.content.startsWith("Back")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
 
 });

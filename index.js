@@ -61,9 +61,9 @@ var funny = [
     "https://imgur.com/nnnw3JF",
     "https://imgur.com/URDe5ps",
     "https://i.imgur.com/1xN7Hmv.gif",
-    "https://i.imgur.com/ZYXMkP1.gif",
-    "https://i.imgur.com/hEn5ffE.gif",
-    "https://imgur.com/kKI054R",
+    "https://i.imgur.com/ZYXMkP1.gif"
+    "https://i.imgur.com/hEn5ffE.gif"
+    "https://imgur.com/kKI054R"
     "https://imgur.com/tVrlkSH",
     "https://i.imgur.com/sF66Yv5.jpg",
     "https://imgur.com/fPs0Ien",
@@ -80,7 +80,7 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log("<o/");
     
-bot.user.setGame("<!info | Donate: paypal.me/VanishedP")
+bot.user.setGame("<!info | Dabbing for" + bot.guilds.size + " servers.")
 
 });
 

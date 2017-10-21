@@ -234,6 +234,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!drink` (A roleplay command.)")
                 .addField("-", "`<!sneeze` (A roleplay command.)")
                 .addField("-", "`<!dab` (A roleplay command.)")
+                .addField("-", "`<!breath` (A roleplay command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
                 message.react("\👻")
@@ -291,6 +292,7 @@ bot.on("message", function(message) {
                     .addField("-", "`<!drink` (A roleplay command.)")
                     .addField("-", "`<!sneeze` (A roleplay command.)")
                     .addField("-", "`<!dab` (A roleplay command.)")
+                    .addField("-", "`<!breath` (A roleplay command.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
                     message.react("\👻")
@@ -394,7 +396,7 @@ bot.on("message", function(message) {
             message.channel.send("<@" + message.author.id + "> kicked " + args[1] + " in the face! OoOoOoO");
             message.react("👻")
         } else {
-        message.channel.sendMessage(":face_palm: You cannot kick yourself! Ofc not...")
+        message.channel.sendMessage(":face_palm: You cannot kick yourself!")
         message.react("👻")
         }
             break;
@@ -425,11 +427,11 @@ bot.on("message", function(message) {
             message.react("👻")
             break;
         case "sneeze":
-            message.channel.send("<@" + message.author.id + "> sneezed... Stay away from that person...");
+            message.channel.send("<@" + message.author.id + "> sneezed...");
             message.react("👻")
             break;
         case "poop":
-            message.channel.send("welp... it looks like <@" + message.author.id + "> pooped... i quit.");
+            message.channel.send("It looks like <@" + message.author.id + "> pooped...");
             message.react("👻")
             break;
         case "breath":
@@ -438,7 +440,7 @@ bot.on("message", function(message) {
             break;
         case "eat":
             if (args[1]) {
-                message.channel.send("<@" + message.author.id + "> is eating " + args[1]);
+                message.channel.send("<@" + message.author.id + "> is eating **" + args[1]);
                 message.react("👻")
             } else {
             message.channel.sendMessage(":face_palm: Tell me what you want to eat!")
@@ -447,7 +449,7 @@ bot.on("message", function(message) {
             break;
         case "drink":
             if (args[1]) {
-                message.channel.send("<@" + message.author.id + "> is drinking " + args[1]);
+                message.channel.send("<@" + message.author.id + "> is drinking **" + args[1] + "**");
                 message.react("👻")
             } else {
             message.channel.sendMessage(":face_palm: Tell me what you want to drink!")

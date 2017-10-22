@@ -335,6 +335,10 @@ bot.on("message", function(message) {
                 .addField("Memory Status", "Stable", true)
                 .addField("GitHub Repo Status", "Updated", true)
                 .addField("Server Count:", bot.guilds.size, true)
+                .addField("Bot Libary", "discord.js", true)
+                .addField("Total Users:", "`" + bot.users.size + "`", true)
+                .addField("Bot Ping", bot.ping.toFixed(), true)
+                .addField("Total Channels", "`" + bot.channels.size + "`", true)
                 .setDescription("<o/")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);

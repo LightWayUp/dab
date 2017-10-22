@@ -100,7 +100,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-    if (message.content.startsWith("<@364399994242859008>help")) message.channel.send("Hello! To get the list of my commands type in: **<!info**!") ;
+    if (message.content.startsWith("<@364399994242859008>")) message.channel.send("Hello! To get the list of my commands type in: **<!info**!") ;
 
 });
 
@@ -428,7 +428,8 @@ bot.on("message", function(message) {
             message.react("👻")
             break;
         case "dab":
-            message.channel.send("<@" + message.author.id + "> Dabbed **<o/** <:pugdab:371345447870005249>");
+            message.channel.send("<@" + message.author.id + "> dabbed **<o/**");
+            message.channel.send("<:pugdab:371345447870005249>");
             message.react("👻")
             break;
         case "sneeze":

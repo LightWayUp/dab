@@ -134,7 +134,7 @@ bot.on("message", function(message) {
     switch (args[0].toLowerCase())  {
         case "ping":
                 message.channel.send("**Pinging...**");
-                message.channel.send("**Pong!**" + "`" + bot.ping + "ms" + "`");
+                message.channel.send("**Pong!**" + "`" + bot.ping.toFixed() + "ms" + "`");
                 message.react("\👻")
             break;
         case "8ball":
@@ -336,9 +336,9 @@ bot.on("message", function(message) {
                 .addField("GitHub Repo Status", "Updated", true)
                 .addField("Server Count:", bot.guilds.size, true)
                 .addField("Bot Libary", "discord.js", true)
-                .addField("Total Users:", "`" + bot.users.size + "`", true)
+                .addField("Total Users:" + bot.users.size + true)
                 .addField("Bot Ping", bot.ping.toFixed(), true)
-                .addField("Total Channels", "`" + bot.channels.size + "`", true)
+                .addField("Total Channels" + bot.channels.size + true)
                 .setDescription("<o/")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);

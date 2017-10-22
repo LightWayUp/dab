@@ -168,11 +168,6 @@ bot.on("message", function(message) {
         message.channel.sendMessage("smh")
         }
             break;
-        case "invite":
-            message.channel.sendMessage("https://discordapp.com/oauth2/authorize?client_id=364399994242859008&scope=bot&permissions=20040010000");
-            message.react("\👻")
-            message.react("\👻")
-            break;
         case "dmspam":
         if (args[1]) {
             message.author.sendMessage("**SPAM REVENGE!!!**")

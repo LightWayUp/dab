@@ -194,7 +194,6 @@ bot.on("message", function(message) {
         case "dminfo":
             var embed = new Discord.RichEmbed()
                 .addField("Info", "`<!info-general` (Get the list of general commands.)")
-                .addField("-", "`<!info-general` (Get the list of general commands.)")
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
@@ -249,7 +248,6 @@ bot.on("message", function(message) {
         case "info":
             var embed = new Discord.RichEmbed()
                 .addField("Info", "`<!info-general` (Get the list of general commands.)")
-                .addField("-", "`<!info-general` (Get the list of general commands.)")
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")

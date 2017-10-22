@@ -6,7 +6,7 @@ const client = new dbl({
    id: "364399994242859008"
 })
 
-client.postStats(21, (err, res) => {
+client.postStats(bot.guild.size, (err, res) => {
     if(err) {
         console.error(err)
     } else {

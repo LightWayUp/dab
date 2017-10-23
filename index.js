@@ -227,7 +227,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!roundhousekick` (A roleplay command.)")
                 .addField("-", "`<!poop` (A roleplay command.)")
                 .addField("-", "`<!cry` (A roleplay command.)")
-                .addField("-", "`<!kick` (A roleplay command.)")
+                .addField("-", "`<!kickk` (A roleplay command.)")
                 .addField("-", "`<!punch` (A roleplay command.)")
                 .addField("-", "`<!eat` (A roleplay command.)")
                 .addField("-", "`<!drink` (A roleplay command.)")
@@ -284,7 +284,7 @@ bot.on("message", function(message) {
                     .addField("-", "`<!roundhousekick` (A roleplay command.)")
                     .addField("-", "`<!poop` (A roleplay command.)")
                     .addField("-", "`<!cry` (A roleplay command.)")
-                    .addField("-", "`<!kick` (A roleplay command.)")
+                    .addField("-", "`<!kickk` (A roleplay command.)")
                     .addField("-", "`<!punch` (A roleplay command.)")
                     .addField("-", "`<!eat` (A roleplay command.)")
                     .addField("-", "`<!drink` (A roleplay command.)")
@@ -394,7 +394,7 @@ bot.on("message", function(message) {
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
             break;
-        case "kick":
+        case "kickk":
         if (args[1]) {
             message.channel.send("<@" + message.author.id + "> kicked " + args[1] + " in the face! OoOoOoO");
             message.react("👻")
@@ -459,6 +459,50 @@ bot.on("message", function(message) {
             message.channel.sendMessage(":face_palm: Tell me what you want to drink!")
             message.react("👻")
             }
+            break;
+        case "kick":
+        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("You are not allowed to execute this command!");
+        if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return message.reply("I do not have the **KICK_MEMBERS** permission.");
+        let user = message.mentions.users.first();
+        let reason = message.content.split(" ").slice(2).join(" ");
+        let modlog = bot.channels.find("name", "mod-log");
+
+        if(!modlog) return message.reply("This server doesent have the mod-log channel!");
+        if (message.mentions.users.size < 1) return message.reply(":face_palm: Mention someone please.");
+        if(!reason) return message.reply ("Give me a reason for your kick.");
+        if (!message.guild.member(user).kickable) return message.reply("I cant kick someone if it has a higher role than me!");
+
+        message.guild.member(user).kick();
+
+        message.delete()
+        var modlogs = new Discord.RichEmbed()
+        .setAuthor(`${user.username} is kicked`, user.displayAvatarURL)
+        .addField("Kick Information:", `**Kicked User:** ${user.tag}\n**Moderator:** ${message.author.tag}\n**Reason:** ${reason}`);
+        message.channel.sendEmbed(modlogs);
+        modlog.send({
+        })
+            break;
+        case "ban":
+        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("You are not allowed to execute this command!");
+        if(!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return message.reply("I do not have the **BAN_MEMBERS** permission.");
+        let userr = message.mentions.users.first();
+        let reasonn = message.content.split(" ").slice(2).join(" ");
+        let modlogg = bot.channels.find("name", "mod-log");
+
+        if(!modlogg) return message.reply("This server doesent have the mod-log channel!");
+        if (message.mentions.users.size < 1) return message.reply(":face_palm: Mention someone please.");
+        if(!reasonn) return message.reply ("Give me a reason for your ban.");
+        if (!message.guild.member(userr).bannable) return message.reply("I cant kick someone if it has a higher role than me!");
+
+        message.guild.member(userr).ban();
+
+        message.delete()
+        var modlogss = new Discord.RichEmbed()
+        .setAuthor(`${userr.username} is banned`, userr.displayAvatarURL)
+        .addField("Ban Information:", `**Banned User:** ${userr.tag}\n**Moderator:** ${message.author.tag}\n**Reason:** ${reasonn}`);
+        message.channel.sendEmbed(modlogss);
+        modlogg.send({
+        })
             break;
         default:
             message.react("\👻")

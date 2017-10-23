@@ -197,6 +197,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
+                .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -244,6 +245,13 @@ bot.on("message", function(message) {
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
                 message.react("\👻")
+        case "11114":
+            var embed = new Discord.RichEmbed()
+                .addField("General Commands", "`<!kick` (A moderator kick command.)")
+                .addField("-", "`<!ban` (A moderator ban command.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -251,6 +259,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
+                .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -302,6 +311,14 @@ bot.on("message", function(message) {
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
                     message.react("\👻")
+            break;
+        case "info-mod":
+            var embed = new Discord.RichEmbed()
+                .addField("General Commands", "`<!kick` (A moderator kick command.)")
+                .addField("-", "`<!ban` (A moderator ban command.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
             break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")

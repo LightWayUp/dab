@@ -521,6 +521,30 @@ bot.on("message", function(message) {
         modlogg.send({
         })
             break;
+        case "unban"://guild.unban('some user ID')
+        if (args[2]) {
+        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("You are not allowed to execute this command!");
+        if(!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return message.reply("I do not have the **BAN_MEMBERS** permission.");
+        let userrr = message.mentions.users.first();
+        let reasonnn = message.content.split(" ").slice(2).join(" ");
+        let modloggg = bot.channels.find("name", "mod-log");
+
+        if(!modloggg) return message.reply("This server doesent have the mod-log channel!");
+        if(!reasonnn) return message.reply ("Give me a reason for your unban.");
+
+        message.guild.unban(args[1])
+
+        message.delete()
+        var modlogssss = new Discord.RichEmbed()
+        .setAuthor(`User 372104600280367105 is unbanned`)
+        .addField("Unban Information:", `**Unbanned User:** 372104600280367105\n**Moderator:** ${message.author.tag}\n**Reason:** ${reasonnn}`);
+        message.channel.sendEmbed(modlogssss);
+        modloggg.send({
+        })
+        } else {
+        message.channel.send(":face_palm: Give me the tag of the banned user and give me a reason for the unban!")
+        }
+            break;
         default:
             message.react("\👻")
     }

@@ -249,6 +249,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("General Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
+                .addField("-", "`<!unban` (A moderator unban command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
@@ -316,6 +317,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("General Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
+                .addField("-", "`<!unban` (A moderator unban command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")

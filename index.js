@@ -258,7 +258,7 @@ bot.on("message", function(message) {
                 message.react("\👻")
         case "11114":
             var embed = new Discord.RichEmbed()
-                .addField("General Commands", "`<!kick` (A moderator kick command.)")
+                .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
                 .setFooter("<o/")
@@ -266,7 +266,7 @@ bot.on("message", function(message) {
                 message.react("\👻")
         case "11115":
             var embed = new Discord.RichEmbed()
-                .addField("General Commands", "`<!8ball` (The mythical 8ball.)")
+                .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
@@ -332,7 +332,7 @@ bot.on("message", function(message) {
             break;
         case "info-mod":
             var embed = new Discord.RichEmbed()
-                .addField("General Commands", "`<!kick` (A moderator kick command.)")
+                .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
                 .setFooter("<o/")
@@ -341,7 +341,7 @@ bot.on("message", function(message) {
             break;
         case "info-games":
             var embed = new Discord.RichEmbed()
-                .addField("General Commands", "`<!8ball` (The mythical 8ball.)")
+                .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);

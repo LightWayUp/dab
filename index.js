@@ -74,6 +74,17 @@ var funny = [
     "https://i.imgur.com/Un1beKw.jpg",
     "https://imgur.com/dt8ISHk",
 ];
+var rps = [
+    ":raised_hand:",
+    ":fist:",
+    ":v:",
+    ":raised_hand:",
+    ":fist:",
+    ":v:",
+    ":raised_hand:",
+    ":fist:",
+    ":v:",
+];
 
 var bot = new Discord.Client(); 
 
@@ -142,7 +153,7 @@ bot.on("message", function(message) {
                 message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
                 message.react("\👻")
             } else {
-            message.channel.sendMessage("Can't read that")
+            message.channel.sendMessage("A question, please.")
             message.react("\👻")
             }
             break;
@@ -251,7 +262,14 @@ bot.on("message", function(message) {
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
                 .setFooter("<o/")
-                message.channel.sendEmbed(embed);
+                message.author.sendEmbed(embed);
+                message.react("\👻")
+        case "11115":
+            var embed = new Discord.RichEmbed()
+                .addField("General Commands", "`<!8ball` (The mythical 8ball.)")
+                .addField("-", "`<!rps` (A rock-paper-scissors game.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
                 message.react("\👻")
             break;
         case "info":
@@ -278,7 +296,6 @@ bot.on("message", function(message) {
         case "info-misc":
             var embed = new Discord.RichEmbed()
                 .addField("Misc Commands", "`<!avatar` (Gives you a nice pic of your avatar.)")
-                .addField("-", "`<!8ball` (The magic 8ball!.)")
                 .addField("-", "<!puns` (Sends a pun. Duh.)")
                 .addField("-", "`<!profile` (Shows your profile card.)")
                 .addField("-", "`<!ping` (Check your ping!)")
@@ -318,6 +335,14 @@ bot.on("message", function(message) {
                 .addField("General Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
+        case "info-games":
+            var embed = new Discord.RichEmbed()
+                .addField("General Commands", "`<!8ball` (The mythical 8ball.)")
+                .addField("-", "`<!rps` (A rock-paper-scissors game.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
@@ -545,6 +570,13 @@ bot.on("message", function(message) {
         })
         } else {
         message.channel.send(":face_palm: Give me the tag of the banned user and give me a reason for the unban!")
+        }
+            break;
+        case "rps":
+        if (args[1]) {
+            message.channel.sendMessage("I choose: **" + rps[Math.floor(Math.random() * rps.length)] + "**. You choose: **" + args[1] + "**. I win! :tada: I do not care about the rules.");
+        } else {
+        message.channel.sendMessage("What do you choose?")
         }
             break;
         default:

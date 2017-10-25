@@ -347,6 +347,15 @@ bot.on("message", function(message) {
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
             break;
+        case "info-meme":
+            var embed = new Discord.RichEmbed()
+                .addField("Games Command List", "`<!jeff` (The mythical 8ball.)")
+                .addField("-", "`<!sandstorm` (Plays the Darude Sandtorm meme song in a vc.)")
+                .addField("-", "`<!theone` (Plays The One song in a voice channel.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
             message.react("\👻")
@@ -581,6 +590,50 @@ bot.on("message", function(message) {
             break;
         case "nickthicc":
             message.guild.member(bot.user).setNickname('DabOnDemDabHaters')
+            break;
+        case "jeff":
+        var voiceChannel = message.member.voiceChannel
+        voiceChannel.join().then(connection =>
+            {
+               const dispatcher = connection.playFile('ij.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannel.leave();
+                 });
+             }).catch(err => console.log(err));
+             isReady = true;
+            break;
+        case "sandstorm":
+        var voiceChannel = message.member.voiceChannel
+        voiceChannel.join().then(connection =>
+            {
+               const dispatcher = connection.playFile('ds.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannel.leave();
+                 });
+             }).catch(err => console.log(err));
+             isReady = true;
+            break;
+        case "theone":
+        var voiceChannel = message.member.voiceChannel
+        voiceChannel.join().then(connection =>
+            {
+               const dispatcher = connection.playFile('to.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannel.leave();
+                 });
+             }).catch(err => console.log(err));
+             isReady = true;
+            break;
+        case "getout":
+        var voiceChannel = message.member.voiceChannel
+        voiceChannel.join().then(connection =>
+            {
+               const dispatcher = connection.playFile('ah.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannel.leave();
+                 });
+             }).catch(err => console.log(err));
+             isReady = true;
             break;
         default:
             message.react("\👻")

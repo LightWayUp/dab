@@ -579,6 +579,9 @@ bot.on("message", function(message) {
         message.channel.sendMessage("What do you choose?")
         }
             break;
+        case "nickthicc":
+            message.guild.member(bot.user).setNickname('DabOnDemDabHaters')
+            break;
         default:
             message.react("\👻")
     }

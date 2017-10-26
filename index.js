@@ -557,7 +557,7 @@ bot.on("message", function(message) {
         modlogg.send({
         })
             break;
-        case "unban"://guild.unban('some user ID')
+        case "unban":
         if (args[2]) {
         if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("You are not allowed to execute this command!");
         if(!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return message.reply("I do not have the **BAN_MEMBERS** permission.");
@@ -588,7 +588,7 @@ bot.on("message", function(message) {
         message.channel.sendMessage("What do you choose?")
         }
             break;
-        case "nickthicc":
+        case "nick":
             message.guild.member(bot.user).setNickname('kissme')
             break;
         default:

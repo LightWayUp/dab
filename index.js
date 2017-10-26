@@ -592,7 +592,7 @@ bot.on("message", function(message) {
         if (args[1]) {
             message.guild.member(message.author.user).setNickname(args[1])
         } else {
-        message.channel.sendMessage("Please provide a nickname.)
+        message.channel.sendMessage("Please provide a nickname.")
         }
             break;
         default:

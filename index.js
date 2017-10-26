@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const dbl = require(`discord-bot-list`)
-var ffmpeg = require('ffmpeg');
 
 const client = new dbl({
    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2NDM5OTk5NDI0Mjg1OTAwOCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTA3NzI4NzA1fQ.3zFSPSkjAAo550TMIVp_CJ-1YcgOi-Rgcj6NI3gy16E",
@@ -591,50 +590,6 @@ bot.on("message", function(message) {
             break;
         case "nickthicc":
             message.guild.member(bot.user).setNickname('DabOnDemDabHaters')
-            break;
-        case "jeff":
-        var voiceChannel = message.member.voiceChannel
-        voiceChannel.join().then(connection =>
-            {
-               const dispatcher = connection.playFile('ij.mp4');
-               dispatcher.on("end", end => {
-                 voiceChannel.leave();
-                 });
-             }).catch(err => console.log(err));
-             isReady = true;
-            break;
-        case "sandstorm":
-        var voiceChannel = message.member.voiceChannel
-        voiceChannel.join().then(connection =>
-            {
-               const dispatcher = connection.playFile('ds.mp4');
-               dispatcher.on("end", end => {
-                 voiceChannel.leave();
-                 });
-             }).catch(err => console.log(err));
-             isReady = true;
-            break;
-        case "theone":
-        var voiceChannel = message.member.voiceChannel
-        voiceChannel.join().then(connection =>
-            {
-               const dispatcher = connection.playFile('to.mp4');
-               dispatcher.on("end", end => {
-                 voiceChannel.leave();
-                 });
-             }).catch(err => console.log(err));
-             isReady = true;
-            break;
-        case "getout":
-        var voiceChannel = message.member.voiceChannel
-        voiceChannel.join().then(connection =>
-            {
-               const dispatcher = connection.playFile('ah.mp4');
-               dispatcher.on("end", end => {
-                 voiceChannel.leave();
-                 });
-             }).catch(err => console.log(err));
-             isReady = true;
             break;
         default:
             message.react("\👻")

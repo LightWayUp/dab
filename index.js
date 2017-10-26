@@ -586,6 +586,8 @@ bot.on("message", function(message) {
             message.guild.member(bot.user).setNickname('kiss me')
             break;
         case "mute":
+        if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("You are not allowed to execute this command!");
+        if(!message.guild.member(bot.user).hasPermission("MUTE_MEMBERS")) return message.reply("I do not have the **MUTE_MEMBERS** permission.");
         let member = message.mentions.members.first();
         if(!member) return message.reply(":face_palm: Mention someone!");
         let muteRole = message.guild.roles.find("name", "Muted");

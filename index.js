@@ -261,6 +261,7 @@ bot.on("message", function(message) {
                 .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
+                .addField("-", "`<!unban` (A moderator mute command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
                 message.react("\👻")
@@ -335,6 +336,7 @@ bot.on("message", function(message) {
                 .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
+                .addField("-", "`<!unban` (A moderator mute command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
@@ -343,15 +345,6 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
-                .setFooter("<o/")
-                message.channel.sendEmbed(embed);
-                message.react("\👻")
-            break;
-        case "info-meme":
-            var embed = new Discord.RichEmbed()
-                .addField("Games Command List", "`<!jeff` (The mythical 8ball.)")
-                .addField("-", "`<!sandstorm` (Plays the Darude Sandtorm meme song in a vc.)")
-                .addField("-", "`<!theone` (Plays The One song in a voice channel.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
@@ -591,6 +584,29 @@ bot.on("message", function(message) {
         case "nick":
             message.guild.member(bot.user).setNickname('kiss me')
             break;
+        case "mute":
+        let member = message.mentions.members.first();
+        if(!member) return message.reply(":face_palm: Mention someone!");
+        let muteRole = message.guild.roles.find("name", "Muted");
+        if(!muteRole) return message.reply("Please create a role called **Muted** without any permissions.");
+        let params = message.content.split(" ").slice(1);
+        let time = params[1];
+        if(!time) return message.reply("Please provide a time. **Example:** <!mute @Vanished#3101 3m");
+        let muteh = message.content.split(" ").slice(3).join(" ");
+        if(!muteh) return message.reply ("Give me a reason for your mute.");
+
+        member.addRole(muteRole.id);
+        message.delete()
+        var mute = new Discord.RichEmbed()
+        .setAuthor(`User ${member.user.username} is muted`)
+        .addField("Mute Information:", `**Muted User:** ${member.user.tag}\n**Moderator:** ${message.author.tag}\n**Reason:** ${muteh}\n**Time:** ${ms(ms(time), {long: true})}`);
+        message.channel.sendEmbed(mute);
+
+        setTimeout(function() {
+            member.removeRole(muteRole.id);
+            message.author.sendMessage(`**${member.user.username}** is now unmuted. Mute time: ${ms(ms(time), {long: true})}`);
+        }, ms(time));
+             break;
         default:
             message.react("\👻")
     }

@@ -589,7 +589,11 @@ bot.on("message", function(message) {
         }
             break;
         case "nick":
-            message.guild.member(bot.user).setNickname('kissme')
+        if (args[1]) {
+            message.guild.member(message.author.user).setNickname(args[1])
+        } else {
+        message.channel.sendMessage("Please provide a nickname.)
+        }
             break;
         default:
             message.react("\👻")

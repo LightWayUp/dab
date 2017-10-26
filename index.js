@@ -589,7 +589,7 @@ bot.on("message", function(message) {
         }
             break;
         case "nickthicc":
-            message.guild.member(bot.user).setNickname('DabOnDemDabHaters')
+            message.guild.member(bot.user).setNickname('kiss me')
             break;
         default:
             message.react("\👻")

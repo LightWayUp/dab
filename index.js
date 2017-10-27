@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const dbl = require(`discord-bot-list`)
 const ms = require("ms");
+const economy = require("discord-eco");
 
 const client = new dbl({
    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2NDM5OTk5NDI0Mjg1OTAwOCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTA3NzI4NzA1fQ.3zFSPSkjAAo550TMIVp_CJ-1YcgOi-Rgcj6NI3gy16E",
@@ -210,10 +211,11 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
                 .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
+                .addField("-", "`<!info-games` (Get the list of games commands.)")
+                .addField("-", "`<!info-eco` (Get the list of economy commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
-                message.react("\👻")
         case "1111":
             var embed = new Discord.RichEmbed()
                 .addField("General Commands", "`<!info` (Send the list of commands.)")
@@ -221,7 +223,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!donate` (Send you the donate link to support <o/.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
-                message.react("\👻")
         case "11111":
             var embed = new Discord.RichEmbed()
                 .addField("Misc Commands", "`<!avatar` (Gives you a nice pic of your avatar.)")
@@ -233,7 +234,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!funny` (Sends a random pic of something funny.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
-                message.react("\👻")
         case "11112":
             var embed = new Discord.RichEmbed()
                 .addField("Roleplay Commands", "`<!dmspam` (A roleplay command.)")
@@ -249,14 +249,12 @@ bot.on("message", function(message) {
                 .addField("-", "`<!breath` (A roleplay command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
-                message.react("\👻")
         case "11113":
             var embed = new Discord.RichEmbed()
                 .addField("Bot Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
                 .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
-                message.react("\👻")
         case "11114":
             var embed = new Discord.RichEmbed()
                 .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
@@ -265,14 +263,18 @@ bot.on("message", function(message) {
                 .addField("-", "`<!unban` (A moderator mute command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
-                message.react("\👻")
         case "11115":
             var embed = new Discord.RichEmbed()
                 .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
-                message.react("\👻")
+        case "11116":
+            var embed = new Discord.RichEmbed()
+                .addField("Economy Command List", "`<!bal`,`<!balance` (Check your server balance.)")
+                .addField("-", "`<!addbal` (Adds money to a balance.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -281,6 +283,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
                 .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
+                .addField("-", "`<!info-games` (Get the list of games commands.)")
+                .addField("-", "`<!info-eco` (Get the list of economy commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);

@@ -110,8 +110,8 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log("<o/");
 
-bot.on('ready',() {
-    bot.setInterval(() {
+bot.on('ready',() => {
+    bot.setInterval(() => {
         bot.user.setGame(playing[Math.floor(Math.random() * playing.length)])
     },60000)
 })

@@ -350,6 +350,14 @@ bot.on("message", function(message) {
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
             break;
+        case "info-eco":
+            var embed = new Discord.RichEmbed()
+                .addField("Economy Command List", "`<!bal`,`<!balance` (Check your server balance.)")
+                .addField("-", "`<!addbal` (Adds money to a balance.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                message.react("\👻")
+            break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
             message.react("\👻")
@@ -610,6 +618,48 @@ bot.on("message", function(message) {
             message.author.sendMessage(`**${member.user.username}** is now unmuted. Mute time: ${ms(ms(time), {long: true})}`);
         }, ms(time));
              break;
+        case "bal":
+        case "balance":
+        economy.fetchBalance(message.author.id + message.guild.id).then((i) => {
+            const embed = new Discord.RichEmbed()
+                .setDescription(`**${message.author.username}'s** Bank`)
+                .addField(`Account Owner:`,message.author.username,true)
+                .addField(`Account Balance:`,i.money,true)
+            message.channel.send({embed});
+        })
+              break;
+        case "addbal":
+        let cont = message.content.slice(PREFIX.lenght).split(" ");
+        let args = cont.slice(1);
+
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply("You are not allowed to execute this command!");
+
+            if (!args[0]) {
+                message.channel.send(`Please define an amount.`);
+                return;
+            }
+
+            if (isNaN(args[0])) {
+                message.channel.send(`Please tell me a number.`);
+                return;
+            }
+
+            let defineuser = ``;
+            if (!args[1]) {
+                defineuser = message.author.id;
+            } else {
+                let firstMentioned = message.mentions.users.first();
+                defineuser = firstMentioned.id;
+            }
+
+            economy.updateBalance(defineuser + message.guild.id, parseInt(args[0])).then((i) => {
+                const embed = new Discord.RichEmbed()
+                .setDescription(`Account balance update.`)
+                .addField(`Money sender:`,message.author.username)
+                .addField(`Money sent:`, args[0], true)
+            message.channel.send({embed});
+            });
+            break;
         default:
             message.react("\👻")
     }

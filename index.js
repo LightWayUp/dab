@@ -114,6 +114,7 @@ client.on('ready',() => {
     setInterval(() => {
         bot.user.setGame(playing[Math.floor(Math.random() * playing.length)])
     },60000)
+})
 
 });
 

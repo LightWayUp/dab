@@ -86,13 +86,31 @@ var rps = [
     ":fist:",
     ":v:",
 ];
+var playing = [
+    "<!info | Dabbing for " + bot.guilds.size + " servers.",
+    "dabdabdab",
+    "Donate: https://paypal.me/VanishedP",
+    "<o/",
+    "<!info | Dabbing for " + bot.guilds.size + " servers.",
+    "dabdabdab",
+    "Donate: https://paypal.me/VanishedP",
+    "<o/",
+    "<!info | Dabbing for " + bot.guilds.size + " servers.",
+    "dabdabdab",
+    "Donate: https://paypal.me/VanishedP",
+    "<o/",
+    "<!info | Dabbing for " + bot.guilds.size + " servers.",
+    "dabdabdab",
+    "Donate: https://paypal.me/VanishedP",
+    "<o/",
+];
 
 var bot = new Discord.Client(); 
 
 bot.on("ready", function() {
     console.log("<o/");
     
-bot.user.setGame("<!info | Dabbing for " + bot.guilds.size + " servers.")
+bot.user.setGame(playing[Math.floor(Math.random() * playing.length)])
 
 });
 

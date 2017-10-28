@@ -770,17 +770,6 @@ bot.on("message", function(message) {
                 .addField(`Worked as:`,workbot[Math.floor(Math.random() * workbot.length)])
             message.channel.send(workk);
             break;
-        case "transfer":
-        let defineeduser = ``;
-            defineeduser = message.author.id;
-        economy.updateBalance(defineeduser + message.guild.id, parseInt(args[0])).then((i) => {
-        const workkk = new Discord.RichEmbed()
-                .setDescription(`Work Receipt`)
-                .addField(`Money earned:`,money[Math.floor(Math.random() * money.length)])
-                .addField(`Worked as:`,workbot[Math.floor(Math.random() * workbot.length)])
-            message.channel.send(workkk);
-        });
-            break;
         default:
             message.react("\👻")
     }

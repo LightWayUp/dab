@@ -87,6 +87,93 @@ var rps = [
     ":fist:",
     ":v:",
 ];
+var dice = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+];
+var workbot = [
+    "A dab mascot in Wallmart™.",
+    "A fan.",
+    "A jumping potato.",
+    "A parrot stuck in a snowflake.",
+    "A kissing poop emoji.",
+    "A bandwidth saver.",
+    "A garbage bin.",
+    "A 404 Error on Google.",
+    "A server raider on Skype™.",
+];
+var money = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+];
 
 var bot = new Discord.Client(); 
 
@@ -267,12 +354,14 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
+                .addField("-", "`<!dice` (A dice roll game.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11116":
             var embed = new Discord.RichEmbed()
                 .addField("Economy Command List", "`<!bal`,`<!balance` (Check your server balance.)")
                 .addField("-", "`<!addbal` (Adds money to a balance.)")
+                .addField("-", "`<!work` (Work for money.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -350,6 +439,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
+                .addField("-", "`<!dice` (A dice roll game.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
@@ -358,6 +448,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Economy Command List", "`<!bal`,`<!balance` (Check your server balance.)")
                 .addField("-", "`<!addbal` (Adds money to a balance.)")
+                .addField("-", "`<!work` (Work for money.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
@@ -663,6 +754,21 @@ bot.on("message", function(message) {
                 .addField(`Money sent:`, args[0], true)
             message.channel.send({embed});
             });
+            break;
+        case "dice":
+            message.channel.sendMessage("**Rolling...**")
+            message.channel.sendMessage("**Rolled!** You rolled **" + dice[Math.floor(Math.random() * dice.length)] + "**! I rolled **" + dice[Math.floor(Math.random() * dice.length)] + "**. <:dice:373895915414618112>");
+            break;
+        case "work":
+        let defineduser = ``;
+            defineduser = message.author.id;
+        economy.updateBalance(defineduser + message.guild.id, parseInt(dice[Math.floor(Math.random() * dice.length)])).then((i) => {
+        });
+        const workk = new Discord.RichEmbed()
+                .setDescription(`Work Receipt`)
+                .addField(`Money earned:`,money[Math.floor(Math.random() * money.length)])
+                .addField(`Worked as:`,workbot[Math.floor(Math.random() * workbot.length)])
+            message.channel.send(workk);
             break;
         default:
             message.react("\👻")

@@ -356,7 +356,7 @@ bot.on("message", function(message) {
                 .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
-                .addField("-", "`<!unban` (A moderator mute command.)")
+                .addField("-", "`<!mute` (A moderator mute command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11115":
@@ -439,7 +439,7 @@ bot.on("message", function(message) {
                 .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
-                .addField("-", "`<!unban` (A moderator mute command.)")
+                .addField("-", "`<!mute` (A moderator mute command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")

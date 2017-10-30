@@ -723,38 +723,6 @@ bot.on("message", function(message) {
             message.channel.send({embed});
         })
               break;
-        case "addbal":
-        let cont = message.content.slice(PREFIX.lenght).split(" ");
-        let args = cont.slice(1);
-
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply("You are not allowed to execute this command!");
-
-            if (!args[0]) {
-                message.channel.send(`Please define an amount.`);
-                return;
-            }
-
-            if (isNaN(args[0])) {
-                message.channel.send(`Please tell me a number.`);
-                return;
-            }
-
-            let defineuser = ``;
-            if (!args[1]) {
-                defineuser = message.author.id;
-            } else {
-                let firstMentioned = message.mentions.users.first();
-                defineuser = firstMentioned.id;
-            }
-
-            economy.updateBalance(defineuser + message.guild.id, parseInt(args[0])).then((i) => {
-                const embed = new Discord.RichEmbed()
-                .setDescription(`Account balance update.`)
-                .addField(`Money sender:`,message.author.username)
-                .addField(`Money sent:`, args[0], true)
-            message.channel.send({embed});
-            });
-            break;
         case "dice":
             message.channel.sendMessage("**Rolling...**")
             message.channel.sendMessage("**Rolled!** You rolled **" + dice[Math.floor(Math.random() * dice.length)] + "**! I rolled **" + dice[Math.floor(Math.random() * dice.length)] + "**. <:dice:373895915414618112>");

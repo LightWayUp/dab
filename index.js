@@ -355,6 +355,7 @@ bot.on("message", function(message) {
                 .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
                 .addField("-", "`<!dice` (A dice roll game.)")
+                .addField("-", "`<!cookie` (A fortune cookie game.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11116":
@@ -440,6 +441,7 @@ bot.on("message", function(message) {
                 .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
                 .addField("-", "`<!dice` (A dice roll game.)")
+                .addField("-", "`<!cookie` (A fortune cookie game.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
                 message.react("\👻")
@@ -737,6 +739,17 @@ bot.on("message", function(message) {
                 .addField(`Money earned:`,money[Math.floor(Math.random() * money.length)])
                 .addField(`Worked as:`,workbot[Math.floor(Math.random() * workbot.length)])
             message.channel.send(workk);
+            break;
+        case "cookie":
+        let defined = ``;
+            defined = message.author.id;
+        economy.updateBalance(defined + message.guild.id, parseInt(dice[Math.floor(Math.random() * dice.length)])).then((i) => {
+        });
+        const workkkk = new Discord.RichEmbed()
+                .setDescription(`Fortune Cookie says:`)
+                .addField(`🍪`,cookie[Math.floor(Math.random() * cookie.length)])
+                .setFooter("You got money from the cookie!")
+            message.channel.send(workkkk);
             break;
         default:
             message.react("\👻")

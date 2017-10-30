@@ -174,6 +174,15 @@ var money = [
     "20",
     "21",
 ];
+var cookie = [
+    "I will beat you in Rock Paper Scissors...",
+    "You will talk to a dab.",
+    "You will use Discord.",
+    "You will get a 404 error on Google.",
+    "You will use this bot.",
+    "You will blahblahblah.",
+    "Someone will beat you in something.",
+];
 
 var bot = new Discord.Client(); 
 

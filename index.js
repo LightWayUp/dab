@@ -760,7 +760,7 @@ bot.on("message", function(message) {
             message.channel.send(workkkk);
             break;
         case "jeff":
-          message.channel.attachFile("ij.mp4");
+          message.channel.sendFile("ij.mp4");
             break;
         default:
             message.react("\👻")

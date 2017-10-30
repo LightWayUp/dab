@@ -745,7 +745,6 @@ bot.on("message", function(message) {
         });
         const workk = new Discord.RichEmbed()
                 .setDescription(`Work Receipt`)
-                .addField(`Money earned:`,money[Math.floor(Math.random() * money.length)])
                 .addField(`Worked as:`,workbot[Math.floor(Math.random() * workbot.length)])
             message.channel.send(workk);
             break;

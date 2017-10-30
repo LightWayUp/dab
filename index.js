@@ -370,7 +370,6 @@ bot.on("message", function(message) {
         case "11116":
             var embed = new Discord.RichEmbed()
                 .addField("Economy Command List", "`<!bal`,`<!balance` (Check your server balance.)")
-                .addField("-", "`<!addbal` (Adds money to a balance.)")
                 .addField("-", "`<!work` (Work for money.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
@@ -458,7 +457,6 @@ bot.on("message", function(message) {
         case "info-eco":
             var embed = new Discord.RichEmbed()
                 .addField("Economy Command List", "`<!bal`,`<!balance` (Check your server balance.)")
-                .addField("-", "`<!addbal` (Adds money to a balance.)")
                 .addField("-", "`<!work` (Work for money.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
@@ -760,6 +758,7 @@ bot.on("message", function(message) {
             message.channel.send(workkkk);
             break;
         case "jeff":
+          message.channel.sendMessage("My name is **JEFF**!");
           message.channel.sendFile("ij.mp4");
             break;
         default:

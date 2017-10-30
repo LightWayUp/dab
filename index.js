@@ -759,6 +759,9 @@ bot.on("message", function(message) {
                 .setFooter("You got money from the cookie!")
             message.channel.send(workkkk);
             break;
+        case "jeff":
+          message.channel.attachFile("ij.mp4");
+            break;
         default:
             message.react("\👻")
     }

@@ -189,7 +189,7 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log("<o/");
 
-bot.user.setGame("<!info | Dabbing for 22 servers.")
+bot.user.setGame("<!info | Dabbing for " + bot.guils.size + "servers.")
        
 });
 

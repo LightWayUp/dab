@@ -360,6 +360,12 @@ bot.on("message", function(message) {
                 .addField("-", "`<!work` (Work for money.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
+        case "11117":
+            var embed = new Discord.RichEmbed()
+                .addField("Image Command List", "`<!funny` (Sends a random pic of something funny.)")
+                .addField("-", "`<!funny` (Sends a random pic of something funny.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -710,18 +716,6 @@ bot.on("message", function(message) {
                 .addField(`🍪`,cookie[Math.floor(Math.random() * cookie.length)])
                 .setFooter("You got money from the cookie!")
             message.channel.send(workkkk);
-            break;
-       case "free":
-       let defineddd = ``;
-           defineddd = message.author.id;
-       message.delete()
-       economy.updateBalance(defineddd + message.guild.id, args[1]).then((i) => {
-       });
-       const free = new Discord.RichEmbed()
-                .setDescription(`**FREEBIES**`)
-                .addField(`OwO Free moneyz! You got: `,args[1])
-                .setFooter("<o/")
-            message.channel.send(free);
             break;
         default:
             message.react("\❌")

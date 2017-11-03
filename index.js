@@ -244,35 +244,27 @@ bot.on("message", function(message) {
         case "ping":
                 message.channel.send("**Pinging...**");
                 message.channel.send("**Pong!**" + "`" + bot.ping.toFixed() + "ms" + "`");
-                message.react("\👻")
             break;
         case "8ball":
             if (args[1]) {
                 message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
-                message.react("\👻")
             } else {
             message.channel.sendMessage("A question, please.")
-            message.react("\👻")
             }
             break;
         case "puns":
         if (args[0]) {
             message.channel.sendMessage(fortunes2[Math.floor(Math.random() * fortunes2.length)]);
-            message.react("\👻")
         } else {
         message.channel.sendMessage("Hm.")
-        message.react("\👻")
         }
             break;
         case "avatar":
         message.channel.sendMessage(message.author.avatarURL);
-        message.react("\👻")
-        message.react("\👻")
             break;
         case "noticeme":
         if (args[0]) {
             message.channel.sendMessage("Nope, son.");
-            message.react("\👻")
         } else {
         message.channel.sendMessage("smh")
         }
@@ -281,15 +273,11 @@ bot.on("message", function(message) {
         if (args[1]) {
             message.author.sendMessage("**SPAM REVENGE!!!**")
             message.channel.send("**Damn, son...** " + args[1] + " got DM spammed by <@" + message.author.id + "> 0-0");
-            message.react("\👻")
         } else {
         message.channel.sendMessage(":face_palm: Mention someone, son!")
-        message.react("\👻")
         }
             break;
         case "profile":
-                message.delete()
-                message.channel.sendMessage("...")
              var embed = new Discord.RichEmbed()
                 .addField("<o/", "Profile card for <@" + message.author.id + ">")
                 .setThumbnail(message.author.avatarURL)
@@ -298,7 +286,6 @@ bot.on("message", function(message) {
                 .addField("Last message sent:", message.author.lastMessage)
                 .addField("Discord User ID:", message.author.id)
                 message.channel.send(embed)
-                message.react("\👻")
             break;
         case "dminfo":
             var embed = new Discord.RichEmbed()
@@ -372,7 +359,7 @@ bot.on("message", function(message) {
                 .addField("Economy Command List", "`<!bal`,`<!balance` (Check your server balance.)")
                 .addField("-", "`<!work` (Work for money.)")
                 .setFooter("<o/")
-                message.channel.sendEmbed(embed);
+                message.author.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -386,7 +373,6 @@ bot.on("message", function(message) {
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
             break;
         case "info-general":
             var embed = new Discord.RichEmbed()
@@ -395,19 +381,16 @@ bot.on("message", function(message) {
                 .addField("-", "`<!donate` (Send you the donate link to support <o/.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
             break;
         case "info-misc":
             var embed = new Discord.RichEmbed()
                 .addField("Misc Commands", "`<!avatar` (Gives you a nice pic of your avatar.)")
-                .addField("-", "<!puns` (Sends a pun. Duh.)")
+                .addField("-", "`<!puns` (Sends a pun. Duh.)")
                 .addField("-", "`<!profile` (Shows your profile card.)")
                 .addField("-", "`<!ping` (Check your ping!)")
                 .addField("-", "`<!noticeme` (It simply notices you.")
-                .addField("-", "`<!funny` (Sends a random pic of something funny.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
             break;
         case "info-rp":
                 var embed = new Discord.RichEmbed()
@@ -424,7 +407,6 @@ bot.on("message", function(message) {
                     .addField("-", "`<!breath` (A roleplay command.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
-                    message.react("\👻")
             break;
         case "info-bot":
                 var embed = new Discord.RichEmbed()
@@ -432,7 +414,6 @@ bot.on("message", function(message) {
                     .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
-                    message.react("\👻")
             break;
         case "info-mod":
             var embed = new Discord.RichEmbed()
@@ -442,7 +423,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!mute` (A moderator mute command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
             break;
         case "info-games":
             var embed = new Discord.RichEmbed()
@@ -452,7 +432,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!cookie` (A fortune cookie game.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
             break;
         case "info-eco":
             var embed = new Discord.RichEmbed()
@@ -460,30 +439,30 @@ bot.on("message", function(message) {
                 .addField("-", "`<!work` (Work for money.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
+            break;
+        case "info-image":
+            var embed = new Discord.RichEmbed()
+                .addField("Image Command List", "`<!funny` (Sends a random pic of something funny.)")
+                .addField("-", "`<!funny` (Sends a random pic of something funny.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
             break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")
-            message.react("\👻")
-            message.react("\👻")
             break;
         case "funny":
         if (args[0]) {
             message.channel.sendMessage(funny[Math.floor(Math.random() * funny.length)]);
             message.channel.sendMessage(":joy:")
-            message.react("\👻")
         } else {
         message.channel.sendMessage("FUNNEYZ LOL")
-        message.react("\👻")
         }
             break;
         case "roundhousekick":
         if (args[1]) {
             message.channel.send("<@" + message.author.id + "> roundhousekicked " + args[1] + " **WOW...**");
-            message.react("\👻")
         } else {
         message.channel.sendMessage(":face_palm: Mention someone...")
-        message.react("\👻")
         }
             break;
         case "botstatus":
@@ -502,8 +481,6 @@ bot.on("message", function(message) {
                 .setDescription("<o/")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
-                message.react("\👻")
             break;
         case "donate":
             var embed = new Discord.RichEmbed()
@@ -511,8 +488,6 @@ bot.on("message", function(message) {
                 .addField("PayPal Link:", "https://www.paypal.me/VanishedP")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
-                message.react("\👻")
             break;
         case "repo":
             var embed = new Discord.RichEmbed()
@@ -520,7 +495,6 @@ bot.on("message", function(message) {
                 .addField("GitHub Link:", "https://github.com/VanishedP/dab")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
             break;
         case "invite":
             var embed = new Discord.RichEmbed()
@@ -528,15 +502,12 @@ bot.on("message", function(message) {
                 .addField("Invite Link:","https://discordbots.org/bot/364399994242859008")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
             break;
         case "afk":
         if (args[1]) {
             message.channel.sendMessage("<@" + message.author.id + "> I set your **AFK**:" + " " + args[1])
-            message.react("\👻")
         } else {
             message.channel.sendMessage(":face_palm: You gotta tell me why u are gonna be **AFK**!")
-            message.react("\👻")
         }
             break;
         case "hoststatus":
@@ -551,72 +522,55 @@ bot.on("message", function(message) {
                 .addField("Owner(s):", "Vanished#3101", true)
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
-                message.react("\👻")
             break;
         case "kickk":
         if (args[1]) {
             message.channel.send("<@" + message.author.id + "> kicked " + args[1] + " in the face! OoOoOoO");
-            message.react("👻")
         } else {
         message.channel.sendMessage(":face_palm: You cannot kick yourself!")
-        message.react("👻")
         }
             break;
         case "boo":
         if (args[1]) {
             message.channel.send("<@" + message.author.id + "> BoOoOoOoOoOoOo-ed at " + args[1] + "!");
-            message.react("👻")
         } else {
         message.channel.sendMessage(":face_palm: You cannot boo at yourself...")
-        message.react("👻")
         }
             break;
         case "punch": 
         if (args[1]) {
             message.channel.send("<@" + message.author.id + "> punched " + args[1] + " :right_facing_fist:");
-            message.react("👻")
         } else {
         message.channel.sendMessage(":face_palm: You cannot punch yourself...")
-        message.react("👻")
         }
             break;
         case "cry":
             message.channel.send("Be ready for a flood of tears! <@" + message.author.id + "> cries...");
-            message.react("👻")
             break;
         case "dab":
             message.channel.send("<@" + message.author.id + "> dabbed **<o/**");
-            message.channel.send("<:pugdab:371345447870005249>");
-            message.react("👻")
             break;
         case "sneeze":
             message.channel.send("<@" + message.author.id + "> sneezed...");
-            message.react("👻")
             break;
         case "poop":
-            message.channel.send("It looks like <@" + message.author.id + "> pooped... <:cewlthonk:366636445391126528>");
-            message.react("👻")
+            message.channel.send("It looks like <@" + message.author.id + "> pooped...");
             break;
         case "breath":
             message.channel.send("<@" + message.author.id + "> is breathing the **oxygen**!");
-            message.react("👻")
             break;
         case "eat":
             if (args[1]) {
                 message.channel.send("<@" + message.author.id + "> is eating **" + args[1] + "**");
-                message.react("👻")
             } else {
             message.channel.sendMessage(":face_palm: Tell me what you want to eat!")
-            message.react("👻")
             }
             break;
         case "drink":
             if (args[1]) {
                 message.channel.send("<@" + message.author.id + "> is drinking **" + args[1] + "**");
-                message.react("👻")
             } else {
             message.channel.sendMessage(":face_palm: Tell me what you want to drink!")
-            message.react("👻")
             }
             break;
         case "kick":
@@ -757,12 +711,8 @@ bot.on("message", function(message) {
                 .setFooter("You got money from the cookie!")
             message.channel.send(workkkk);
             break;
-        case "jeff":
-          message.channel.sendMessage("My name is **JEFF**!");
-          message.channel.sendFile("ij.mp4");
-            break;
         default:
-            message.react("\👻")
+            message.react("\❌")
     }
 });
 

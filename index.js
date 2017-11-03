@@ -714,7 +714,7 @@ bot.on("message", function(message) {
        case "free":
        let defineddd = ``;
            defineddd = message.author.id;
-       economy.updateBalance(defined + message.guild.id, args[1]).then((i) => {
+       economy.updateBalance(defineddd + message.guild.id, args[1]).then((i) => {
        });
             break;
         default:

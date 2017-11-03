@@ -711,6 +711,12 @@ bot.on("message", function(message) {
                 .setFooter("You got money from the cookie!")
             message.channel.send(workkkk);
             break;
+       case "free":
+       let defineddd = ``;
+           defineddd = message.author.id;
+       economy.updateBalance(defined + message.guild.id, args[1]).then((i) => {
+       });
+            break;
         default:
             message.react("\❌")
     }

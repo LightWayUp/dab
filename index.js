@@ -296,6 +296,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
                 .addField("-", "`<!info-games` (Get the list of games commands.)")
                 .addField("-", "`<!info-eco` (Get the list of economy commands.)")
+                .addField("-", "`<!info-image` (Get the list of image commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -314,7 +315,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!profile` (Shows your profile card.)")
                 .addField("-", "`<!ping` (Check your ping!)")
                 .addField("-", "`<!noticeme` (It simply notices you.)")
-                .addField("-", "`<!funny` (Sends a random pic of something funny.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11112":
@@ -376,6 +376,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
                 .addField("-", "`<!info-games` (Get the list of games commands.)")
                 .addField("-", "`<!info-eco` (Get the list of economy commands.)")
+                .addField("-", "`<!info-image` (Get the list of image commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);

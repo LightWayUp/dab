@@ -717,11 +717,11 @@ bot.on("message", function(message) {
        message.delete()
        economy.updateBalance(defineddd + message.guild.id, args[1]).then((i) => {
        });
-       const workkkk = new Discord.RichEmbed()
+       const free = new Discord.RichEmbed()
                 .setDescription(`**FREEBIES**`)
                 .addField(`OwO Free moneyz! You got: `,args[1])
                 .setFooter("<o/")
-            message.channel.send(workkkk);
+            message.channel.send(free);
             break;
         default:
             message.react("\❌")

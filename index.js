@@ -365,7 +365,13 @@ bot.on("message", function(message) {
                 .addField("Image Command List", "`<!funny` (Sends a random pic of something funny.)")
                 .addField("-", "`<!funny` (Sends a random pic of something funny.)")
                 .setFooter("<o/")
-                message.channel.sendEmbed(embed);
+                message.author.sendEmbed(embed);
+        case "11118":
+            var embed = new Discord.RichEmbed()
+                .addField("Image Command List", "`<!youtube` (Search up YouTube.)")
+                .addField("-", "`<!google` (Search up Google.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -451,6 +457,13 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Image Command List", "`<!funny` (Sends a random pic of something funny.)")
                 .addField("-", "`<!funny` (Sends a random pic of something funny.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
+        case "info-search":
+            var embed = new Discord.RichEmbed()
+                .addField("Image Command List", "`<!youtube` (Search up YouTube.)")
+                .addField("-", "`<!google` (Search up Google.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -717,6 +730,14 @@ bot.on("message", function(message) {
                 .addField(`🍪`,cookie[Math.floor(Math.random() * cookie.length)])
                 .setFooter("You got money from the cookie!")
             message.channel.send(workkkk);
+            break;
+        case "google":
+        let gs = message.content.split(" ").slice(1).join("%20");
+        message.channel.send(`<:g_:376454342796115978> Google Search Link:\nhttps://www.google.ba/search?dcr=0&ei=V7r8WdqkHIura9SjiNgP&q=${gs}`);
+            break;
+        case "youtube":
+        let yts = message.content.split(" ").slice(1).join("+");
+        message.channel.send(`<:yt:376453183532171274> YouTube Search Link:\nhttps://www.youtube.com/results?search_query=${yts}`);
             break;
         default:
             message.react("\❌")

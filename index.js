@@ -297,6 +297,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-games` (Get the list of games commands.)")
                 .addField("-", "`<!info-eco` (Get the list of economy commands.)")
                 .addField("-", "`<!info-image` (Get the list of image commands.)")
+                .addField("-", "`<!info-search` (Get the list of search commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -368,7 +369,7 @@ bot.on("message", function(message) {
                 message.author.sendEmbed(embed);
         case "11118":
             var embed = new Discord.RichEmbed()
-                .addField("Image Command List", "`<!youtube` (Search up YouTube.)")
+                .addField("Search Command List", "`<!youtube` (Search up YouTube.)")
                 .addField("-", "`<!google` (Search up Google.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
@@ -462,7 +463,7 @@ bot.on("message", function(message) {
             break;
         case "info-search":
             var embed = new Discord.RichEmbed()
-                .addField("Image Command List", "`<!youtube` (Search up YouTube.)")
+                .addField("Search Command List", "`<!youtube` (Search up YouTube.)")
                 .addField("-", "`<!google` (Search up Google.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);

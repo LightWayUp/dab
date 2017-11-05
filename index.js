@@ -740,6 +740,40 @@ bot.on("message", function(message) {
         let yts = message.content.split(" ").slice(1).join("+");
         message.channel.send(`<:yt:376453183532171274> YouTube Search Link:\nhttps://www.youtube.com/results?search_query=${yts}`);
             break;
+        case "achievement":
+        const snekfetch = require('snekfetch');
+        let [title, contents] = args.join(" ").split("|");
+        if(!contents) {
+          [title, contents] = ["Achievement Get!", title];
+        }
+        let rnd = Math.floor((Math.random() * 39) + 1);
+        if(args.join(" ").toLowerCase().includes("burn")) rnd = 38;
+        if(args.join(" ").toLowerCase().includes("cookie")) rnd = 21;
+        if(args.join(" ").toLowerCase().includes("cake")) rnd = 10;
+      
+        if(title.length > 22 || contents.length > 22) return message.edit("Max Length: 22 Characters.").then(message.delete.bind(message), 2000);
+        const url = `https://www.minecraftskinstealer.com/achievement/a.php?i=${rnd}&h=${encodeURIComponent(title)}&t=${encodeURIComponent(contents)}`;
+        snekfetch.get(url)
+         .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
+        message.delete();
+            break;
+        case "clear":
+        if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("You are not allowed to execute this command!");
+        if(!message.guild.member(bot.user).hasPermission("MUTE_MEMBERS")) return message.reply("I do not have the **MUTE_MEMBERS** permission.");
+        const userrr = message.mentions.users.first();
+        const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2])
+        if (!amount) return message.reply('Please specify a number of messages to delete! (1-100)');
+        message.channel.fetchMessages({
+         limit: amount,
+        }).then((messages) => {
+         if (userrr) {
+         const filterBy = userrr ? userrr.id : Client.userrr.id;
+         messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
+         }
+         message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
+         message.reply('Cleared **' + args[1] + '** messages! :wastebasket:')
+        });
+            break;
         default:
             message.react("\❌")
     }

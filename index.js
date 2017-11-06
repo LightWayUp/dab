@@ -794,6 +794,14 @@ bot.on("message", function(message) {
            message.channel.send("Please provide a search query.");
         }
             break;
+        case "skin":
+        if (args[1]) {
+        let skins = message.content.split(" ").slice(1).join("");
+        message.channel.send(`<:imgur:377096709505024004> Imgur Search Link:\nhttps://www.minecraftskinstealer.com/skin.php?u=${skins}&s=700`);
+        } else {
+           message.channel.send("Please provide a valid Minecraft Username.");
+        }
+            break;
         default:
             message.react("\❌")
     }

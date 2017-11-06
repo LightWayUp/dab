@@ -799,7 +799,7 @@ bot.on("message", function(message) {
         case "vov":
         let evaa = message.content.split(" ").slice(1).join(" ");
             message.delete()
-            message.channel.sendMessage("eval(evaa)");
+            message.channel.sendMessage(eval(evaa));
             break;
         default:
             message.react("\❌")

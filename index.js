@@ -804,7 +804,7 @@ bot.on("message", function(message) {
             break;
        case "remind":
        let paramsz = message.content.split(" ").slice(1);
-       let timez = params[1];
+       let timez = paramsz[1];
        if(!timez) return message.reply("Please provide a time. **Example:** <!mute @Vanished#3101 3m");
        
        setTimeout(function() {

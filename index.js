@@ -204,32 +204,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("message", function(message) {
-    if (message.content.startsWith("back")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
-
-});
-
-bot.on("message", function(message) {
     if (message.content.startsWith("<@364399994242859008>")) message.channel.send("Hello! To get the list of my commands type in: **<!info**!") ;
-
-});
-
-bot.on("message", function(message) {
-    if (message.content.startsWith("Back")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
-
-});
-
-bot.on("message", function(message) {
-    if (message.content.startsWith("BACK")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
-
-});
-
-bot.on("message", function(message) {
-    if (message.content.startsWith("bAck")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
-
-});
-
-bot.on("message", function(message) {
-    if (message.content.startsWith("baCk")) message.channel.sendMessage("<@" + message.author.id + "> I removed your **AFK**") ;
 
 });
 
@@ -242,8 +217,12 @@ bot.on("message", function(message) {
 
     switch (args[0].toLowerCase())  {
         case "ping":
-                message.channel.send("**Pinging...**");
-                message.channel.send("**Pong!**" + "`" + bot.ping.toFixed() + "ms" + "`");
+               message.channel.send("**Pinging.**").then((message)=>{
+                        message.edit("**Pinging..**")
+                            message.edit("**Pinging...**")
+                                message.edit("**Pinging.**")
+                                    message.edit("**Pinging..**")
+                                        message.edit("**Pinging..**"**Pong!**" + "`" + bot.ping.toFixed() + "ms" + "`")});
             break;
         case "8ball":
             if (args[1]) {

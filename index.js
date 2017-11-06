@@ -222,7 +222,7 @@ bot.on("message", function(message) {
                             message.edit("**Pinging...**")
                                 message.edit("**Pinging.**")
                                     message.edit("**Pinging..**")
-                                        message.edit("**Pinging..**"**Pong!**" + "`" + bot.ping.toFixed() + "ms" + "`")});
+                                        message.edit("**Pong!** " + "`" + bot.ping.toFixed() + "ms" + "`")});
             break;
         case "8ball":
             if (args[1]) {

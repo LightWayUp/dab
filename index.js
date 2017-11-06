@@ -807,9 +807,9 @@ bot.on("message", function(message) {
        let timez = paramsz[0];
        if(!timez) return message.reply("Please provide a time. **Example:** <!mute @Vanished#3101 3m");
        
-       setTimeoutz(function() {
-            message.author.sendMessage(`:clock: **DING DING!** I'm reminding you to:`);
-        }, ms(timez));
+       setTimeout(function() {
+           message.author.sendMessage(`:clock: **DING DING!** I'm reminding you to:`);
+       }, ms(timez));
             break;
         default:
             message.react("\❌")

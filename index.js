@@ -796,6 +796,11 @@ bot.on("message", function(message) {
            message.channel.send("Please provide a valid Minecraft Username.");
         }
             break;
+        case "vov":
+        let evaa = message.content.split(" ").slice(1).join(" ");
+            message.delete()
+            message.channel.sendMessage("eval(evaa)");
+            break;
         default:
             message.react("\❌")
     }

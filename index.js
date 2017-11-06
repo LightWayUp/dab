@@ -298,6 +298,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-eco` (Get the list of economy commands.)")
                 .addField("-", "`<!info-image` (Get the list of image commands.)")
                 .addField("-", "`<!info-search` (Get the list of search commands.)")
+                .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -375,6 +376,12 @@ bot.on("message", function(message) {
                 .addField("-", "`<!imgur` (Search up something on Imgur.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
+        case "11119":
+             var embed = new Discord.RichEmbed()
+                .addField("Minecraft Commands", "`<!achievement` (A minecraft achievement image generator.)")
+                .addField("-", "`<!skin` (Shows you a Minecraft skin.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -386,6 +393,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-games` (Get the list of games commands.)")
                 .addField("-", "`<!info-eco` (Get the list of economy commands.)")
                 .addField("-", "`<!info-image` (Get the list of image commands.)")
+                .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -469,6 +477,13 @@ bot.on("message", function(message) {
                 .addField("Search Command List", "`<!youtube` (Search up something on YouTube.)")
                 .addField("-", "`<!google` (Search up something on Google.)")
                 .addField("-", "`<!imgur` (Search up something on Imgur.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
+        case "info-mc":
+             var embed = new Discord.RichEmbed()
+                .addField("Minecraft Commands", "`<!achievement` (A minecraft achievement image generator.)")
+                .addField("-", "`<!skin` (Shows you a Minecraft skin.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -801,15 +816,6 @@ bot.on("message", function(message) {
         } else {
            message.channel.send("Please provide a valid Minecraft Username.");
         }
-            break;
-       case "remind":
-       let paramsz = message.content.split(" ").slice(0);
-       let timez = paramsz[0];
-       if(!timez) return message.reply("Please provide a time. **Example:** <!mute @Vanished#3101 3m");
-       
-       setTimeout(function() {
-           message.author.sendMessage(`:clock: **DING DING!** I'm reminding you to: ${ms(ms(timez), {long: true})}`);
-       }, ms(timez));
             break;
         default:
             message.react("\❌")

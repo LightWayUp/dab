@@ -808,7 +808,7 @@ bot.on("message", function(message) {
        if(!timez) return message.reply("Please provide a time. **Example:** <!mute @Vanished#3101 3m");
        
        setTimeout(function() {
-            message.author.sendMessage(`**${member.user.username}** is now unmuted. Mute time: ${ms(ms(timez), {long: true})}`);
+            message.author.sendMessage(`:clock: **DING DING!** I'm remind you to: Time: ${ms(ms(timez), {long: true})}`);
         }, ms(timez));
             break;
         default:

@@ -802,6 +802,16 @@ bot.on("message", function(message) {
            message.channel.send("Please provide a valid Minecraft Username.");
         }
             break;
+       case "remind":
+       let paramsz = message.content.split(" ").slice(1);
+       let timez = params[1];
+       if(!timez) return message.reply("Please provide a time. **Example:** <!mute @Vanished#3101 3m");
+       
+       setTimeout(function() {
+            member.removeRole(muteRole.id);
+            message.author.sendMessage(`**${member.user.username}** is now unmuted. Mute time: ${ms(ms(time), {long: true})}`);
+        }, ms(time));
+            break;
         default:
             message.react("\❌")
     }

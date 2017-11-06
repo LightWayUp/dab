@@ -345,6 +345,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
                 .addField("-", "`<!mute` (A moderator mute command.)")
+                .addField("-", "`<!clear` (A moderator message clear command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11115":
@@ -371,6 +372,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Search Command List", "`<!youtube` (Search up YouTube.)")
                 .addField("-", "`<!google` (Search up Google.)")
+                .addField("-", "`<!imgur` (Search up something on Imgur.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
             break;
@@ -435,6 +437,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!ban` (A moderator ban command.)")
                 .addField("-", "`<!unban` (A moderator unban command.)")
                 .addField("-", "`<!mute` (A moderator mute command.)")
+                .addField("-", "`<!clear` (A moderator message clear command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -463,8 +466,9 @@ bot.on("message", function(message) {
             break;
         case "info-search":
             var embed = new Discord.RichEmbed()
-                .addField("Search Command List", "`<!youtube` (Search up YouTube.)")
-                .addField("-", "`<!google` (Search up Google.)")
+                .addField("Search Command List", "`<!youtube` (Search up something on YouTube.)")
+                .addField("-", "`<!google` (Search up something on Google.)")
+                .addField("-", "`<!imgur` (Search up something on Imgur.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -733,12 +737,20 @@ bot.on("message", function(message) {
             message.channel.send(workkkk);
             break;
         case "google":
+        if (args[1]) {
         let gs = message.content.split(" ").slice(1).join("%20");
         message.channel.send(`<:g_:376454342796115978> Google Search Link:\nhttps://www.google.ba/search?dcr=0&ei=V7r8WdqkHIura9SjiNgP&q=${gs}`);
+        } else {
+           message.channel.send("Please provide a search query.");
+        }
             break;
         case "youtube":
+        if (args[1]) {
         let yts = message.content.split(" ").slice(1).join("+");
         message.channel.send(`<:yt:376453183532171274> YouTube Search Link:\nhttps://www.youtube.com/results?search_query=${yts}`);
+        } else {
+           message.channel.send("Please provide a search query.");
+        }
             break;
         case "achievement":
         const snekfetch = require('snekfetch');
@@ -773,6 +785,14 @@ bot.on("message", function(message) {
          message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
          message.reply('Cleared **' + args[1] + '** messages! :wastebasket:')
         });
+            break;
+        case "imgur":
+        if (args[1]) {
+        let im = message.content.split(" ").slice(1).join("+");
+        message.channel.send(`<:imgur:377096709505024004> Imgur Search Link:\nhttps://https://imgur.com/search/score?q=${im}`);
+        } else {
+           message.channel.send("Please provide a search query.");
+        }
             break;
         default:
             message.react("\❌")

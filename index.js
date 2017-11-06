@@ -809,8 +809,8 @@ bot.on("message", function(message) {
        
        setTimeout(function() {
             member.removeRole(muteRole.id);
-            message.author.sendMessage(`**${member.user.username}** is now unmuted. Mute time: ${ms(ms(time), {long: true})}`);
-        }, ms(time));
+            message.author.sendMessage(`**${member.user.username}** is now unmuted. Mute time: ${ms(ms(timez), {long: true})}`);
+        }, ms(timez));
             break;
         default:
             message.react("\❌")

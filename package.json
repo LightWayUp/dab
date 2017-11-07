@@ -12,6 +12,7 @@
     "discord-bot-list": "^1.0.1",
     "ms": "^2.0.0",
     "discord.js": "^11.2.1",
+    "snekfetch": "^3.5.8",
     "discord-eco": "0.0.10"
   }
 }

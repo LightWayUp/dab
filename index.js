@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const dbl = require(`discord-bot-list`)
 const ms = require("ms");
 const economy = require("discord-eco");
+const snekfetch = require('snekfetch');
 
 const PREFIX = "<!";
 

@@ -458,7 +458,7 @@ bot.on("message", function(message) {
             break;
         case "info-mc":
              var embed = new Discord.RichEmbed()
-                .addField("Minecraft Commands", "`<!achievement` (A minecraft achievement image generator.) **BETA**")
+                .addField("Minecraft Commands", "`<!achievement` (A minecraft achievement image generator.)")
                 .addField("-", "`<!skin` (Shows you a Minecraft skin.)")
                 .setFooter("<o/")
             break;

@@ -778,7 +778,10 @@ bot.on("message", function(message) {
         case "skin":
         if (args[1]) {
         let skins = message.content.split(" ").slice(1).join("");
-        message.channel.send(`<:minecraft:377102754256125962> Minecraft Skin Link:\nhttps://www.minecraftskinstealer.com/skin.php?u=${skins}&s=700`);
+        const urll = `https://www.minecraftskinstealer.com/skin.php?u=${skins}&s=700`;
+        snekfetch.get(urll)
+         .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
+        message.channel.send(`<:minecraft:377102754256125962>`);
         } else {
            message.channel.send("Please provide a valid Minecraft Username.");
         }

@@ -754,18 +754,20 @@ bot.on("message", function(message) {
         const snekfetch = require('snekfetch');
         let [title, contents] = args.join(" ").split("|");
         if(!contents) {
-          [title, contents] = ["Achievement Get!", title];
+            [title, contents] = ["Achievement Get!", title];
         }
+        let achieve = "Achievement+Get!"
+        let line = message.content.split(" ").slice(1).join("+");
         let rnd = Math.floor((Math.random() * 39) + 1);
         if(args.join(" ").toLowerCase().includes("burn")) rnd = 38;
         if(args.join(" ").toLowerCase().includes("cookie")) rnd = 21;
         if(args.join(" ").toLowerCase().includes("cake")) rnd = 10;
-      
+          
         if(title.length > 22 || contents.length > 22) return message.edit("Max Length: 22 Characters.").then(message.delete.bind(message), 2000);
-        const url = `https://www.minecraftskinstealer.com/achievement/a.php?i=${rnd}&h=${encodeURIComponent(title)}&t=${encodeURIComponent(contents)}`;
+        const url = `https://www.minecraftskinstealer.com/achievement/a.php?i=${rnd}&h=${achieve}&t=${line}`;
         snekfetch.get(url)
-         .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
-        message.delete();
+            .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
+            message.delete();
             break;
         case "clear":
         if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("You are not allowed to execute this command!");

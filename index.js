@@ -266,6 +266,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-image` (Get the list of image commands.)")
                 .addField("-", "`<!info-search` (Get the list of search commands.)")
                 .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
+                .addField("-", "`<!info-math` (Get the list of math commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -348,7 +349,14 @@ bot.on("message", function(message) {
                 .addField("Minecraft Commands", "`<!achievement` (A minecraft achievement image generator.)")
                 .addField("-", "`<!skin` (Shows you a Minecraft skin.)")
                 .setFooter("<o/")
-                message.channel.sendEmbed(embed);
+                message.author.sendEmbed(embed);
+        case "11120":
+             var embed = new Discord.RichEmbed()
+                .addField("Math Commands", "`<!plus` (A math plus command.)")
+                .addField("-", "`<!minus` (A math minus command.)")
+                .addField("-", "`<!multiply` (A math multiply command.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -361,6 +369,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-eco` (Get the list of economy commands.)")
                 .addField("-", "`<!info-image` (Get the list of image commands.)")
                 .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
+                .addField("-", "`<!info-math` (Get the list math commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -451,6 +460,13 @@ bot.on("message", function(message) {
              var embed = new Discord.RichEmbed()
                 .addField("Minecraft Commands", "`<!achievement` (A minecraft achievement image generator.) **BETA**")
                 .addField("-", "`<!skin` (Shows you a Minecraft skin.)")
+                .setFooter("<o/")
+            break;
+        case "info-math":
+             var embed = new Discord.RichEmbed()
+                .addField("Math Commands", "`<!plus` (A math plus command.)")
+                .addField("-", "`<!minus` (A math minus command.)")
+                .addField("-", "`<!multiply` (A math multiply command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -792,6 +808,36 @@ bot.on("message", function(message) {
         let evaa = message.content.split(" ").slice(1).join(" ");
             message.delete()
             message.channel.sendMessage(eval(evaa));
+            break;
+        case "plus":
+        let plus = message.content.split(" ").slice(1).join("+");
+        let timemmm = plus[1];
+        if(!timemmm) return message.reply("Please provide a math task using **+**");
+
+        var embed = new Discord.RichEmbed()
+        .addField("Math Information:", `**Input:** :inbox_tray: ${plus}\n**Output:** :outbox_tray: ${eval(plus)}`)
+        .setFooter("<o/")
+        message.channel.sendEmbed(embed);
+            break;
+        case "minus":
+        let minus = message.content.split(" ").slice(1).join("-");
+        let timem = minus[1];
+        if(!timem) return message.reply("Please provide a math task using **-**");
+
+        var embed = new Discord.RichEmbed()
+        .addField("Math Information:", `**Input:** :inbox_tray: ${minus}\n**Output:** :outbox_tray: ${eval(minus)}`)
+        .setFooter("<o/")
+        message.channel.sendEmbed(embed);
+            break;
+        case "multiply":
+        let multiply = message.content.split(" ").slice(1).join("*");
+        let timemm = multiply[1];
+        if(!timemm) return message.reply("Please provide a math task using *****");
+
+        var embed = new Discord.RichEmbed()
+        .addField("Math Information:", `**Input:** :inbox_tray: ${multiply}\n**Output:** :outbox_tray: ${eval(multiply)}`)
+        .setFooter("<o/")
+        message.channel.sendEmbed(embed);
             break;
         default:
             message.react("\❌")

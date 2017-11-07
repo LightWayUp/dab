@@ -778,6 +778,7 @@ bot.on("message", function(message) {
             break;
         case "skin":
         if (args[1]) {
+        const snekfetch = require('snekfetch');
         let skins = message.content.split(" ").slice(1).join("");
         const urll = `https://www.minecraftskinstealer.com/skin.php?u=${skins}&s=700`;
         snekfetch.get(urll)

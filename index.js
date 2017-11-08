@@ -3,6 +3,7 @@ const dbl = require(`discord-bot-list`)
 const ms = require("ms");
 const economy = require("discord-eco");
 const snekfetch = require('snekfetch');
+var Jimp = require("jimp");
 
 const PREFIX = "<!";
 
@@ -840,6 +841,211 @@ bot.on("message", function(message) {
         .addField("Math Information:", `**Input:** :inbox_tray: ${multiply}\n**Output:** :outbox_tray: ${eval(multiply)}`)
         .setFooter("<o/")
         message.channel.sendEmbed(embed);
+            break;
+        case "cry":
+        let user = message.mentions.users.first();
+        if (user) return message.reply("No tags. nonono");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " cries...")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "punch":
+        let userr = message.mentions.users.first();
+        if (userr) return message.reply("No tags. nonono");
+
+        let arg = args[1]
+        if (!arg) return message.reply("Please provide someone to dmspam.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " punched " + args[1] + " in the face!")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "dmspam":
+        let userrr = message.mentions.users.first();
+        if (userrr) return message.reply("No tags. nonono");
+
+        let argzz = args[1]
+        if (!!argzz) return message.reply("Please provide someone to dmspam.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " dmspammed " + args[1] + " !")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "poop":
+        let userrrr = message.mentions.users.first();
+        if (!userrrr) return message.reply("No tags. nonono");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " pooped...")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "roundhousekick":
+        let userrrrr = message.mentions.users.first();
+        if (userrrrr) return message.reply("No tags. nonono");
+
+        let argggg = args[1]
+        if (!argggg) return message.reply("Please provide something to roundhousekick.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " roundhousekicked " + args[1] + " !")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "punch":
+        let userrrrrr = message.mentions.users.first();
+        if (userrrrrr) return message.reply("No tags. nonono");
+
+        let arggggg = args[1]
+        if (!argggg) return message.reply("Please provide something to punch.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " punched " + args[1] + " in the face!")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "eat":
+        let userrrrrrrr = message.mentions.users.first();
+        if (userrrrrrrr) return message.reply("No tags. nonono");
+
+        let argz = args[1]
+        if (!argz) return message.reply("Please provide something to eat.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " is eating " + args[1] + " .")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "drink":
+        let userrrrrrrrr = message.mentions.users.first();
+        if (userrrrrrrrr) return message.reply("No tags. nonono");
+
+        let arggg = args[1]
+        if (!argg) return message.reply("Please provide something to drink.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " is drinking " + args[1] + " .")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "sneeze":
+        let userrrrrrrrrr = message.mentions.users.first();
+        if (userrrrrrrrrr) return message.reply("No tags. nonono");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " sneezed...")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "dab":
+        let userrrrrrrrrrrr = message.mentions.users.first();
+        if (userrrrrrrrrrrr) return message.reply("No tags. nonono");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " dabbed! <o/")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
+            break;
+        case "breath":
+        let userrrrrrrrrrrrrrrrrrrrrrr = message.mentions.users.first();
+        if (userrrrrrrrrrrrrrrrrrrrrrr) return message.reply("No tags. nonono");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("lena-small-bw.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " is breathing.")
+                 .write("lena-small-bw.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("lena-small-bw.jpg");
+        }, ms("2s"));
             break;
         default:
             message.react("\❌")

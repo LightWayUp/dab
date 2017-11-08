@@ -843,8 +843,8 @@ bot.on("message", function(message) {
         message.channel.sendEmbed(embed);
             break;
         case "cry":
-        let user = message.mentions.users.first();
-        if (user) return message.reply("No tags. nonono");
+        let userlj = message.mentions.users.first();
+        if (userlj) return message.reply("No tags. nonono");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;

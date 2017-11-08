@@ -870,7 +870,7 @@ bot.on("message", function(message) {
             if (err) throw err;
             lenna.write("punch.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
-            lenna.print(font, 20, 150, "* " + message.author.username + " punched " + args[1] + " in the face!")
+            lenna.print(font, 20, 150, "* " + message.author.username + " punched " + args[1] + " !")
                  .write("punch.jpg"); // save
         });
         });

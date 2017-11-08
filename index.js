@@ -482,13 +482,6 @@ bot.on("message", function(message) {
         message.channel.sendMessage("FUNNEYZ LOL")
         }
             break;
-        case "roundhousekick":
-        if (args[1]) {
-            message.channel.send("<@" + message.author.id + "> roundhousekicked " + args[1] + " **WOW...**");
-        } else {
-        message.channel.sendMessage(":face_palm: Mention someone...")
-        }
-            break;
         case "botstatus":
         case "botinfo":
             var embed = new Discord.RichEmbed()
@@ -546,56 +539,6 @@ bot.on("message", function(message) {
                 .addField("Owner(s):", "Vanished#3101", true)
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
-            break;
-        case "kickk":
-        if (args[1]) {
-            message.channel.send("<@" + message.author.id + "> kicked " + args[1] + " in the face! OoOoOoO");
-        } else {
-        message.channel.sendMessage(":face_palm: You cannot kick yourself!")
-        }
-            break;
-        case "boo":
-        if (args[1]) {
-            message.channel.send("<@" + message.author.id + "> BoOoOoOoOoOoOo-ed at " + args[1] + "!");
-        } else {
-        message.channel.sendMessage(":face_palm: You cannot boo at yourself...")
-        }
-            break;
-        case "punch": 
-        if (args[1]) {
-            message.channel.send("<@" + message.author.id + "> punched " + args[1] + " :right_facing_fist:");
-        } else {
-        message.channel.sendMessage(":face_palm: You cannot punch yourself...")
-        }
-            break;
-        case "cry":
-            message.channel.send("Be ready for a flood of tears! <@" + message.author.id + "> cries...");
-            break;
-        case "dab":
-            message.channel.send("<@" + message.author.id + "> dabbed **<o/**");
-            break;
-        case "sneeze":
-            message.channel.send("<@" + message.author.id + "> sneezed...");
-            break;
-        case "poop":
-            message.channel.send("It looks like <@" + message.author.id + "> pooped...");
-            break;
-        case "breath":
-            message.channel.send("<@" + message.author.id + "> is breathing the **oxygen**!");
-            break;
-        case "eat":
-            if (args[1]) {
-                message.channel.send("<@" + message.author.id + "> is eating **" + args[1] + "**");
-            } else {
-            message.channel.sendMessage(":face_palm: Tell me what you want to eat!")
-            }
-            break;
-        case "drink":
-            if (args[1]) {
-                message.channel.send("<@" + message.author.id + "> is drinking **" + args[1] + "**");
-            } else {
-            message.channel.sendMessage(":face_palm: Tell me what you want to drink!")
-            }
             break;
         case "kick":
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("You are not allowed to execute this command!");
@@ -860,8 +803,8 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "punch":
-        let userr = message.mentions.users.first();
-        if (userr) return message.reply("No tags. nonono");
+        let userrlj = message.mentions.users.first();
+        if (userrlj) return message.reply("No tags. nonono");
 
         let arg = args[1]
         if (!arg) return message.reply("Please provide someone to dmspam.");
@@ -880,8 +823,8 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "dmspam":
-        let userrr = message.mentions.users.first();
-        if (userrr) return message.reply("No tags. nonono");
+        let userrrlj = message.mentions.users.first();
+        if (userrrlj) return message.reply("No tags. nonono");
 
         let argzz = args[1]
         if (!!argzz) return message.reply("Please provide someone to dmspam.");
@@ -900,8 +843,8 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "poop":
-        let userrrr = message.mentions.users.first();
-        if (!userrrr) return message.reply("No tags. nonono");
+        let userrrrlj = message.mentions.users.first();
+        if (!userrrrlj) return message.reply("No tags. nonono");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -917,8 +860,8 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "roundhousekick":
-        let userrrrr = message.mentions.users.first();
-        if (userrrrr) return message.reply("No tags. nonono");
+        let userrrrrlj = message.mentions.users.first();
+        if (userrrrrlj) return message.reply("No tags. nonono");
 
         let argggg = args[1]
         if (!argggg) return message.reply("Please provide something to roundhousekick.");
@@ -937,8 +880,8 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "punch":
-        let userrrrrr = message.mentions.users.first();
-        if (userrrrrr) return message.reply("No tags. nonono");
+        let userrrrrrlj = message.mentions.users.first();
+        if (userrrrrrlj) return message.reply("No tags. nonono");
 
         let arggggg = args[1]
         if (!argggg) return message.reply("Please provide something to punch.");
@@ -957,8 +900,8 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "eat":
-        let userrrrrrrr = message.mentions.users.first();
-        if (userrrrrrrr) return message.reply("No tags. nonono");
+        let userrrrrrrrlj = message.mentions.users.first();
+        if (userrrrrrrrlj) return message.reply("No tags. nonono");
 
         let argz = args[1]
         if (!argz) return message.reply("Please provide something to eat.");
@@ -977,8 +920,8 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "drink":
-        let userrrrrrrrr = message.mentions.users.first();
-        if (userrrrrrrrr) return message.reply("No tags. nonono");
+        let userrrrrrrrrlj = message.mentions.users.first();
+        if (userrrrrrrrrlj) return message.reply("No tags. nonono");
 
         let arggg = args[1]
         if (!argg) return message.reply("Please provide something to drink.");

@@ -928,11 +928,11 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "drink":
-        let userrrrrrrrrlj = message.mentions.users.first();
-        if (!userrrrrrrrrlj) return message.reply("No mentions please.");
-
         let arggg = args[1]
         if (!arggg) return message.reply("Please provide something to drink.");
+            
+        let userrrrrrrrrlj = message.mentions.users.first();
+        if (!userrrrrrrrrlj) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;

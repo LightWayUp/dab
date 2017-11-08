@@ -787,7 +787,7 @@ bot.on("message", function(message) {
             break;
         case "cry":
         let userlj = message.mentions.users.first();
-        if (userlj) return message.reply("No tags. nonono");
+        if (!userlj) return message.reply("No tags. nonono");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -804,7 +804,7 @@ bot.on("message", function(message) {
             break;
         case "punch":
         let userrlj = message.mentions.users.first();
-        if (userrlj) return message.reply("No tags. nonono");
+        if (!userrlj) return message.reply("No tags. nonono");
 
         let arg = args[1]
         if (!arg) return message.reply("Please provide someone to dmspam.");
@@ -881,10 +881,10 @@ bot.on("message", function(message) {
             break;
         case "punch":
         let userrrrrrlj = message.mentions.users.first();
-        if (userrrrrrlj) return message.reply("No tags. nonono");
+        if (!userrrrrrlj) return message.reply("No tags. nonono");
 
         let arggggg = args[1]
-        if (!argggg) return message.reply("Please provide something to punch.");
+        if (!arggggg) return message.reply("Please provide something to punch.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -901,7 +901,7 @@ bot.on("message", function(message) {
             break;
         case "eat":
         let userrrrrrrrlj = message.mentions.users.first();
-        if (userrrrrrrrlj) return message.reply("No tags. nonono");
+        if (!userrrrrrrrlj) return message.reply("No tags. nonono");
 
         let argz = args[1]
         if (!argz) return message.reply("Please provide something to eat.");
@@ -921,7 +921,7 @@ bot.on("message", function(message) {
             break;
         case "drink":
         let userrrrrrrrrlj = message.mentions.users.first();
-        if (userrrrrrrrrlj) return message.reply("No tags. nonono");
+        if (!userrrrrrrrrlj) return message.reply("No tags. nonono");
 
         let arggg = args[1]
         if (!arggg) return message.reply("Please provide something to drink.");
@@ -941,7 +941,7 @@ bot.on("message", function(message) {
             break;
         case "sneeze":
         let userrrrrrrrrr = message.mentions.users.first();
-        if (userrrrrrrrrr) return message.reply("No tags. nonono");
+        if (!userrrrrrrrrr) return message.reply("No tags. nonono");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -958,7 +958,7 @@ bot.on("message", function(message) {
             break;
         case "dab":
         let userrrrrrrrrrrr = message.mentions.users.first();
-        if (userrrrrrrrrrrr) return message.reply("No tags. nonono");
+        if (!userrrrrrrrrrrr) return message.reply("No tags. nonono");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -975,7 +975,7 @@ bot.on("message", function(message) {
             break;
         case "breath":
         let userrrrrrrrrrrrrrrrrrrrrrr = message.mentions.users.first();
-        if (userrrrrrrrrrrrrrrrrrrrrrr) return message.reply("No tags. nonono");
+        if (!userrrrrrrrrrrrrrrrrrrrrrr) return message.reply("No tags. nonono");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;

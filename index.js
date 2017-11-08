@@ -294,7 +294,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!roundhousekick` (A roleplay command.)")
                 .addField("-", "`<!poop` (A roleplay command.)")
                 .addField("-", "`<!cry` (A roleplay command.)")
-                .addField("-", "`<!kickk` (A roleplay command.)")
                 .addField("-", "`<!punch` (A roleplay command.)")
                 .addField("-", "`<!eat` (A roleplay command.)")
                 .addField("-", "`<!drink` (A roleplay command.)")
@@ -399,7 +398,6 @@ bot.on("message", function(message) {
                     .addField("-", "`<!roundhousekick` (A roleplay command.)")
                     .addField("-", "`<!poop` (A roleplay command.)")
                     .addField("-", "`<!cry` (A roleplay command.)")
-                    .addField("-", "`<!kickk` (A roleplay command.)")
                     .addField("-", "`<!punch` (A roleplay command.)")
                     .addField("-", "`<!eat` (A roleplay command.)")
                     .addField("-", "`<!drink` (A roleplay command.)")
@@ -785,9 +783,19 @@ bot.on("message", function(message) {
         .setFooter("<o/")
         message.channel.sendEmbed(embed);
             break;
+        case "divide":
+        let divide = message.content.split(" ").slice(1).join("/");
+        let timemmz = multiply[1];
+        if(!timemmz) return message.reply("Please provide a math task using **/**");
+
+        var embed = new Discord.RichEmbed()
+        .addField("Math Information:", `**Input:** :inbox_tray: ${multiply}\n**Output:** :outbox_tray: ${eval(multiply)}`)
+        .setFooter("<o/")
+        message.channel.sendEmbed(embed);
+            break;
         case "cry":
         let userlj = message.mentions.users.first();
-        if (!userlj) return message.reply("No tags. nonono");
+        if (!userlj) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -804,7 +812,7 @@ bot.on("message", function(message) {
             break;
         case "punch":
         let userrlj = message.mentions.users.first();
-        if (!userrlj) return message.reply("No tags. nonono");
+        if (!userrlj) return message.reply("No mentions please.");
 
         let arg = args[1]
         if (!arg) return message.reply("Please provide someone to dmspam.");
@@ -824,7 +832,7 @@ bot.on("message", function(message) {
             break;
         case "dmspam":
         let userrrlj = message.mentions.users.first();
-        if (userrrlj) return message.reply("No tags. nonono");
+        if (!userrrlj) return message.reply("No mentions please.");
 
         let argzz = args[1]
         if (!!argzz) return message.reply("Please provide someone to dmspam.");
@@ -844,7 +852,7 @@ bot.on("message", function(message) {
             break;
         case "poop":
         let userrrrlj = message.mentions.users.first();
-        if (!userrrrlj) return message.reply("No tags. nonono");
+        if (!userrrrlj) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -861,7 +869,7 @@ bot.on("message", function(message) {
             break;
         case "roundhousekick":
         let userrrrrlj = message.mentions.users.first();
-        if (userrrrrlj) return message.reply("No tags. nonono");
+        if (!userrrrrlj) return message.reply("No mentions please.");
 
         let argggg = args[1]
         if (!argggg) return message.reply("Please provide something to roundhousekick.");
@@ -881,7 +889,7 @@ bot.on("message", function(message) {
             break;
         case "punch":
         let userrrrrrlj = message.mentions.users.first();
-        if (!userrrrrrlj) return message.reply("No tags. nonono");
+        if (!userrrrrrlj) return message.reply("No mentions please.");
 
         let arggggg = args[1]
         if (!arggggg) return message.reply("Please provide something to punch.");
@@ -901,7 +909,7 @@ bot.on("message", function(message) {
             break;
         case "eat":
         let userrrrrrrrlj = message.mentions.users.first();
-        if (!userrrrrrrrlj) return message.reply("No tags. nonono");
+        if (!userrrrrrrrlj) return message.reply("No mentions please.");
 
         let argz = args[1]
         if (!argz) return message.reply("Please provide something to eat.");
@@ -921,7 +929,7 @@ bot.on("message", function(message) {
             break;
         case "drink":
         let userrrrrrrrrlj = message.mentions.users.first();
-        if (!userrrrrrrrrlj) return message.reply("No tags. nonono");
+        if (!userrrrrrrrrlj) return message.reply("No mentions please.");
 
         let arggg = args[1]
         if (!arggg) return message.reply("Please provide something to drink.");
@@ -941,7 +949,7 @@ bot.on("message", function(message) {
             break;
         case "sneeze":
         let userrrrrrrrrr = message.mentions.users.first();
-        if (!userrrrrrrrrr) return message.reply("No tags. nonono");
+        if (!userrrrrrrrrr) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -958,7 +966,7 @@ bot.on("message", function(message) {
             break;
         case "dab":
         let userrrrrrrrrrrr = message.mentions.users.first();
-        if (!userrrrrrrrrrrr) return message.reply("No tags. nonono");
+        if (!userrrrrrrrrrrr) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -975,7 +983,7 @@ bot.on("message", function(message) {
             break;
         case "breath":
         let userrrrrrrrrrrrrrrrrrrrrrr = message.mentions.users.first();
-        if (!userrrrrrrrrrrrrrrrrrrrrrr) return message.reply("No tags. nonono");
+        if (!userrrrrrrrrrrrrrrrrrrrrrr) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;

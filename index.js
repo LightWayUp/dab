@@ -237,14 +237,6 @@ bot.on("message", function(message) {
         message.channel.sendMessage("smh")
         }
             break;
-        case "dmspam":
-        if (args[1]) {
-            message.author.sendMessage("**SPAM REVENGE!!!**")
-            message.channel.send("**Damn, son...** " + args[1] + " got DM spammed by <@" + message.author.id + "> 0-0");
-        } else {
-        message.channel.sendMessage(":face_palm: Mention someone, son!")
-        }
-            break;
         case "profile":
              var embed = new Discord.RichEmbed()
                 .addField("<o/", "Profile card for <@" + message.author.id + ">")

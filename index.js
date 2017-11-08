@@ -787,7 +787,7 @@ bot.on("message", function(message) {
             break;
         case "cry":
         let userlj = message.mentions.users.first();
-        if (!userlj) return message.reply("No mentions please.");
+        if (userlj) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -804,7 +804,7 @@ bot.on("message", function(message) {
             break;
         case "punch":
         let userrlj = message.mentions.users.first();
-        if (!userrlj) return message.reply("No mentions please.");
+        if (userrlj) return message.reply("No mentions please.");
 
         let arg = args[1]
         if (!arg) return message.reply("Please provide someone to dmspam.");
@@ -824,10 +824,10 @@ bot.on("message", function(message) {
             break;
         case "dmspam":
         let userrrlj = message.mentions.users.first();
-        if (!userrrlj) return message.reply("No mentions please.");
+        if (userrrlj) return message.reply("No mentions please.");
 
         let argzz = args[1]
-        if (!!argzz) return message.reply("Please provide someone to dmspam.");
+        if (!argzz) return message.reply("Please provide someone to dmspam.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -861,7 +861,7 @@ bot.on("message", function(message) {
             break;
         case "roundhousekick":
         let userrrrrlj = message.mentions.users.first();
-        if (!userrrrrlj) return message.reply("No mentions please.");
+        if (userrrrrlj) return message.reply("No mentions please.");
 
         let argggg = args[1]
         if (!argggg) return message.reply("Please provide something to roundhousekick.");
@@ -881,7 +881,7 @@ bot.on("message", function(message) {
             break;
         case "punch":
         let userrrrrrlj = message.mentions.users.first();
-        if (!userrrrrrlj) return message.reply("No mentions please.");
+        if (userrrrrrlj) return message.reply("No mentions please.");
 
         let arggggg = args[1]
         if (!arggggg) return message.reply("Please provide something to punch.");
@@ -901,7 +901,7 @@ bot.on("message", function(message) {
             break;
         case "eat":
         let userrrrrrrrlj = message.mentions.users.first();
-        if (!userrrrrrrrlj) return message.reply("No mentions please.");
+        if (userrrrrrrrlj) return message.reply("No mentions please.");
 
         let argz = args[1]
         if (!argz) return message.reply("Please provide something to eat.");
@@ -924,7 +924,7 @@ bot.on("message", function(message) {
         if (!arggg) return message.reply("Please provide something to drink.");
             
         let userrrrrrrrrlj = message.mentions.users.first();
-        if (!userrrrrrrrrlj) return message.reply("No mentions please.");
+        if (userrrrrrrrrlj) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -941,7 +941,7 @@ bot.on("message", function(message) {
             break;
         case "sneeze":
         let userrrrrrrrrr = message.mentions.users.first();
-        if (!userrrrrrrrrr) return message.reply("No mentions please.");
+        if (userrrrrrrrrr) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -958,7 +958,7 @@ bot.on("message", function(message) {
             break;
         case "dab":
         let userrrrrrrrrrrr = message.mentions.users.first();
-        if (!userrrrrrrrrrrr) return message.reply("No mentions please.");
+        if (userrrrrrrrrrrr) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -975,7 +975,7 @@ bot.on("message", function(message) {
             break;
         case "breath":
         let userrrrrrrrrrrrrrrrrrrrrrr = message.mentions.users.first();
-        if (!userrrrrrrrrrrrrrrrrrrrrrr) return message.reply("No mentions please.");
+        if (userrrrrrrrrrrrrrrrrrrrrrr) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;

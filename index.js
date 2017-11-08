@@ -743,7 +743,6 @@ bot.on("message", function(message) {
         case "eval":
         if (message.author.id !== "267025484028706816") return;
         let evaa = message.content.split(" ").slice(1).join(" ");
-            message.delete()
             message.channel.sendMessage(eval(evaa));
             break;
         case "plus":

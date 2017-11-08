@@ -924,7 +924,7 @@ bot.on("message", function(message) {
         if (userrrrrrrrrlj) return message.reply("No tags. nonono");
 
         let arggg = args[1]
-        if (!argg) return message.reply("Please provide something to drink.");
+        if (!arggg) return message.reply("Please provide something to drink.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;

@@ -791,35 +791,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("cry.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " cries...")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("cry.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
-        }, ms("2s"));
-            break;
-        case "punch":
-        let userrlj = message.mentions.users.first();
-        if (userrlj) return message.reply("No mentions please.");
-
-        let arg = args[1]
-        if (!arg) return message.reply("Please provide someone to dmspam.");
-
-        Jimp.read("greyy.png", function (err, lenna) {
-            if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
-        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
-            lenna.print(font, 20, 150, "* " + message.author.username + " punched " + args[1] + " in the face!")
-                 .write("lena-small-bw.jpg"); // save
-        });
-        });
-
-        setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("cry.jpg");
         }, ms("2s"));
             break;
         case "dmspam":
@@ -831,15 +811,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("dmspam.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " dmspammed " + args[1] + " !")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("dmspam.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("dmspam.jpg");
         }, ms("2s"));
             break;
         case "poop":
@@ -848,15 +828,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("poop.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " pooped...")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("poop.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("poop.jpg");
         }, ms("2s"));
             break;
         case "roundhousekick":
@@ -868,15 +848,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("roundhousekick.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " roundhousekicked " + args[1] + " !")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("roundhousekick.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("roundhousekick.jpg");
         }, ms("2s"));
             break;
         case "punch":
@@ -888,15 +868,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("punch.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " punched " + args[1] + " in the face!")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("punch.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("punch.jpg");
         }, ms("2s"));
             break;
         case "eat":
@@ -908,15 +888,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("eat.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " is eating " + args[1] + " .")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("eat.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("eat.jpg");
         }, ms("2s"));
             break;
         case "drink":
@@ -928,15 +908,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("drink.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " is drinking " + args[1] + " .")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("drink.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("drink.jpg");
         }, ms("2s"));
             break;
         case "sneeze":
@@ -945,15 +925,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("sneeze.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " sneezed...")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("sneeze.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("sneeze.jpg");
         }, ms("2s"));
             break;
         case "dab":
@@ -962,15 +942,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("dab.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " dabbed! <o/")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("dab.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("dab.jpg");
         }, ms("2s"));
             break;
         case "breath":
@@ -979,15 +959,15 @@ bot.on("message", function(message) {
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
-            lenna.write("lena-small-bw.jpg"); // save
+            lenna.write("breath.jpg"); // save
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
             lenna.print(font, 20, 150, "* " + message.author.username + " is breathing.")
-                 .write("lena-small-bw.jpg"); // save
+                 .write("breath.jpg"); // save
         });
         });
 
         setTimeout(function() {
-            message.channel.sendFile("lena-small-bw.jpg");
+            message.channel.sendFile("breath.jpg");
         }, ms("2s"));
             break;
         default:

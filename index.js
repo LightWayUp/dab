@@ -351,6 +351,15 @@ bot.on("message", function(message) {
                 .addField("Math Commands", "`<!plus` (A math plus command.)")
                 .addField("-", "`<!minus` (A math minus command.)")
                 .addField("-", "`<!multiply` (A math multiply command.)")
+                .addField("-", "`<!divide` (A math divide command.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
+        case "11121":
+             var embed = new Discord.RichEmbed()
+                .addField("Image Manipulation Commands", "`<!greyscale` (An image greyscale command.)")
+                .addField("-", "`<!contrast` (An image contrast command.)")
+                .addField("-", "`<!blur` (An image blur command.)")
+                .addField("-", "`<!pixelate` (An image pixelate command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
             break;
@@ -462,6 +471,16 @@ bot.on("message", function(message) {
                 .addField("Math Commands", "`<!plus` (A math plus command.)")
                 .addField("-", "`<!minus` (A math minus command.)")
                 .addField("-", "`<!multiply` (A math multiply command.)")
+                .addField("-", "`<!divide` (A math divide command.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
+        case "info-im":
+             var embed = new Discord.RichEmbed()
+                .addField("Image Manipulation Commands", "`<!greyscale` (An image greyscale command.)")
+                .addField("-", "`<!contrast` (An image contrast command.)")
+                .addField("-", "`<!blur` (An image blur command.)")
+                .addField("-", "`<!pixelate` (An image pixelate command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;

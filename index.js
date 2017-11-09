@@ -376,7 +376,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-image` (Get the list of image commands.)")
                 .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
                 .addField("-", "`<!info-math` (Get the list math commands.)")
-                .addField("-", "`<!info-im` (Get the list of image manipulation commands.)"
+                .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);

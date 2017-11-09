@@ -228,8 +228,6 @@ bot.on("message", function(message) {
         }
             break;
         case "avatar":
-        const snekfetch = require('snekfetch');
-
         const url = message.author.avatarURL;
         snekfetch.get(url)
             .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));

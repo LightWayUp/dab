@@ -800,7 +800,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("cry.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         case "dmspam":
         let userrrlj = message.mentions.users.first();
@@ -820,11 +820,11 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("dmspam.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         case "poop":
         let userrrrlj = message.mentions.users.first();
-        if (!userrrrlj) return message.reply("No mentions please.");
+        if (userrrrlj) return message.reply("No mentions please.");
 
         Jimp.read("greyy.png", function (err, lenna) {
             if (err) throw err;
@@ -837,27 +837,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("poop.jpg");
-        }, ms("2s"));
-            break;
-        case "roundhousekick":
-        let userrrrrlj = message.mentions.users.first();
-        if (userrrrrlj) return message.reply("No mentions please.");
-
-        let argggg = args[1]
-        if (!argggg) return message.reply("Please provide something to roundhousekick.");
-
-        Jimp.read("greyy.png", function (err, lenna) {
-            if (err) throw err;
-            lenna.write("roundhousekick.jpg"); // save
-        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
-            lenna.print(font, 20, 150, "* " + message.author.username + " roundhousekicked " + args[1] + " !")
-                 .write("roundhousekick.jpg"); // save
-        });
-        });
-
-        setTimeout(function() {
-            message.channel.sendFile("roundhousekick.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         case "punch":
         let userrrrrrlj = message.mentions.users.first();
@@ -877,7 +857,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("punch.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         case "eat":
         let userrrrrrrrlj = message.mentions.users.first();
@@ -897,7 +877,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("eat.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         case "drink":
         let arggg = args[1]
@@ -917,7 +897,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("drink.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         case "sneeze":
         let userrrrrrrrrr = message.mentions.users.first();
@@ -934,7 +914,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("sneeze.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         case "dab":
         let userrrrrrrrrrrr = message.mentions.users.first();
@@ -951,7 +931,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("dab.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         case "breath":
         let userrrrrrrrrrrrrrrrrrrrrrr = message.mentions.users.first();
@@ -968,7 +948,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("breath.jpg");
-        }, ms("2s"));
+        }, ms("4s"));
             break;
         default:
             message.react("\❌")

@@ -228,7 +228,11 @@ bot.on("message", function(message) {
         }
             break;
         case "avatar":
-        message.channel.sendMessage(message.author.avatarURL);
+        const snekfetch = require('snekfetch');
+
+        const url = message.author.avatarURL;
+        snekfetch.get(url)
+            .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
             break;
         case "noticeme":
         if (args[0]) {
@@ -800,7 +804,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("cry.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
             break;
         case "dmspam":
         let userrrlj = message.mentions.users.first();
@@ -820,7 +824,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("dmspam.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
             break;
         case "poop":
         let userrrrlj = message.mentions.users.first();
@@ -837,7 +841,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("poop.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
             break;
         case "punch":
         let userrrrrrlj = message.mentions.users.first();
@@ -857,7 +861,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("punch.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
             break;
         case "eat":
         let userrrrrrrrlj = message.mentions.users.first();
@@ -877,7 +881,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("eat.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
             break;
         case "drink":
         let arggg = args[1]
@@ -897,7 +901,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("drink.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
             break;
         case "sneeze":
         let userrrrrrrrrr = message.mentions.users.first();
@@ -914,7 +918,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("sneeze.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
             break;
         case "dab":
         let userrrrrrrrrrrr = message.mentions.users.first();
@@ -931,7 +935,7 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("dab.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
             break;
         case "breath":
         let userrrrrrrrrrrrrrrrrrrrrrr = message.mentions.users.first();
@@ -948,7 +952,51 @@ bot.on("message", function(message) {
 
         setTimeout(function() {
             message.channel.sendFile("breath.jpg");
-        }, ms("4s"));
+        }, ms("2s"));
+            break;
+        case "greyscale":
+        Jimp.read(message.author.avatarURL, function (err, lenna) {
+            if (err) throw err;
+            lenna.greyscale()
+                 .write("grey.jpg");
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("grey.jpg");
+        }, ms("2s"));
+            break;
+        case "contrast":
+        Jimp.read(message.author.avatarURL, function (err, lenna) {
+            if (err) throw err;
+            lenna.contrast( +1 )
+                 .write("contrast.jpg");
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("contrast.jpg");
+        }, ms("2s"));
+            break;
+        case "blur":
+        Jimp.read(message.author.avatarURL, function (err, lenna) {
+            if (err) throw err;
+            lenna.blur( 1 )
+                 .write("blur.jpg");
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("blur.jpg");
+        }, ms("2s"));
+            break;
+        case "pixelate":
+        Jimp.read(message.author.avatarURL, function (err, lenna) {
+            if (err) throw err;
+            lenna.pixelate(10)
+                 .write("pixel.jpg");
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("pixel.jpg");
+        }, ms("2s"));
             break;
         default:
             message.react("\❌")

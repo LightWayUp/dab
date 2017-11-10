@@ -1019,6 +1019,15 @@ bot.on("message", function(message) {
             message.channel.sendFile("pixel.jpg");
         }, ms("2s"));
             break;
+        case "reboot":
+        if (message.author.id !== "267025484028706816") {
+            message.reply("This is a **Bot Owner** only command!")
+        }
+        if (message.author.id === "267025484028706816") {
+            message.channel.send("Rebooting the bot... **<o/**")
+            setTimeout(function(){process.exit(1)}, 3000)
+        }
+            break;
         default:
             message.react("\❌")
     }

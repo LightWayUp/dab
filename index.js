@@ -587,7 +587,7 @@ bot.on("message", function(message) {
         message.delete()
         var modlogss = new Discord.RichEmbed()
         .setAuthor(`${userr.username} is banned`, userr.displayAvatarURL)
-        .addField("Ban Information:", `**Banned User:** ${userr.tag}\n**Moderator:** ${message.author.tag}\n**Reason:** ${reasonn}`);
+        .addField("Ban Information:", `**Banned User:** ${userr.tag}\n**User ID** ${userr.id}\n**Moderator:** ${message.author.tag}\n**Reason:** ${reasonn}`);
         message.channel.sendEmbed(modlogss);
         modlogg.send({
         })
@@ -607,13 +607,13 @@ bot.on("message", function(message) {
 
         message.delete()
         var modlogssss = new Discord.RichEmbed()
-        .setAuthor(`User 372104600280367105 is unbanned`)
-        .addField("Unban Information:", `**Unbanned User:** 372104600280367105\n**Moderator:** ${message.author.tag}\n**Reason:** ${reasonnn}`);
+        .setAuthor(`User ${args[1]} is unbanned`)
+        .addField("Unban Information:", `**Unbanned User:** ${args[1]}\n**Moderator:** ${message.author.tag}\n**Reason:** ${reasonnn}`);
         message.channel.sendEmbed(modlogssss);
         modloggg.send({
         })
         } else {
-        message.channel.send(":face_palm: Give me the tag of the banned user and give me a reason for the unban!")
+        message.channel.send(":face_palm: Give me the ID of the banned user and give me a reason for the unban!")
         }
             break;
         case "rps":

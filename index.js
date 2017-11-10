@@ -178,7 +178,7 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log("<o/");
 
-bot.user.setGame("<!info | Dabbing for " + bot.guilds.size + " servers.")
+bot.user.setGame("<!info | Dabbing for 51 server.")
        
 });
 
@@ -505,11 +505,11 @@ bot.on("message", function(message) {
                 .addField("Memory Status:", "Stable", true)
                 .addField("GitHub Repo Status:", "Updated", true)
                 .addField("Host Status:", "Unknown", true)
-                .addField("Server Count:", bot.guilds.size, true)
+                .addField("Server Count:", "51", true)
                 .addField("Bot Libary:", "discord.js", true)
-                .addField("Total Users:", + bot.users.size, true)
+                .addField("Total Users:", "5782", true)
                 .addField("Bot Ping:", bot.ping.toFixed(), true)
-                .addField("Total Channels:", + bot.channels.size, true)
+                .addField("Total Channels:", "789", true)
                 .setDescription("<o/")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
@@ -534,13 +534,6 @@ bot.on("message", function(message) {
                 .addField("Invite Link:","https://discordbots.org/bot/364399994242859008")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "afk":
-        if (args[1]) {
-            message.channel.sendMessage("<@" + message.author.id + "> I set your **AFK**:" + " " + args[1])
-        } else {
-            message.channel.sendMessage(":face_palm: You gotta tell me why u are gonna be **AFK**!")
-        }
             break;
         case "hoststatus":
         case "hostinfo":
@@ -1024,8 +1017,16 @@ bot.on("message", function(message) {
             message.reply("This is a **Bot Owner** only command!")
         }
         if (message.author.id === "267025484028706816") {
-            message.channel.send("Rebooting the bot... **<o/**")
+            message.channel.send("Rebooting myself... **<o/**")
             setTimeout(function(){process.exit(1)}, 3000)
+        }
+            break;
+        case "servercount":
+        if (message.author.id !== "267025484028706816") {
+            message.reply("This is a **Bot Owner** only command!")
+        }
+        if (message.author.id === "267025484028706816") {
+            message.author.send("**Server Count:**" + bot.guilds.size)
         }
             break;
         default:

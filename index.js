@@ -1042,6 +1042,17 @@ bot.on("message", function(message) {
             message.channel.sendFile("tiny.jpg");
         }, ms("2s"));
             break;
+        case "osu":
+        if (args[1]) {
+        const snekkfetch = require('snekfetch');
+        let uz = message.content.split(" ").slice(1).join("");
+        const osu = `https://lemmmy.pw/osusig/sig.php?uname=${uz}`;
+        snekkfetch.get(osu)
+         .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
+        } else {
+           message.channel.send("Please provide a valid osu! Username.");
+        }
+            break;
         default:
             message.react("\❌")
     }

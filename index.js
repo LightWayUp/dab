@@ -361,6 +361,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!contrast` (An image contrast command.)")
                 .addField("-", "`<!blur` (An image blur command.)")
                 .addField("-", "`<!pixelate` (An image pixelate command.)")
+                .addField("-", "`<!tiny` (An image tiny command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
             break;
@@ -483,6 +484,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!contrast` (An image contrast command.)")
                 .addField("-", "`<!blur` (An image blur command.)")
                 .addField("-", "`<!pixelate` (An image pixelate command.)")
+                .addField("-", "`<!tiny` (An image tiny command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -1028,6 +1030,17 @@ bot.on("message", function(message) {
         if (message.author.id === "267025484028706816") {
             message.author.send("**Server Count:**" + bot.guilds.size)
         }
+            break;
+        case "tiny":
+        let usew = args[1]
+
+        Jimp.read(message.author.avatarURL, function (err, lenna) {
+            lenna.write("tiny.jpg");
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("tiny.jpg");
+        }, ms("2s"));
             break;
         default:
             message.react("\❌")

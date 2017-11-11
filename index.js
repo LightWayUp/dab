@@ -1032,10 +1032,10 @@ bot.on("message", function(message) {
         }
             break;
         case "tiny":
-        let usew = args[1]
 
         Jimp.read(message.author.avatarURL, function (err, lenna) {
-            lenna.write("tiny.jpg");
+            lenna.resize(10, 10)
+                 .write("tiny.jpg");
         });
 
         setTimeout(function() {

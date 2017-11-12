@@ -285,6 +285,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
                 .addField("-", "`<!info-music` (Get the list of music commands.)")
                 .addField("-", "`<!info-dev` (Get the list of developer commands.)")
+                .addField("-", "`<!info-meme` (Get the list of meme commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -395,6 +396,16 @@ bot.on("message", function(message) {
                 .addField("Developer Commands", "`<!eval` (A dev eval command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
+        case "11124":
+             var embed = new Discord.RichEmbed()
+                .addField("Meme Commands", "`<!meme` (A meme command.)")
+                .addField("-", "`<!cena` (A meme cena command.)")
+                .addField("-", "`<!theone` (A meme the one command.)")
+                .addField("-", "`<!potato` (A meme potato command.)")
+                .addField("-", "`<!jeff` (A meme jeff command.)")
+                .addField("-", "`<!wow` (A meme wow command.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -411,6 +422,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
                 .addField("-", "`<!info-music` (Get the list of music commands.)")
                 .addField("-", "`<!info-dev` (Get the list of developer commands.)")
+                .addField("-", "`<!info-meme` (Get the list of meme commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -531,6 +543,17 @@ bot.on("message", function(message) {
         case "info-dev":
              var embed = new Discord.RichEmbed()
                 .addField("Developer Commands", "`<!eval` (A dev eval command.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
+        case "info-meme":
+             var embed = new Discord.RichEmbed()
+                .addField("Meme Commands", "`<!meme` (A meme command.)")
+                .addField("-", "`<!cena` (A meme cena command.)")
+                .addField("-", "`<!theone` (A meme the one command.)")
+                .addField("-", "`<!potato` (A meme potato command.)")
+                .addField("-", "`<!jeff` (A meme jeff command.)")
+                .addField("-", "`<!wow` (A meme wow command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -1130,6 +1153,90 @@ bot.on("message", function(message) {
 
                 if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
                 break;
+            case "meme":
+            var voiceChannelz = message.member.voiceChannel;
+
+            if (!voiceChannelz){
+                return message.channel.sendMessage("Please join a voice channel.");
+              }
+
+            voiceChannelz.join().then(connection => {
+               const dispatcher = connection.playFile('meme.mp3');
+               dispatcher.on("end", end => {
+                 voiceChannelz.leave();
+            });
+            });
+            break;
+            case "theone":
+            var voiceChannelh = message.member.voiceChannel;
+
+            if (!voiceChannelh){
+                return message.channel.sendMessage("Please join a voice channel.");
+              }
+
+            voiceChannelh.join().then(connection => {
+               const dispatcher = connection.playFile('one.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannelh.leave();
+            });
+            });
+            break;
+            case "jeff":
+            var voiceChannelj = message.member.voiceChannel;
+
+            if (!voiceChannelj){
+                return message.channel.sendMessage("Please join a voice channel.");
+              }
+
+            voiceChannelj.join().then(connection => {
+               const dispatcher = connection.playFile('jeff.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannelj.leave();
+            });
+            });
+            break;
+            case "potato":
+            var voiceChannelk = message.member.voiceChannel;
+
+            if (!voiceChannelk){
+                return message.channel.sendMessage("Please join a voice channel.");
+              }
+
+            voiceChannelk.join().then(connection => {
+               const dispatcher = connection.playFile('potato.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannelk.leave();
+            });
+            });
+            break;
+            case "wow":
+            var voiceChannell = message.member.voiceChannel;
+
+            if (!voiceChannell){
+                return message.channel.sendMessage("Please join a voice channel.");
+              }
+
+            voiceChannell.join().then(connection => {
+               const dispatcher = connection.playFile('wow.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannell.leave();
+            });
+            });
+            break;
+            case "cena":
+            var voiceChannelm = message.member.voiceChannel;
+
+            if (!voiceChannelm){
+                return message.channel.sendMessage("Please join a voice channel.");
+              }
+
+            voiceChannelm.join().then(connection => {
+               const dispatcher = connection.playFile('cena.mp4');
+               dispatcher.on("end", end => {
+                 voiceChannelm.leave();
+            });
+            });
+            break;
         default:
             message.react("\❌")
     }

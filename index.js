@@ -283,6 +283,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
                 .addField("-", "`<!info-math` (Get the list of math commands.)")
                 .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
+                .addField("-", "`<!info-music` (Get the list of music commands.)")
+                .addField("-", "`<!info-dev` (Get the list of developer commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -382,6 +384,17 @@ bot.on("message", function(message) {
                 .addField("-", "`<!tiny` (An image tiny command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
+        case "11122":
+             var embed = new Discord.RichEmbed()
+                .addField("Music Commands", "`<!play` (A music play command.)")
+                .addField("-", "`<!contrast` (A music stop command.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
+        case "11123":
+             var embed = new Discord.RichEmbed()
+                .addField("Developer Commands", "`<!eval` (A dev eval command.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -396,6 +409,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
                 .addField("-", "`<!info-math` (Get the list math commands.)")
                 .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
+                .addField("-", "`<!info-music` (Get the list of music commands.)")
+                .addField("-", "`<!info-dev` (Get the list of developer commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -503,6 +518,19 @@ bot.on("message", function(message) {
                 .addField("-", "`<!blur` (An image blur command.)")
                 .addField("-", "`<!pixelate` (An image pixelate command.)")
                 .addField("-", "`<!tiny` (An image tiny command.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
+        case "info-music":
+             var embed = new Discord.RichEmbed()
+                .addField("Music Commands", "`<!play` (A music play command.)")
+                .addField("-", "`<!contrast` (A music stop command.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
+        case "info-dev":
+             var embed = new Discord.RichEmbed()
+                .addField("Developer Commands", "`<!eval` (A dev eval command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;

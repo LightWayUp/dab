@@ -16,6 +16,7 @@
     "jimp": "^0.2.28",
     "opusscript": "0.0.4",
     "youtube-search": "^1.0.10",
-    "discord-eco": "0.0.10"
+    "discord-eco": "0.0.10",
+    "ytdl-core": "^0.18.1"
   }
 }

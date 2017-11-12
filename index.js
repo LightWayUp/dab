@@ -14,6 +14,7 @@ var fortunes = [
     ";-;",
     "y u do dis",
     "Ask me later.",
+    "Nope",
 ];
 var fortunes2 = [
     "LOL",

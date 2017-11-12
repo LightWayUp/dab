@@ -29,6 +29,7 @@ var fortunes = [
     "y u do dis",
     "Ask me later.",
     "Nope",
+    "Maybe.",
 ];
 var fortunes2 = [
     "LOL",

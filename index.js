@@ -373,7 +373,6 @@ bot.on("message", function(message) {
                 .addField("Math Commands", "`<!plus` (A math plus command.)")
                 .addField("-", "`<!minus` (A math minus command.)")
                 .addField("-", "`<!multiply` (A math multiply command.)")
-                .addField("-", "`<!divide` (A math divide command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11121":
@@ -388,7 +387,7 @@ bot.on("message", function(message) {
         case "11122":
              var embed = new Discord.RichEmbed()
                 .addField("Music Commands", "`<!play` (A music play command.)")
-                .addField("-", "`<!contrast` (A music stop command.)")
+                .addField("-", "`<!stop` (A music stop command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11123":
@@ -513,6 +512,7 @@ bot.on("message", function(message) {
                 .addField("Minecraft Commands", "`<!achievement` (A minecraft achievement image generator.)")
                 .addField("-", "`<!skin` (Shows you a Minecraft skin.)")
                 .setFooter("<o/")
+                message.channel.sendEmbed(embed);
             break;
         case "info-math":
              var embed = new Discord.RichEmbed()
@@ -536,7 +536,7 @@ bot.on("message", function(message) {
         case "info-music":
              var embed = new Discord.RichEmbed()
                 .addField("Music Commands", "`<!play` (A music play command.)")
-                .addField("-", "`<!contrast` (A music stop command.)")
+                .addField("-", "`<!stop` (A music stop command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -864,16 +864,6 @@ bot.on("message", function(message) {
         .setFooter("<o/")
         message.channel.sendEmbed(embed);
             break;
-        case "divide":
-        let divide = message.content.split(" ").slice(1).join("/");
-        let timemmz = multiply[1];
-        if(!timemmz) return message.reply("Please provide a math task using **/**");
-
-        var embed = new Discord.RichEmbed()
-        .addField("Math Information:", `**Input:** :inbox_tray: ${multiply}\n**Output:** :outbox_tray: ${eval(multiply)}`)
-        .setFooter("<o/")
-        message.channel.sendEmbed(embed);
-            break;
         case "cry":
         let userlj = message.mentions.users.first();
         if (userlj) return message.reply("No mentions please.");
@@ -1152,6 +1142,7 @@ bot.on("message", function(message) {
                 var server = servers[message.guild.id];
 
                 if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+                message.channel.send("Stopped the queue.");
                 break;
             case "meme":
             var voiceChannelz = message.member.voiceChannel;

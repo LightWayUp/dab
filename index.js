@@ -4,8 +4,22 @@ const ms = require("ms");
 const economy = require("discord-eco");
 const snekfetch = require('snekfetch');
 var Jimp = require("jimp");
+const YTDL = require("ytdl-core")
 
 const PREFIX = "<!";
+
+function play(connection, message) {
+    var server = servers[message.guild.id];
+
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+
+    server.queue.shift();
+
+    server.dispatcher.on("end", function() {
+        if (server.queue[0]) play(connection, message);
+        else connection.disconnect();
+    });
+}
 
 var fortunes = [
     "Yes.",
@@ -175,6 +189,8 @@ var cookie = [
 ];
 
 var bot = new Discord.Client(); 
+
+var servers = [];
 
 bot.on("ready", function() {
     console.log("<o/");
@@ -1054,6 +1070,37 @@ bot.on("message", function(message) {
            message.channel.send("Please provide a valid osu! Username.");
         }
             break;
+            case "play":
+            const voiceChannel = message.member.voiceChannel;
+
+            if (!args[1]){
+                return message.channel.sendMessage("Please provide a link.");
+              }
+
+            if (!voiceChannel){
+              return message.channel.sendMessage("Please join a voice channel.");
+            }
+            voiceChannel.join()
+            .then(connection => {
+              let stream = YTDL(args.join(" "), {audioonly: true});
+              YTDL.getInfo(args.join(" "), function(err, info) {
+              const title = info.title
+              console.log(`${message.author.username}, Queued the song '${title}.'`)
+              message.channel.sendMessage(`Playing \**${title}\** in the queue.`)
+              })
+              const dispatcher = connection.playStream(stream);
+              dispatcher.on('end', () => {
+                 voiceChannel.leave();
+               }).catch(e =>{
+                 console.error(e);
+               });
+            })
+            break;
+            case "stop":
+                var server = servers[message.guild.id];
+
+                if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+                break;
         default:
             message.react("\❌")
     }

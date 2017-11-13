@@ -216,7 +216,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("guildCreate", guild => {
-    member.guild.channels.find("id", "376093555069812738").send(`I just joined guild called ${guild.name}. Owner: ${guild.owner.user.tag}. Now in ${bot.guilds.size} servers. **<o/**`);
+    guild.channels.find("id", "376093555069812738").send(`I just joined guild called ${guild.name}. Owner: ${guild.owner.user.tag}. Now in ${bot.guilds.size} servers. **<o/**`);
 });
 
 bot.on("message", function(message) {

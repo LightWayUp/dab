@@ -377,11 +377,13 @@ bot.on("message", function(message) {
                 message.author.sendEmbed(embed);
         case "11121":
              var embed = new Discord.RichEmbed()
-                .addField("Image Manipulation Commands", "`<!greyscale` (An image greyscale command.)")
+                .addField("Image Generator Commands", "`<!greyscale` (An image greyscale command.)")
                 .addField("-", "`<!contrast` (An image contrast command.)")
                 .addField("-", "`<!blur` (An image blur command.)")
                 .addField("-", "`<!pixelate` (An image pixelate command.)")
                 .addField("-", "`<!tiny` (An image tiny command.)")
+                .addField("-", "`<!qrcode` (An image qrcode command.)")
+                .addField("-", "`<!barcode` (An image barcode command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11122":
@@ -523,13 +525,15 @@ bot.on("message", function(message) {
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
-        case "info-im":
+        case "info-ig":
              var embed = new Discord.RichEmbed()
-                .addField("Image Manipulation Commands", "`<!greyscale` (An image greyscale command.)")
+                .addField("Image Generator Commands", "`<!greyscale` (An image greyscale command.)")
                 .addField("-", "`<!contrast` (An image contrast command.)")
                 .addField("-", "`<!blur` (An image blur command.)")
                 .addField("-", "`<!pixelate` (An image pixelate command.)")
                 .addField("-", "`<!tiny` (An image tiny command.)")
+                .addField("-", "`<!qrcode` (An image qrcode command.)")
+                .addField("-", "`<!barcode` (An image barcode command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;

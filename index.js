@@ -1234,7 +1234,7 @@ bot.on("message", function(message) {
             const snekfetchbar = require('snekfetch');
             let bc = message.content.split(" ").slice(1).join("");
             const bar = `https://www.barcodesinc.com/generator/image.php?code=${bc}&style=300&type=C128B&width=300&height=200&xres=2&font=3`;
-            snekfetcbar.get(bar)
+            snekfetchbar.get(bar)
              .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
             } else {
                message.channel.send("Please provide a text you want to convert to barcode.");

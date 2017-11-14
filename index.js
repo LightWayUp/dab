@@ -318,6 +318,9 @@ bot.on("message", function(message) {
                 .addField("-", "`<!sneeze` (A roleplay command.)")
                 .addField("-", "`<!dab` (A roleplay command.)")
                 .addField("-", "`<!breath` (A roleplay command.)")
+                .addField("-", "`<!stab` (A roleplay command.)")
+                .addField("-", "`<!happy` (A roleplay command.)")
+                .addField("-", "`<!cough` (A roleplay command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11113":
@@ -458,6 +461,9 @@ bot.on("message", function(message) {
                     .addField("-", "`<!sneeze` (A roleplay command.)")
                     .addField("-", "`<!dab` (A roleplay command.)")
                     .addField("-", "`<!breath` (A roleplay command.)")
+                    .addField("-", "`<!stab` (A roleplay command.)")
+                    .addField("-", "`<!happy` (A roleplay command.)")
+                    .addField("-", "`<!cough` (A roleplay command.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
             break;
@@ -1256,6 +1262,60 @@ bot.on("message", function(message) {
                message.channel.send("Please provide a text you want to convert to qrcode.");
             }
                 break;
+        case "cough":
+        let userrrrrrrrrrrrrrrrrrrrrrrz = message.mentions.users.first();
+        if (userrrrrrrrrrrrrrrrrrrrrrrz) return message.reply("No mentions please.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("cough.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " coughed.")
+                 .write("cough.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("cough.jpg");
+        }, ms("2s"));
+            break;
+        case "stab":
+        let userrrrrrrrrrrrrrrrrrrrrrrzsk = message.mentions.users.first();
+        if (userrrrrrrrrrrrrrrrrrrrrrrzsk) return message.reply("No mentions please.");
+
+        let argzssk = args[1]
+        if (!argzssk) return message.reply("Please provide someone to stab.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("stab.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " stabbed " + args[1] + "!")
+                 .write("stab.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("stab.jpg");
+        }, ms("2s"));
+            break;
+        case "happy":
+        let userrrrrrrrrrrrrrrrrrrrrrrzlol = message.mentions.users.first();
+        if (userrrrrrrrrrrrrrrrrrrrrrrzlol) return message.reply("No mentions please.");
+
+        Jimp.read("greyy.png", function (err, lenna) {
+            if (err) throw err;
+            lenna.write("happy.jpg"); // save
+        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(function (font) {
+            lenna.print(font, 20, 150, "* " + message.author.username + " is happy.")
+                 .write("happy.jpg"); // save
+        });
+        });
+
+        setTimeout(function() {
+            message.channel.sendFile("happy.jpg");
+        }, ms("2s"));
+            break;
         default:
             message.react("\❌")
     }

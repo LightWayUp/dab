@@ -4,22 +4,8 @@ const ms = require("ms");
 const economy = require("discord-eco");
 const snekfetch = require('snekfetch');
 var Jimp = require("jimp");
-const YTDL = require("ytdl-core")
 
 const PREFIX = "<!";
-
-function play(connection, message) {
-    var server = servers[message.guild.id];
-
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-
-    server.queue.shift();
-
-    server.dispatcher.on("end", function() {
-        if (server.queue[0]) play(connection, message);
-        else connection.disconnect();
-    });
-}
 
 var fortunes = [
     "Yes.",
@@ -283,7 +269,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
                 .addField("-", "`<!info-math` (Get the list of math commands.)")
                 .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
-                .addField("-", "`<!info-music` (Get the list of music commands.)")
                 .addField("-", "`<!info-dev` (Get the list of developer commands.)")
                 .addField("-", "`<!info-meme` (Get the list of meme commands.)")
                 .setDescription("Prefix: <!")
@@ -389,12 +374,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!barcode` (An image barcode command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
-        case "11122":
-             var embed = new Discord.RichEmbed()
-                .addField("Music Commands", "`<!play` (A music play command.)")
-                .addField("-", "`<!stop` (A music stop command.)")
-                .setFooter("<o/")
-                message.author.sendEmbed(embed);
         case "11123":
              var embed = new Discord.RichEmbed()
                 .addField("Developer Commands", "`<!eval` (A dev eval command.)")
@@ -424,7 +403,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
                 .addField("-", "`<!info-math` (Get the list math commands.)")
                 .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
-                .addField("-", "`<!info-music` (Get the list of music commands.)")
                 .addField("-", "`<!info-dev` (Get the list of developer commands.)")
                 .addField("-", "`<!info-meme` (Get the list of meme commands.)")
                 .setDescription("Prefix: <!")
@@ -540,13 +518,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!tiny` (An image tiny command.)")
                 .addField("-", "`<!qrcode` (An image qrcode command.)")
                 .addField("-", "`<!barcode` (An image barcode command.)")
-                .setFooter("<o/")
-                message.channel.sendEmbed(embed);
-            break;
-        case "info-music":
-             var embed = new Discord.RichEmbed()
-                .addField("Music Commands", "`<!play` (A music play command.)")
-                .addField("-", "`<!stop` (A music stop command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -1121,52 +1092,6 @@ bot.on("message", function(message) {
         } else {
            message.channel.send("Please provide a valid osu! Username.");
         }
-            break;
-            case "play":
-            const voiceChannel = message.member.voiceChannel;
-
-            if (!args[1]){
-                return message.channel.sendMessage("Please provide a link.");
-              }
-
-            if (!voiceChannel){
-              return message.channel.sendMessage("Please join a voice channel.");
-            }
-            voiceChannel.join()
-            .then(connection => {
-              let stream = YTDL(args.join(" "), {audioonly: true});
-              YTDL.getInfo(args.join(" "), function(err, info) {
-              const title = info.title
-              console.log(`${message.author.username}, Queued the song '${title}.'`)
-              message.channel.sendMessage(`Playing \**${title}\** in the queue.`)
-              })
-              const dispatcher = connection.playStream(stream);
-              dispatcher.on('end', () => {
-                 voiceChannel.leave();
-               }).catch(e =>{
-                 console.error(e);
-               });
-            })
-            break;
-            case "stop":
-                var server = servers[message.guild.id];
-
-                if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-                message.channel.send("Stopped the queue.");
-                break;
-            case "meme":
-            var voiceChannelz = message.member.voiceChannel;
-
-            if (!voiceChannelz){
-                return message.channel.sendMessage("Please join a voice channel.");
-              }
-
-            voiceChannelz.join().then(connection => {
-               const dispatcher = connection.playFile('meme.mp3');
-               dispatcher.on("end", end => {
-                 voiceChannelz.leave();
-            });
-            });
             break;
             case "theone":
             var voiceChannelh = message.member.voiceChannel;

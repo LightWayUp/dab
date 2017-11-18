@@ -261,7 +261,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
-                .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
                 .addField("-", "`<!info-games` (Get the list of games commands.)")
                 .addField("-", "`<!info-eco` (Get the list of economy commands.)")
                 .addField("-", "`<!info-image` (Get the list of image commands.)")
@@ -312,15 +311,6 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Bot Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
                 .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
-                .setFooter("<o/")
-                message.author.sendEmbed(embed);
-        case "11114":
-            var embed = new Discord.RichEmbed()
-                .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
-                .addField("-", "`<!ban` (A moderator ban command.)")
-                .addField("-", "`<!unban` (A moderator unban command.)")
-                .addField("-", "`<!mute` (A moderator mute command.)")
-                .addField("-", "`<!clear` (A moderator message clear command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11115":
@@ -396,7 +386,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-misc` (Get the list of misc commands.)")
                 .addField("-", "`<!info-bot` (Get the list of info commands.)")
                 .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
-                .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
                 .addField("-", "`<!info-games` (Get the list of games commands.)")
                 .addField("-", "`<!info-eco` (Get the list of economy commands.)")
                 .addField("-", "`<!info-image` (Get the list of image commands.)")
@@ -451,16 +440,6 @@ bot.on("message", function(message) {
                     .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
-            break;
-        case "info-mod":
-            var embed = new Discord.RichEmbed()
-                .addField("Moderation Commands", "`<!kick` (A moderator kick command.)")
-                .addField("-", "`<!ban` (A moderator ban command.)")
-                .addField("-", "`<!unban` (A moderator unban command.)")
-                .addField("-", "`<!mute` (A moderator mute command.)")
-                .addField("-", "`<!clear` (A moderator message clear command.)")
-                .setFooter("<o/")
-                message.channel.sendEmbed(embed);
             break;
         case "info-games":
             var embed = new Discord.RichEmbed()
@@ -600,74 +579,6 @@ bot.on("message", function(message) {
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
             break;
-        case "kick":
-        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("You are not allowed to execute this command!");
-        if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return message.reply("I do not have the **KICK_MEMBERS** permission.");
-        let user = message.mentions.users.first();
-        let reason = message.content.split(" ").slice(2).join(" ");
-        let modlog = bot.channels.find("name", "mod-log");
-
-        if(!modlog) return message.reply("This server doesent have the mod-log channel!");
-        if (message.mentions.users.size < 1) return message.reply(":face_palm: Mention someone please.");
-        if(!reason) return message.reply ("Give me a reason for your kick.");
-        if (!message.guild.member(user).kickable) return message.reply("I cant kick someone if it has a higher role than me!");
-
-        message.guild.member(user).kick();
-
-        message.delete()
-        var modlogs = new Discord.RichEmbed()
-        .setAuthor(`${user.username} is kicked`, user.displayAvatarURL)
-        .addField("Kick Information:", `**Kicked User:** ${user.tag}\n**Moderator:** ${message.author.tag}\n**Reason:** ${reason}`);
-        message.channel.sendEmbed(modlogs);
-        modlog.send({
-        })
-            break;
-        case "ban":
-        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("You are not allowed to execute this command!");
-        if(!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return message.reply("I do not have the **BAN_MEMBERS** permission.");
-        let userr = message.mentions.users.first();
-        let reasonn = message.content.split(" ").slice(2).join(" ");
-        let modlogg = bot.channels.find("name", "mod-log");
-
-        if(!modlogg) return message.reply("This server doesent have the mod-log channel!");
-        if (message.mentions.users.size < 1) return message.reply(":face_palm: Mention someone please.");
-        if(!reasonn) return message.reply ("Give me a reason for your ban.");
-        if (!message.guild.member(userr).bannable) return message.reply("I cant kick someone if it has a higher role than me!");
-
-        message.guild.member(userr).ban();
-
-        message.delete()
-        var modlogss = new Discord.RichEmbed()
-        .setAuthor(`${userr.username} is banned`, userr.displayAvatarURL)
-        .addField("Ban Information:", `**Banned User:** ${userr.tag}\n**User ID** ${userr.id}\n**Moderator:** ${message.author.tag}\n**Reason:** ${reasonn}`);
-        message.channel.sendEmbed(modlogss);
-        modlogg.send({
-        })
-            break;
-        case "unban":
-        if (args[2]) {
-        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("You are not allowed to execute this command!");
-        if(!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return message.reply("I do not have the **BAN_MEMBERS** permission.");
-        let userrr = message.mentions.users.first();
-        let reasonnn = message.content.split(" ").slice(2).join(" ");
-        let modloggg = bot.channels.find("name", "mod-log");
-
-        if(!modloggg) return message.reply("This server doesent have the mod-log channel!");
-        if(!reasonnn) return message.reply ("Give me a reason for your unban.");
-
-        message.guild.unban(args[1])
-
-        message.delete()
-        var modlogssss = new Discord.RichEmbed()
-        .setAuthor(`User ${args[1]} is unbanned`)
-        .addField("Unban Information:", `**Unbanned User:** ${args[1]}\n**Moderator:** ${message.author.tag}\n**Reason:** ${reasonnn}`);
-        message.channel.sendEmbed(modlogssss);
-        modloggg.send({
-        })
-        } else {
-        message.channel.send(":face_palm: Give me the ID of the banned user and give me a reason for the unban!")
-        }
-            break;
         case "rps":
         if (args[1]) {
             message.channel.sendMessage("I choose: **" + rps[Math.floor(Math.random() * rps.length)] + "**. You choose: **" + args[1] + "**. I win! :tada: I do not care about the rules.");
@@ -678,31 +589,6 @@ bot.on("message", function(message) {
         case "nick":
             message.guild.member(bot.user).setNickname('kiss me')
             break;
-        case "mute":
-        if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("You are not allowed to execute this command!");
-        if(!message.guild.member(bot.user).hasPermission("MUTE_MEMBERS")) return message.reply("I do not have the **MUTE_MEMBERS** permission.");
-        let member = message.mentions.members.first();
-        if(!member) return message.reply(":face_palm: Mention someone!");
-        let muteRole = message.guild.roles.find("name", "Muted");
-        if(!muteRole) return message.reply("Please create a role called **Muted** without any permissions.");
-        let params = message.content.split(" ").slice(1);
-        let time = params[1];
-        if(!time) return message.reply("Please provide a time. **Example:** <!mute @Vanished#3101 3m");
-        let muteh = message.content.split(" ").slice(3).join(" ");
-        if(!muteh) return message.reply ("Give me a reason for your mute.");
-
-        member.addRole(muteRole.id);
-        message.delete()
-        var mute = new Discord.RichEmbed()
-        .setAuthor(`User ${member.user.username} is muted`)
-        .addField("Mute Information:", `**Muted User:** ${member.user.tag}\n**Moderator:** ${message.author.tag}\n**Reason:** ${muteh}\n**Time:** ${ms(ms(time), {long: true})}`);
-        message.channel.sendEmbed(mute);
-
-        setTimeout(function() {
-            member.removeRole(muteRole.id);
-            message.author.sendMessage(`**${member.user.username}** is now unmuted. Mute time: ${ms(ms(time), {long: true})}`);
-        }, ms(time));
-             break;
         case "bal":
         case "balance":
         economy.fetchBalance(message.author.id + message.guild.id).then((i) => {
@@ -772,23 +658,6 @@ bot.on("message", function(message) {
         snekfetch.get(url)
             .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
             message.delete();
-            break;
-        case "clear":
-        if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("You are not allowed to execute this command!");
-        if(!message.guild.member(bot.user).hasPermission("MUTE_MEMBERS")) return message.reply("I do not have the **MUTE_MEMBERS** permission.");
-        const userrr = message.mentions.users.first();
-        const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2])
-        if (!amount) return message.reply('Please specify a number of messages to delete! (1-100)');
-        message.channel.fetchMessages({
-         limit: amount,
-        }).then((messages) => {
-         if (userrr) {
-         const filterBy = userrr ? userrr.id : Client.userrr.id;
-         messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
-         }
-         message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
-         message.reply('Cleared **' + args[1] + '** messages! :wastebasket:')
-        });
             break;
         case "imgur":
         if (args[1]) {

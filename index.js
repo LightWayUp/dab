@@ -1138,7 +1138,7 @@ bot.on("message", function(message) {
             .addField("**Ticket Answer**", "**>** Ticket Status: " + status +"\n**>** Answer: " + msgh)
             .setThumbnail(message.author.avatarURL);
 
-            message.guild.member(args[1]).send(embed);
+            message.guild.member(args[0]).send(embed);
             message.delete();
             message.channel.send("Ticket answer sent.")
                 break;

@@ -311,6 +311,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Bot Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
                 .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
+                .addField("-", "`<!report` (A bot ticket command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11115":
@@ -367,6 +368,7 @@ bot.on("message", function(message) {
         case "11123":
              var embed = new Discord.RichEmbed()
                 .addField("Developer Commands", "`<!eval` (A dev eval command.)")
+                .addField("-", "`<!answer` (A dev ticket answer command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11124":
@@ -438,6 +440,7 @@ bot.on("message", function(message) {
                 var embed = new Discord.RichEmbed()
                     .addField("Bot Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
                     .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
+                    .addField("-", "`<!report` (A bot ticket command.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
             break;
@@ -503,6 +506,7 @@ bot.on("message", function(message) {
         case "info-dev":
              var embed = new Discord.RichEmbed()
                 .addField("Developer Commands", "`<!eval` (A dev eval command.)")
+                .addField("-", "`<!answer` (A dev ticket answer command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -1110,6 +1114,34 @@ bot.on("message", function(message) {
             message.channel.sendFile("happy.jpg");
         }, ms("2s"));
             break;
+        case "report":
+        let member = ("267025484028706816");
+        let msg = args.slice(1).join(" ")
+        var embed = new Discord.RichEmbed()
+            .addField("**REPORT ALERT!**", "**>** Reporter: " + message.author.tag +"\n**>** Reporter ID: " + message.author.id + "\n**>** Message ID: " + message.id + "\n**>** Report Message: " + msg)
+            .addField("**Stalker Info:**", "**>** Guild Name: " + message.guild.name + "\n**>** Message Date: " + message.createdAt + "\n**>** Channel Name: " + message.channel.name + "\n**>** Channel ID: " + message.channel.id)
+            .setThumbnail(message.author.avatarURL);
+
+        if (!msg) {
+            return message.channel.send("Please provide a question/report to send to the owner.");
+        }
+
+            message.guild.member(member).send(embed);
+            message.delete();
+            message.channel.send("The report message has been sent! The owner will answer to your ticket soon.")
+                break;
+        case "answer":
+        if (message.author.id !== "267025484028706816") return;
+        let status = args[2]
+        let msgh = args.slice(2).join(" ")
+        var embed = new Discord.RichEmbed()
+            .addField("**Ticket Answer**", "**>** Ticket Status: " + status +"\n**>** Answer: " + msgh)
+            .setThumbnail(message.author.avatarURL);
+
+            message.guild.member(args[1]).send(embed);
+            message.delete();
+            message.channel.send("Ticket answer sent.")
+                break;
         default:
             message.react("\❌")
     }

@@ -293,7 +293,6 @@ bot.on("message", function(message) {
         case "11112":
             var embed = new Discord.RichEmbed()
                 .addField("Roleplay Commands", "`<!dmspam` (A roleplay command.)")
-                .addField("-", "`<!roundhousekick` (A roleplay command.)")
                 .addField("-", "`<!poop` (A roleplay command.)")
                 .addField("-", "`<!cry` (A roleplay command.)")
                 .addField("-", "`<!punch` (A roleplay command.)")
@@ -421,7 +420,6 @@ bot.on("message", function(message) {
         case "info-rp":
                 var embed = new Discord.RichEmbed()
                     .addField("Roleplay Commands", "`<!dmspam` (A roleplay command.)")
-                    .addField("-", "`<!roundhousekick` (A roleplay command.)")
                     .addField("-", "`<!poop` (A roleplay command.)")
                     .addField("-", "`<!cry` (A roleplay command.)")
                     .addField("-", "`<!punch` (A roleplay command.)")
@@ -463,7 +461,6 @@ bot.on("message", function(message) {
         case "info-image":
             var embed = new Discord.RichEmbed()
                 .addField("Image Command List", "`<!funny` (Sends a random pic of something funny.)")
-                .addField("-", "`<!funny` (Sends a random pic of something funny.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -591,9 +588,11 @@ bot.on("message", function(message) {
         }
             break;
         case "nick":
-            message.guild.member(bot.user).setNickname('kiss me')
+            message.delete()
+            message.guild.member(bot.user).setNickname(args[1])
             break;
-            case "profile":
+            case "bal":
+            case "balance":
             economy.fetchBalance(message.author.id).then((i) => {
             Jimp.read("bal.png", function (err, lenna) {
             Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {

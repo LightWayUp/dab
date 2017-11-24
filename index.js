@@ -593,16 +593,23 @@ bot.on("message", function(message) {
         case "nick":
             message.guild.member(bot.user).setNickname('kiss me')
             break;
-        case "bal":
-        case "balance":
-        economy.fetchBalance(message.author.id + message.guild.id).then((i) => {
-            const embed = new Discord.RichEmbed()
-                .setDescription(`**${message.author.username}'s** Bank`)
-                .addField(`Account Owner:`,message.author.username,true)
-                .addField(`Account Balance:`,i.money,true)
-            message.channel.send({embed});
-        })
-              break;
+            case "profile":
+            economy.fetchBalance(message.author.id).then((i) => {
+            Jimp.read("bal.png", function (err, lenna) {
+            Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
+                lenna.print(font, 120, 70, "Balance: " + i.money)
+            Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(function (font) {
+                lenna.print(font, 120, 30, message.author.username)
+                     .write("balance.jpg");
+            });
+            });
+            });
+            })
+        
+                setTimeout(function() {
+                    message.channel.sendFile("balance.jpg");
+                }, ms("2s"));
+                    break;
         case "dice":
             message.channel.sendMessage("**Rolling...**")
             message.channel.sendMessage("**Rolled!** You rolled **" + dice[Math.floor(Math.random() * dice.length)] + "**! I rolled **" + dice[Math.floor(Math.random() * dice.length)] + "**. <:dice:373895915414618112>");

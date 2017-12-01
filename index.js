@@ -377,7 +377,7 @@ bot.on("message", function(message) {
                    YTDL.getInfo(args.join(" "), function(err, info) {
                    const title = info.title
                    console.log(`${message.author.tag}, Queued the song '${title}.'`)
-                   message.channel.sendMessage(`Playing \**{info.title}\** in the voice channel!`)
+                   message.channel.sendMessage(`Playing **\{info.title}\** in the voice channel!`)
                    })
                    const dispatcher = connection.playStream(stream);
                    dispatcher.on('end', () => {
@@ -392,7 +392,7 @@ bot.on("message", function(message) {
      
                      if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
                      message.channel.send(":x: Stopped!");
-                     console.log(`Stopped. User: ${message.author.tag} Guild: ${bot.guild.name} ${bot.guild.id} ${bot.guild.owner.user.tag}'`)
+                     console.log(`Stopped. User: ${message.author.tag}'`)
                      break;
             case "clear":
             if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("You are not allowed to execute this command!");

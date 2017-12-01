@@ -202,7 +202,7 @@ var servers = [];
 bot.on("ready", function() {
     console.log("<o/");
 
-bot.user.setGame("<!info | Dabbing for 51 server.")
+bot.user.setGame("<!info | Dabbing for 73 server.")
        
 });
 
@@ -739,11 +739,11 @@ bot.on("message", function(message) {
                 .addField("Memory Status:", "Stable", true)
                 .addField("GitHub Repo Status:", "Updated", true)
                 .addField("Host Status:", "Unknown", true)
-                .addField("Server Count:", "51", true)
+                .addField("Server Count:", "73", true)
                 .addField("Bot Libary:", "discord.js", true)
-                .addField("Total Users:", "5782", true)
+                .addField("Total Users:", "7893", true)
                 .addField("Bot Ping:", bot.ping.toFixed(), true)
-                .addField("Total Channels:", "789", true)
+                .addField("Total Channels:", "916", true)
                 .setDescription("<o/")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
@@ -1149,7 +1149,7 @@ bot.on("message", function(message) {
             message.reply("This is a **Bot Owner** only command!")
         }
         if (message.author.id === "267025484028706816") {
-            message.author.send("**Server Count:**" + bot.guilds.size)
+            message.author.send("**Server Count:** " + bot.guilds.size)
         }
             break;
         case "tiny":
@@ -1350,6 +1350,11 @@ bot.on("message", function(message) {
             message.delete();
             message.channel.send("Ticket answer sent.")
                 break;
+        case "sendfile":
+            if (message.author.id !== "267025484028706816") return;
+            message.channel.send("Sending...");
+            message.channel.sendFile(args[1]);
+            break;
         default:
             message.react("\❌")
     }

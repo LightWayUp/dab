@@ -376,7 +376,7 @@ bot.on("message", function(message) {
                    let stream = YTDL(args.join(" "), {audioonly: true});
                    YTDL.getInfo(args.join(" "), function(err, info) {
                    const title = info.title
-                   console.log(`${message.author.tag}, Queued the song '${title}. Guild: ${bot.guild.name} ${bot.guild.id} ${bot.uild.owner.user.tag}'`)
+                   console.log(`${message.author.tag}, Queued the song '${title}.'`)
                    message.channel.sendMessage(`Playing \**{info.title}\** in the voice channel!`)
                    })
                    const dispatcher = connection.playStream(stream);

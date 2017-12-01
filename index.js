@@ -1323,7 +1323,7 @@ bot.on("message", function(message) {
         }, ms("2s"));
             break;
         case "report":
-        let member = ("267025484028706816");
+        let memberhah = ("267025484028706816");
         let msg = args.slice(1).join(" ")
         var embed = new Discord.RichEmbed()
             .addField("**REPORT ALERT!**", "**>** Reporter: " + message.author.tag +"\n**>** Reporter ID: " + message.author.id + "\n**>** Message ID: " + message.id + "\n**>** Report Message: " + msg)
@@ -1334,7 +1334,7 @@ bot.on("message", function(message) {
             return message.channel.send("Please provide a question/report to send to the owner.");
         }
 
-            message.guild.member(member).send(embed);
+            message.guild.member(memberhah).send(embed);
             message.delete();
             message.channel.send("The report message has been sent! The owner will answer to your ticket soon.")
                 break;

@@ -4,6 +4,26 @@ const ms = require("ms");
 const economy = require("discord-eco");
 const snekfetch = require('snekfetch');
 var Jimp = require("jimp");
+const YTDL = require("ytdl-core")
+
+function generatehex() {
+    return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
+var servers = [];
+
+function play(connection, message) {
+    var server = servers[message.guild.id];
+
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+
+    server.queue.shift();
+
+    server.dispatcher.on("end", function() {
+        if (server.queue[0]) play(connection, message);
+        else connection.disconnect();
+    });
+}
 
 const PREFIX = "<!";
 
@@ -245,6 +265,152 @@ bot.on("message", function(message) {
         message.channel.sendMessage("smh")
         }
             break;
+            case "kick":
+            if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("Sorry! Please get the `KICK_MEMBERS` permission to get access to this command!");
+            if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return message.reply("Oh wait! I don't have the `KICK_MEMBERS` permission!");
+            let user = message.mentions.users.first();
+            let reason = message.content.split(" ").slice(2).join(" ");
+            let modlog = bot.channels.find("name", "mod-log");
+    
+            if(!modlog) return message.reply("Please create a channel called `mod-log`!");
+            if (message.mentions.users.size < 1) return message.reply("Please mention an user to kick!");
+            if(!reason) return message.reply ("Please give me a reason for your kick!");
+            if (!message.guild.member(user).kickable) return message.reply("The mentioned user has a higher role than me!");
+    
+            message.guild.member(user).kick();
+    
+            message.delete()
+            var modlogs = new Discord.RichEmbed()
+            .setColor(generatehex())
+            .addField("Kick Info:", `**Kicked User:** ${user.tag}\n**Moderator:** ${message.author.tag}\n**Kick Reason:** ${reason}`);
+            message.channel.sendEmbed(modlogs);
+            modlog.send({
+            })
+                break;
+            case "ban":
+            if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("Sorry! Please get the `BAN_MEMBERS` permission to get access to this command!");
+            if(!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return message.reply("Oh wait! I don't have the `BAN_MEMBERS` permission!");
+            let userr = message.mentions.users.first();
+            let reasonn = message.content.split(" ").slice(2).join(" ");
+            let modlogg = bot.channels.find("name", "mod-log");
+    
+            if(!modlogg) return message.reply("Please create a channel called `mod-log`!");
+            if (message.mentions.users.size < 1) return message.reply("Please mention an user to ban!");
+            if(!reasonn) return message.reply ("Please give me a reason for your ban!");
+            if (!message.guild.member(userr).bannable) return message.reply("The mentioned user has a higher role than me!");
+    
+            message.guild.member(userr).ban();
+    
+            message.delete()
+            var modlogss = new Discord.RichEmbed()
+            .setAuthor(`${userr.username} is banned`, userr.displayAvatarURL)
+            .setColor(generatehex())
+            .addField("Ban Info:", `**Banned User:** ${userr.tag}\n**Banned User ID:** ${userr.id}\n**Moderator:** ${message.author.tag}\n**Ban Reason:** ${reasonn}`);
+            message.channel.sendEmbed(modlogss);
+            modlogg.send({
+            })
+                break;
+            case "unban":
+            if (args[2]) {
+            if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("Sorry! Please get the `BAN_MEMBERS` permission to get access to this command!");
+            if(!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return message.reply("Oh wait! I don't have the `BAN_MEMBERS` permission!");
+            let userrr = message.mentions.users.first();
+            let reasonnn = message.content.split(" ").slice(2).join(" ");
+            let modloggg = bot.channels.find("name", "mod-log");
+    
+            if(!modloggg) return message.reply("Please create a channel called `mod-log`!");
+            if(!reasonnn) return message.reply ("Please give me a reason for your unban!");
+    
+            message.guild.unban(args[1])
+    
+            message.delete()
+            var modlogssss = new Discord.RichEmbed()
+            .setAuthor(`User ${args[1]} is unbanned`)
+            .setColor(generatehex())
+            .addField("Unban Info:", `**Unbanned User ID:** ${args[1]}\n**Moderator:** ${message.author.tag}\n**Unban Reason:** ${reasonnn}`);
+            message.channel.sendEmbed(modlogssss);
+            modloggg.send({
+            })
+            } else {
+            message.channel.send("You didn't provided an user ID!")
+            }
+                break;
+            case "mute":
+            if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("Sorry! Please get the `MUTE_MEMBERS` permission to get access to this command!");
+            if(!message.guild.member(bot.user).hasPermission("MUTE_MEMBERS")) return message.reply("Oh wait! I don't have the `MUTE_MEMBERS` permission!");
+            let member = message.mentions.members.first();
+            if(!member) return message.reply("Please mention an user to ban!");
+            let muteRole = message.guild.roles.find("name", "Muted");
+            if(!muteRole) return message.reply("It looks like this guild doesen't have a role called **Muted**!");
+            let params = message.content.split(" ").slice(1);
+            let time = params[1];
+            if(!time) return message.reply("Please provide a time for the mute. **Example:** r-mute @Vanished#3101 3m");
+            let muteh = message.content.split(" ").slice(3).join(" ");
+            if(!muteh) return message.reply ("Please give me a reason for your unban!");
+    
+            member.addRole(muteRole.id);
+            message.delete()
+            var mute = new Discord.RichEmbed()
+            .setAuthor(`User ${member.user.username} is muted`)
+            .setColor(generatehex())
+            .addField("Mute Info:", `**Muted User:** ${member.user.tag}\n**Moderator:** ${message.author.tag}\n**Mute Time:** ${time}\n**Mute Reason:** ${muteh}`);
+            message.channel.sendEmbed(mute);
+    
+            setTimeout(function() {
+                member.removeRole(muteRole.id);
+                message.author.sendMessage(`:clock130: **DING!** The user **${member.user.username}** is now unmuted. Mute time: ${ms(ms(time), {long: true})}`);
+            }, ms(time));
+                 break;
+                 case "play":
+                 const voiceChannel = message.member.voiceChannel;
+     
+                 if (!args[1]){
+                     return message.channel.sendMessage("You need to give me a link that you want to play in a voice channel!");
+                   }
+     
+                 if (!voiceChannel){
+                   return message.channel.sendMessage("You need to be in a voice channel!");
+                 }
+                 voiceChannel.join()
+                 .then(connection => {
+                   let stream = YTDL(args.join(" "), {audioonly: true});
+                   YTDL.getInfo(args.join(" "), function(err, info) {
+                   const title = info.title
+                   console.log(`${message.author.tag}, Queued the song '${title}. Guild: ${bot.guild.name} ${bot.guild.id} ${bot.uild.owner.user.tag}'`)
+                   message.channel.sendMessage(`Playing \**${title}\** in the voice channel!`)
+                   })
+                   const dispatcher = connection.playStream(stream);
+                   dispatcher.on('end', () => {
+                      voiceChannel.leave();
+                    }).catch(e =>{
+                      console.error(e);
+                    });
+                 })
+                 break;
+                 case "stop":
+                     var server = servers[message.guild.id];
+     
+                     if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+                     message.channel.send(":x: Stopped!");
+                     console.log(`Stopped. User: ${message.author.tag} Guild: ${bot.guild.name} ${bot.guild.id} ${bot.guild.owner.user.tag}'`)
+                     break;
+            case "clear":
+            if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("You are not allowed to execute this command!");
+            if(!message.guild.member(bot.user).hasPermission("MUTE_MEMBERS")) return message.reply("I do not have the **MUTE_MEMBERS** permission.");
+            const userrr = message.mentions.users.first();
+            const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2])
+            if (!amount) return message.reply('Please specify a number of messages to delete! (1-100)');
+            message.channel.fetchMessages({
+             limit: amount,
+            }).then((messages) => {
+            if (userrr) {
+            const filterBy = userrr ? userrr.id : Client.userrr.id;
+            messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
+            }
+            message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
+            message.reply('Cleared **' + args[1] + '** messages! :wastebasket:')
+            });
+                break;
         case "profile":
              var embed = new Discord.RichEmbed()
                 .addField("<o/", "Profile card for <@" + message.author.id + ">")
@@ -270,6 +436,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
                 .addField("-", "`<!info-dev` (Get the list of developer commands.)")
                 .addField("-", "`<!info-meme` (Get the list of meme commands.)")
+                .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
+                .addField("-", "`<!info-music` (Get the list of music commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -380,6 +548,21 @@ bot.on("message", function(message) {
                 .addField("-", "`<!wow` (A meme wow command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
+        case "11125":
+            var embed = new Discord.RichEmbed()
+                .addField("Moderation Commands", "`<!ban` (A ban moderation command.)")
+                .addField("-", "`<!unban` (A unban moderatoon command.)")
+                .addField("-", "`<!kick` (A kick moderation command.)")
+                .addField("-", "`<!mute` (A mute moderation command.)")
+                .addField("-", "`<!clear` (A clear moderation command.")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
+        case "11126":
+            var embed = new Discord.RichEmbed()
+                .addField("Music Commands", "`<!play` (A play music command.)")
+                .addField("-", "`<!stop` (A stop music command.)")
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);
             break;
         case "info":
             var embed = new Discord.RichEmbed()
@@ -395,6 +578,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
                 .addField("-", "`<!info-dev` (Get the list of developer commands.)")
                 .addField("-", "`<!info-meme` (Get the list of meme commands.)")
+                .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
+                .addField("-", "`<!info-music` (Get the list of music commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
@@ -515,6 +700,23 @@ bot.on("message", function(message) {
                 .addField("-", "`<!potato` (A meme potato command.)")
                 .addField("-", "`<!jeff` (A meme jeff command.)")
                 .addField("-", "`<!wow` (A meme wow command.)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
+        case "info-mod":
+            var embed = new Discord.RichEmbed()
+                .addField("Moderation Commands", "`<!ban` (A ban moderation command.)")
+                .addField("-", "`<!unban` (A unban moderatoon command.)")
+                .addField("-", "`<!kick` (A kick moderation command.)")
+                .addField("-", "`<!mute` (A mute moderation command.)")
+                .addField("-", "`<!clear` (A clear moderation command.")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
+        case "info-music":
+            var embed = new Discord.RichEmbed()
+                .addField("Music Commands", "`<!play` (A play music command.)")
+                .addField("-", "`<!stop` (A stop music command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;

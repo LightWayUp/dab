@@ -5,6 +5,9 @@ const economy = require("discord-eco");
 const snekfetch = require('snekfetch');
 var Jimp = require("jimp");
 const YTDL = require("ytdl-core")
+var fs = require('fs');
+var data = fs.readFileSync('test.json');
+var words = JSON.parse(data);
 
 function generatehex() {
     return '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -1373,16 +1376,9 @@ bot.on("message", function(message) {
             message.channel.sendFile(args[1]);
             break;
         case "write":
-        if (message.author.id !== "267025484028706816") return;
-        var txtFile = "test.txt";
-        var file = new File(txtFile);
-        var str = "WOW";
-
-        file.open("w"); // open file with write access
-        file.writeln("First line of text");
-        file.writeln("Second line of text " + str);
-        file.write(str);
-        file.close();
+        var words = message.author.username
+    var data = JSON.stringify(words, null, 2);
+    fs.writeFile('test.json', data, finished);
             break;
         default:
             message.react("\❌")

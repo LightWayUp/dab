@@ -201,14 +201,23 @@ var servers = [];
 
 bot.on("ready", function() {
     console.log("<o/");
-
-bot.user.setGame("<!info | Dabbing for 73 server.")
        
 });
 
 bot.on("ready", function() {
     console.log("Server Count: " + bot.guilds.size);
 
+});
+
+bot.on("ready", function() {
+    bot.user.setPresence({
+          status: "online",
+          activity: {
+            name: "people dab in 73 servers | <!info",
+            type: 3,
+            url: "https://www.dab.in"
+          }
+        })
 });
 
 bot.on("message", function(message) {

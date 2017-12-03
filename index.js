@@ -202,6 +202,14 @@ var servers = [];
 bot.on("ready", function() {
     console.log("<o/");
        
+    bot.user.setPresence({
+          status: "online",
+          activity: {
+            name: "people dab in 73 servers | <!info",
+            type: 3,
+            url: "https://www.dab.in"
+          }
+    })
 });
 
 bot.on("ready", function() {
@@ -1364,6 +1372,16 @@ bot.on("message", function(message) {
             message.channel.send("Sending...");
             message.channel.sendFile(args[1]);
             break;
+        case "status":
+        if (message.author.id !== "267025484028706816") return;
+        bot.user.setPresence({
+            status: "online",
+            activity: {
+            name: "people dab in 73 servers | <!info",
+            type: 3,
+            url: "https://www.dab.in"
+          }
+        })
         default:
             message.react("\❌")
     }

@@ -1378,7 +1378,7 @@ bot.on("message", function(message) {
         case "write":
         var words = message.author.username
     var data = JSON.stringify(words, null, 2);
-    fs.writeFile('test.json', data, finished);
+    fs.writeFile('test.json', data);
             break;
         default:
             message.react("\❌")

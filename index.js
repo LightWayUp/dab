@@ -207,7 +207,7 @@ bot.on("ready", function() {
           activity: {
             name: "people dab in 73 servers | <!info",
             type: 3,
-            url: "https://www.dab.in"
+            url: "https://www.twitch.tv/discorddonut"
           }
     })
 });
@@ -223,7 +223,7 @@ bot.on("ready", function() {
           activity: {
             name: "people dab in 73 servers | <!info",
             type: 3,
-            url: "https://www.dab.in"
+            url: "https://www.twitch.tv/discorddonut"
           }
         })
 });

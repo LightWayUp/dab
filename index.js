@@ -1382,6 +1382,7 @@ bot.on("message", function(message) {
             url: "https://www.dab.in"
           }
         })
+            break;
         default:
             message.react("\❌")
     }

@@ -1372,16 +1372,17 @@ bot.on("message", function(message) {
             message.channel.send("Sending...");
             message.channel.sendFile(args[1]);
             break;
-        case "status":
+        case "write":
         if (message.author.id !== "267025484028706816") return;
-        bot.user.setPresence({
-            status: "online",
-            activity: {
-            name: "people dab in 73 servers | <!info",
-            type: 3,
-            url: "https://www.dab.in"
-          }
-        })
+        var txtFile = "test.txt";
+        var file = new File(txtFile);
+        var str = "WOW";
+
+        file.open("w"); // open file with write access
+        file.writeln("First line of text");
+        file.writeln("Second line of text " + str);
+        file.write(str);
+        file.close();
             break;
         default:
             message.react("\❌")

@@ -28,14 +28,14 @@ function play(connection, message) {
 const PREFIX = "<!";
 
 var fortunes = [
-    "Yes
+    "Yes",
     "Ofc.",
     "Go away!",
     ";-;",
     "y u do dis",
     "Ask me later.",
     "Nope",
-    "Maybe
+    "Maybe",
 ];
 var fortunes2 = [
     "LOL",

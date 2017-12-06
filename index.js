@@ -208,6 +208,7 @@ bot.on("ready", function() {
 
 bot.on("ready", function() {
     console.log("Server Count: " + bot.guilds.size);
+    bot.user.setGame("<!info | Dabbing in " + bot.guilds.size + " servers.")
 
 });
 

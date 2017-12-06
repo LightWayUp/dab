@@ -226,6 +226,8 @@ bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
 
     if (!message.content.startsWith(PREFIX)) return;
+    
+    if (message.channel.type === 'dm') return;
 
     var args = message.content.substring(PREFIX.length).split(" ");
 
@@ -1355,11 +1357,6 @@ bot.on("message", function(message) {
             if (message.author.id !== "267025484028706816") return;
             message.channel.send("Sending...");
             message.channel.sendFile(args[1]);
-            break;
-        case "write":
-        var words = message.author.username
-    var data = JSON.stringify(words, null, 2);
-    fs.writeFile('test.json', data,);
             break;
         default:
             message.react("\❌")

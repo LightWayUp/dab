@@ -205,7 +205,7 @@ var servers = [];
 bot.on("ready", function() {
     console.log("<o/");
        
-    bot.user.setgame("<!info | Dabbing in " + bot.guilds.size + " servers.)
+    bot.user.setGame("<!info | Dabbing in " + bot.guilds.size + " servers.)
 });
 
 bot.on("ready", function() {

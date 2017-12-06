@@ -205,30 +205,12 @@ var servers = [];
 bot.on("ready", function() {
     console.log("<o/");
        
-    bot.user.setPresence({
-          status: "online",
-          activity: {
-            name: "people dab in 73 servers | <!info",
-            type: 3,
-            url: "https://www.twitch.tv/discorddonut"
-          }
-    })
+    bot.user.setgame("<!info | Dabbing in " + bot.guilds.size + " servers.)
 });
 
 bot.on("ready", function() {
     console.log("Server Count: " + bot.guilds.size);
 
-});
-
-bot.on("ready", function() {
-    bot.user.setPresence({
-          status: "online",
-          activity: {
-            name: "people dab in 73 servers | <!info",
-            type: 3,
-            url: "https://www.twitch.tv/discorddonut"
-          }
-        })
 });
 
 bot.on("message", function(message) {
@@ -759,7 +741,7 @@ bot.on("message", function(message) {
                 .addField("Memory Status:", "Stable", true)
                 .addField("GitHub Repo Status:", "Updated", true)
                 .addField("Host Status:", "Unknown", true)
-                .addField("Server Count:", "73", true)
+                .addField("Server Count:", bot.guilds.size, true)
                 .addField("Bot Libary:", "discord.js", true)
                 .addField("Total Users:", "7893", true)
                 .addField("Bot Ping:", bot.ping.toFixed(), true)
@@ -771,21 +753,21 @@ bot.on("message", function(message) {
         case "donate":
             var embed = new Discord.RichEmbed()
                 .addField("<o/", "Donate to us via PayPal!")
-                .addField("PayPal Link:", "https://www.paypal.me/VanishedP")
+                .addField("PayPal Link:", "[PayPal](https://www.paypal.me/VanishedP)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
         case "repo":
             var embed = new Discord.RichEmbed()
                 .addField("<o/", "Open Source Code")
-                .addField("GitHub Link:", "https://github.com/VanishedP/dab")
+                .addField("GitHub Link:", "[GitHub](https://github.com/VanishedP/dab)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
         case "invite":
             var embed = new Discord.RichEmbed()
                 .addField("<o/", "Invite me to your server!")
-                .addField("Invite Link:","https://discordbots.org/bot/364399994242859008")
+                .addField("Invite Link:","[Invite](https://discordbots.org/bot/364399994242859008)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -794,7 +776,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addField("Host Status", "<o/")
                 .addField("Host:", "Heroku", true)
-                .addField("Slug Size:", "14.9 MB of 500 MB", true)
+                .addField("Slug Size:", "115.9 MB of 500 MB", true)
                 .addField("Framework:", "Node.js", true)
                 .addField("Web Status:", "OFF", true)
                 .addField("Worker Status", "ON", true)

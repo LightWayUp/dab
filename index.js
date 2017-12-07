@@ -531,8 +531,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!blur` (An image blur command.)")
                 .addField("-", "`<!pixelate` (An image pixelate command.)")
                 .addField("-", "`<!tiny` (An image tiny command.)")
-                .addField("-", "`<!qrcode` (An image qrcode command.)")
-                .addField("-", "`<!barcode` (An image barcode command.)")
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
         case "11123":
@@ -683,8 +681,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!blur` (An image blur command.)")
                 .addField("-", "`<!pixelate` (An image pixelate command.)")
                 .addField("-", "`<!tiny` (An image tiny command.)")
-                .addField("-", "`<!qrcode` (An image qrcode command.)")
-                .addField("-", "`<!barcode` (An image barcode command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
@@ -1247,30 +1243,6 @@ bot.on("message", function(message) {
             });
             });
             break;
-            case "barcode":
-            if (args[1]) {
-            
-            const snekfetchbar = require('snekfetch');
-            let bc = message.content.split(" ").slice(1).join("");
-            const bar = `https://www.barcodesinc.com/generator/image.php?code=${bc}&style=300&type=C128B&width=300&height=200&xres=2&font=3`;
-            snekfetchbar.get(bar)
-             .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
-            } else {
-               message.channel.send("Please provide a text you want to convert to barcode.");
-            }
-                break;
-            case "qrcode":
-            if (args[1]) {
-            
-            const snekkfetchq = require('snekfetch');
-            let qc = message.content.split(" ").slice(1).join("");
-            const qr = `https://chart.googleapis.com/chart?chl=${qc}&chs=200x200&cht=qr&chld=H|0`;
-            snekkfetchq.get(qr)
-             .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
-            } else {
-               message.channel.send("Please provide a text you want to convert to qrcode.");
-            }
-                break;
         case "cough":
         let userrrrrrrrrrrrrrrrrrrrrrrz = message.mentions.users.first();
         if (userrrrrrrrrrrrrrrrrrrrrrrz) return message.reply("No mentions please.");

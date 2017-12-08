@@ -9,6 +9,21 @@ var fs = require('fs');
 var data = fs.readFileSync('test.json');
 var words = JSON.parse(data);
 
+const dbl = require(`discord-bot-list`)
+ 
+const client = new dbl({
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2NDM5OTk5NDI0Mjg1OTAwOCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTA3NzI4NzA1fQ.3zFSPSkjAAo550TMIVp_CJ-1YcgOi-Rgcj6NI3gy16",
+    id: "364399994242859008"
+})
+
+client.postStats(39, (err, res) => {
+    if(err) {
+        console.error(err)
+    } else {
+        console.log(res)
+    }
+})
+
 function generatehex() {
     return '#' + Math.floor(Math.random()*16777215).toString(16);
 }

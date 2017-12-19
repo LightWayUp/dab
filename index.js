@@ -576,6 +576,7 @@ bot.on("message", function(message) {
                 message.author.sendEmbed(embed);
             break;
         case "info":
+        if (!args[1]) {
             var embed = new Discord.RichEmbed()
                 .addField("Info", "`<!info general` (Get the list of general commands.)")
                 .addField("-", "`<!info misc` (Get the list of misc commands.)")
@@ -593,6 +594,7 @@ bot.on("message", function(message) {
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
+        }
         if (args[1] === "general") {
             var embed = new Discord.RichEmbed()
                 .addField("General Commands", "`<!info` (Send the list of commands.)")

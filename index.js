@@ -8,12 +8,6 @@ const YTDL = require("ytdl-core")
 var fs = require('fs');
 var data = fs.readFileSync('test.json');
 var words = JSON.parse(data);
- 
-snekfetch.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
-   .set("Authorization", process.env.DBL_TOKEN)
-   .send({
-    server_count: bot.guilds.size
-})
 
 function generatehex() {
     return '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -1333,6 +1327,13 @@ bot.on("message", function(message) {
             message.channel.send("Sending...");
             message.channel.sendFile(args[1]);
             break;
+     case "k":
+snekfetch.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
+   .set("Authorization", process.env.DBL_TOKEN)
+   .send({
+    server_count: bot.guilds.size
+})
+       break;
         default:
             message.react("\❌")
     }

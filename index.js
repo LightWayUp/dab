@@ -9,17 +9,10 @@ var fs = require('fs');
 var data = fs.readFileSync('test.json');
 var words = JSON.parse(data);
  
-const client = new dbl({
-    token: process.env.DBL_TOKEN,
-    id: "364399994242859008"
-})
-
-client.postStats(47, (err, res) => {
-    if(err) {
-        console.error(err)
-    } else {
-        console.log(res)
-    }
+snekfetch.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
+   .set("Authorization", process.env.DBL_TOKEN)
+   .send({
+    server_count: bot.guilds.size
 })
 
 function generatehex() {

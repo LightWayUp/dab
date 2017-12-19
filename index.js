@@ -260,6 +260,13 @@ bot.on("message", function(message) {
         const urll = message.author.avatarURL;
         snekfetchh.get(urll)
             .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
+            
+        snekfetchh.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
+        .set("Authorization", process.env.DBL_TOKEN)
+        .send({
+            server_count: bot.guilds.size
+         })
+            .then(console.log('k'));
             break;
         case "noticeme":
         if (args[0]) {
@@ -1327,14 +1334,6 @@ bot.on("message", function(message) {
             message.channel.send("Sending...");
             message.channel.sendFile(args[1]);
             break;
-     case "k":
-const snekfetchhk = require('snekfetch');
-snekfetchhk.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
-   .set("Authorization", process.env.DBL_TOKEN)
-   .send({
-    server_count: bot.guilds.size
-})
-       break;
         default:
             message.react("\❌")
     }

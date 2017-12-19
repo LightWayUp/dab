@@ -262,9 +262,9 @@ bot.on("message", function(message) {
             .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
             
         snekfetchh.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
-        .set("Authorization", process.env.DBL_TOKEN)
+        .set("Authorization", 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2NDM5OTk5NDI0Mjg1OTAwOCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTEzNzA5MzQ0fQ.a79EctTmJ_pi00cASeO5buWfh5xWTdL6wuk8YBk-eCE')
         .send({
-            server_count: bot.guilds.size
+            server_count: '47'
          })
             .then(console.log('k'));
             break;

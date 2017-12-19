@@ -439,22 +439,19 @@ bot.on("message", function(message) {
             break;
         case "dminfo":
             var embed = new Discord.RichEmbed()
-                .addField("Info", "`<!info-general` (Get the list of general commands.)")
-                .addField("-", "`<!info-misc` (Get the list of misc commands.)")
-                .addField("-", "`<!info-bot` (Get the list of info commands.)")
-                .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
-                .addField("-", "`<!info-games` (Get the list of games commands.)")
-                .addField("-", "`<!info-eco` (Get the list of economy commands.)")
-                .addField("-", "`<!info-image` (Get the list of image commands.)")
-                .addField("-", "`<!info-search` (Get the list of search commands.)")
-                .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
-                .addField("-", "`<!info-math` (Get the list of math commands.)")
-                .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
-                .addField("-", "`<!info-dev` (Get the list of developer commands.)")
-                .addField("-", "`<!info-meme` (Get the list of meme commands.)")
-                .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
-                .addField("-", "`<!info-music` (Get the list of music commands.)")
-                .setDescription("Prefix: <!")
+                .addField("Info", "`<!info general` (Get the list of general commands.)")
+                .addField("-", "`<!info misc` (Get the list of misc commands.)")
+                .addField("-", "`<!info bot` (Get the list of info commands.)")
+                .addField("-", "`<!info rp` (Get the list of roleplay commands.)")
+                .addField("-", "`<!info games` (Get the list of games commands.)")
+                .addField("-", "`<!info eco` (Get the list of economy commands.)")
+                .addField("-", "`<!info mc` (Get the list of minecraft commands.)")
+                .addField("-", "`<!info math` (Get the list math commands.)")
+                .addField("-", "`<!info im` (Get the list of image manipulation commands.)")
+                .addField("-", "`<!info dev` (Get the list of developer commands.)")
+                .addField("-", "`<!info meme` (Get the list of meme commands.)")
+                .addField("-", "`<!info mod` (Get the list of moderation commands.)")
+                .addField("-", "`<!info music` (Get the list of music commands.)")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
         case "1111":
@@ -580,33 +577,31 @@ bot.on("message", function(message) {
             break;
         case "info":
             var embed = new Discord.RichEmbed()
-                .addField("Info", "`<!info-general` (Get the list of general commands.)")
-                .addField("-", "`<!info-misc` (Get the list of misc commands.)")
-                .addField("-", "`<!info-bot` (Get the list of info commands.)")
-                .addField("-", "`<!info-rp` (Get the list of roleplay commands.)")
-                .addField("-", "`<!info-games` (Get the list of games commands.)")
-                .addField("-", "`<!info-eco` (Get the list of economy commands.)")
-                .addField("-", "`<!info-image` (Get the list of image commands.)")
-                .addField("-", "`<!info-mc` (Get the list of minecraft commands.)")
-                .addField("-", "`<!info-math` (Get the list math commands.)")
-                .addField("-", "`<!info-im` (Get the list of image manipulation commands.)")
-                .addField("-", "`<!info-dev` (Get the list of developer commands.)")
-                .addField("-", "`<!info-meme` (Get the list of meme commands.)")
-                .addField("-", "`<!info-mod` (Get the list of moderation commands.)")
-                .addField("-", "`<!info-music` (Get the list of music commands.)")
+                .addField("Info", "`<!info general` (Get the list of general commands.)")
+                .addField("-", "`<!info misc` (Get the list of misc commands.)")
+                .addField("-", "`<!info bot` (Get the list of info commands.)")
+                .addField("-", "`<!info rp` (Get the list of roleplay commands.)")
+                .addField("-", "`<!info games` (Get the list of games commands.)")
+                .addField("-", "`<!info eco` (Get the list of economy commands.)")
+                .addField("-", "`<!info mc` (Get the list of minecraft commands.)")
+                .addField("-", "`<!info math` (Get the list math commands.)")
+                .addField("-", "`<!info im` (Get the list of image manipulation commands.)")
+                .addField("-", "`<!info dev` (Get the list of developer commands.)")
+                .addField("-", "`<!info meme` (Get the list of meme commands.)")
+                .addField("-", "`<!info mod` (Get the list of moderation commands.)")
+                .addField("-", "`<!info music` (Get the list of music commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-general":
+        if (args[1] === "general") {
             var embed = new Discord.RichEmbed()
                 .addField("General Commands", "`<!info` (Send the list of commands.)")
                 .addField("-", "`<!invite` (Sends you the link to invite <o/.)")
                 .addField("-", "`<!donate` (Send you the donate link to support <o/.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-misc":
+        }
+        if (args[1] === "misc") {
             var embed = new Discord.RichEmbed()
                 .addField("Misc Commands", "`<!avatar` (Gives you a nice pic of your avatar.)")
                 .addField("-", "`<!puns` (Sends a pun. Duh.)")
@@ -615,8 +610,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!noticeme` (It simply notices you.")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-rp":
+        }
+        if (args[1] === "rp") {
                 var embed = new Discord.RichEmbed()
                     .addField("Roleplay Commands", "`<!dmspam` (A roleplay command.)")
                     .addField("-", "`<!poop` (A roleplay command.)")
@@ -632,16 +627,16 @@ bot.on("message", function(message) {
                     .addField("-", "`<!cough` (A roleplay command.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
-            break;
-        case "info-bot":
+        }
+        if (args[1] === "bot") {
                 var embed = new Discord.RichEmbed()
                     .addField("Bot Info Commands", "`<!botinfo`,`<!botstatus` (Gives you the current bot info.)")
                     .addField("-", "`<!hostinfo`,`<!hoststatus` (Gives you the current host info.)")
                     .addField("-", "`<!report` (A bot ticket command.)")
                     .setFooter("<o/")
                     message.channel.sendEmbed(embed);
-            break;
-        case "info-games":
+        }
+        if (args[1] === "games") {
             var embed = new Discord.RichEmbed()
                 .addField("Games Command List", "`<!8ball` (The mythical 8ball.)")
                 .addField("-", "`<!rps` (A rock-paper-scissors game.)")
@@ -649,36 +644,36 @@ bot.on("message", function(message) {
                 .addField("-", "`<!cookie` (A fortune cookie game.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-eco":
+        }
+        if (args[1] === "eco") {
             var embed = new Discord.RichEmbed()
                 .addField("Economy Command List", "`<!bal`,`<!balance` (Check your server balance.)")
                 .addField("-", "`<!work` (Work for money.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-image":
+        }
+        if (args[1] === "image") {
             var embed = new Discord.RichEmbed()
                 .addField("Image Command List", "`<!funny` (Sends a random pic of something funny.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-search":
+        }
+        if (args[1] === "search") {
             var embed = new Discord.RichEmbed()
                 .addField("Search Command List", "`<!youtube` (Search up something on YouTube.)")
                 .addField("-", "`<!google` (Search up something on Google.)")
                 .addField("-", "`<!imgur` (Search up something on Imgur.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-mc":
+        }
+        if (args[1] === "mc") {
              var embed = new Discord.RichEmbed()
                 .addField("Minecraft Commands", "`<!achievement` (A minecraft achievement image generator.)")
                 .addField("-", "`<!skin` (Shows you a Minecraft skin.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-math":
+        }
+        if (args[1] === "math") {
              var embed = new Discord.RichEmbed()
                 .addField("Math Commands", "`<!plus` (A math plus command.)")
                 .addField("-", "`<!minus` (A math minus command.)")
@@ -686,8 +681,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!divide` (A math divide command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-ig":
+        }
+        if (args[1] === "ig") {
              var embed = new Discord.RichEmbed()
                 .addField("Image Generator Commands", "`<!greyscale` (An image greyscale command.)")
                 .addField("-", "`<!contrast` (An image contrast command.)")
@@ -696,15 +691,15 @@ bot.on("message", function(message) {
                 .addField("-", "`<!tiny` (An image tiny command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-dev":
+        }
+        if (args[1] === "dev") {
              var embed = new Discord.RichEmbed()
                 .addField("Developer Commands", "`<!eval` (A dev eval command.)")
                 .addField("-", "`<!answer` (A dev ticket answer command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-meme":
+        }
+        if (args[1] === "meme") {
              var embed = new Discord.RichEmbed()
                 .addField("Meme Commands", "`<!meme` (A meme command.)")
                 .addField("-", "`<!cena` (A meme cena command.)")
@@ -713,9 +708,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!jeff` (A meme jeff command.)")
                 .addField("-", "`<!wow` (A meme wow command.)")
                 .setFooter("<o/")
-                message.channel.sendEmbed(embed);
-            break;
-        case "info-mod":
+        }
+        if (args[1] === "mod") {
             var embed = new Discord.RichEmbed()
                 .addField("Moderation Commands", "`<!ban` (A ban moderation command.)")
                 .addField("-", "`<!unban` (A unban moderatoon command.)")
@@ -724,13 +718,14 @@ bot.on("message", function(message) {
                 .addField("-", "`<!clear` (A clear moderation command.")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
-            break;
-        case "info-music":
+        }
+        if (args[1] === "music") {
             var embed = new Discord.RichEmbed()
                 .addField("Music Commands", "`<!play` (A play music command.)")
                 .addField("-", "`<!stop` (A stop music command.)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
+        }
             break;
         case "test":
             message.channel.sendMessage("Zis iz a testz :wink:")

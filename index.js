@@ -1328,7 +1328,8 @@ bot.on("message", function(message) {
             message.channel.sendFile(args[1]);
             break;
      case "k":
-snekfetch.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
+const snekfetchhk = require('snekfetch');
+snekfetchhk.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({
     server_count: bot.guilds.size

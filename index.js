@@ -10,7 +10,7 @@ var data = fs.readFileSync('test.json');
 var words = JSON.parse(data);
  
 const client = new dbl({
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2NDM5OTk5NDI0Mjg1OTAwOCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTA3NzI4NzA1fQ.3zFSPSkjAAo550TMIVp_CJ-1YcgOi-Rgcj6NI3gy16",
+    token: process.env.DBL_TOKEN,
     id: "364399994242859008"
 })
 

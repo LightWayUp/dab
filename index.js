@@ -5,9 +5,6 @@ const economy = require("discord-eco");
 const snekfetch = require('snekfetch');
 var Jimp = require("jimp");
 const YTDL = require("ytdl-core")
-var fs = require('fs');
-var data = fs.readFileSync('test.json');
-var words = JSON.parse(data);
 
 function generatehex() {
     return '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -588,7 +585,7 @@ bot.on("message", function(message) {
             case "bal":
             case "balance":
             economy.fetchBalance(message.author.id).then((i) => {
-            Jimp.read("bal.png", function (err, lenna) {
+            /*Jimp.read("bal.png", function (err, lenna) {
             Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
                 lenna.print(font, 120, 70, "Balance: " + i.money)
             Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(function (font) {
@@ -596,12 +593,13 @@ bot.on("message", function(message) {
                      .write("balance.jpg");
             });
             });
-            });
+            });*/
+                message.channel.send('Your balance: **' + i.money + '**');
             })
         
-                setTimeout(function() {
+                /*setTimeout(function() {
                     message.channel.sendFile("balance.jpg");
-                }, ms("2s"));
+                }, ms("2s"));*/
                     break;
         
         //RP

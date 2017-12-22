@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const dbl = require(`discord-bot-list`)
 const ms = require("ms");
-const economy = require("discord-eco");
 const snekfetch = require('snekfetch');
 var Jimp = require("jimp");
 const YTDL = require("ytdl-core")
@@ -275,7 +274,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info botinfo` (Get the list of botinfo commands.)")
                 .addField("-", "`<!info rp` (Get the list of roleplay commands.)")
                 .addField("-", "`<!info music` (Get the list of music commands.)")
-                .addField("-", "`<!info eco` (Get the list of economy commands.)")
                 .addField("-", "`<!info developer` (Get the list of developer commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
@@ -331,11 +329,6 @@ bot.on("message", function(message) {
                 .setFooter("<o/")
                 message.author.sendEmbed(embed);
 
-             var embed = new Discord.RichEmbed()
-                .addField("Economy Command List", "`<!bal`, `<!balance` (A balance command.)")
-                .setFooter("<o/")
-                message.author.sendEmbed(embed);
-
             var embed = new Discord.RichEmbed()
                 .addField("Developer Commands", "`<!eval` (An eval command.)")
                 .addField("-", "`<!answer` (An answer command.)")
@@ -352,7 +345,6 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info botinfo` (Get the list of botinfo commands.)")
                 .addField("-", "`<!info rp` (Get the list of roleplay commands.)")
                 .addField("-", "`<!info music` (Get the list of music commands.)")
-                .addField("-", "`<!info eco` (Get the list of economy commands.)")
                 .addField("-", "`<!info developer` (Get the list of developer commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
@@ -413,12 +405,6 @@ bot.on("message", function(message) {
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
         }
-        if (args[1] === "eco") {
-             var embed = new Discord.RichEmbed()
-                .addField("Economy Command List", "`<!bal`, `<!balance` (A balance command.)")
-                .setFooter("<o/")
-                message.channel.sendEmbed(embed);
-        }
         if (args[1] === "dev") {
             var embed = new Discord.RichEmbed()
                 .addField("Developer Commands", "`<!eval` (An eval command.)")
@@ -433,9 +419,6 @@ bot.on("message", function(message) {
         case "8ball":
         if (args[1]) {
             message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
-            message.channel.send("You got money from the game!")
-            economy.updateBalance(defined + message.guild.id, parseInt(dice[Math.floor(Math.random() * dice.length)])).then((i) => {
-            });
         } else {
         message.channel.sendMessage("A question, please.")
         }
@@ -470,9 +453,6 @@ bot.on("message", function(message) {
         case "rps":
         if (args[1]) {
             message.channel.sendMessage("I choose: **" + rps[Math.floor(Math.random() * rps.length)] + "**. You choose: **" + args[1] + "**. I win! :tada: I do not care about the rules.");
-            message.channel.send("You got money from the game!")
-            economy.updateBalance(defined + message.guild.id, parseInt(dice[Math.floor(Math.random() * dice.length)])).then((i) => {
-            });
         } else {
         message.channel.sendMessage("What do you choose?")
         }
@@ -480,9 +460,6 @@ bot.on("message", function(message) {
             case "dice":
             message.channel.sendMessage("**Rolling...**")
             message.channel.sendMessage("**Rolled!** You rolled **" + dice[Math.floor(Math.random() * dice.length)] + "**! I rolled **" + dice[Math.floor(Math.random() * dice.length)] + "**. <:dice:373895915414618112>");
-            message.channel.send("You got money from the dice!")
-            economy.updateBalance(defined + message.guild.id, parseInt(dice[Math.floor(Math.random() * dice.length)])).then((i) => {
-            });
             break;
         case "work":
         let defineduser = ``;
@@ -495,12 +472,9 @@ bot.on("message", function(message) {
             message.channel.send(workk);
             break;
         case "cookie":
-        economy.updateBalance(defined + message.guild.id, parseInt(dice[Math.floor(Math.random() * dice.length)])).then((i) => {
-        });
         const workkkk = new Discord.RichEmbed()
                 .setDescription(`Fortune Cookie says:`)
                 .addField(`🍪`,cookie[Math.floor(Math.random() * cookie.length)])
-                .setFooter("You got money from the cookie!")
             message.channel.send(workkkk);
             break;
         

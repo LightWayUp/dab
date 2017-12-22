@@ -198,9 +198,6 @@ var cookie = [
     "Someone will beat you in something.",
 ];
 
-let defined = ``;
-    defined = message.author.id;
-
 var bot = new Discord.Client(); 
 
 var servers = [];
@@ -231,6 +228,9 @@ bot.on("message", function(message) {
     if (!message.content.startsWith(PREFIX)) return;
     
     if (message.channel.type === 'dm') return;
+    
+    let defined = ``;
+        defined = message.author.id;
 
     var args = message.content.substring(PREFIX.length).split(" ");
 

@@ -554,27 +554,6 @@ bot.on("message", function(message) {
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
-
-            //Economy
-            case "bal":
-            case "balance":
-            economy.fetchBalance(message.author.id).then((i) => {
-            /*Jimp.read("bal.png", function (err, lenna) {
-            Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
-                lenna.print(font, 120, 70, "Balance: " + i.money)
-            Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(function (font) {
-                lenna.print(font, 120, 30, message.author.username)
-                     .write("balance.jpg");
-            });
-            });
-            });*/
-                message.channel.send('Your balance: **' + i.money + '**');
-            })
-        
-                /*setTimeout(function() {
-                    message.channel.sendFile("balance.jpg");
-                }, ms("2s"));*/
-                    break;
         
         //RP
         case "cry":

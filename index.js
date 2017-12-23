@@ -219,7 +219,7 @@ bot.on("ready", function() {
 });
 
 bot.on("message", function(message) {
-    if (message.content.startsWith("S: ")) message.react("❌") + message.react("⭕") ;
+    if (message.content.startsWith("S: ")) message.react("❌") + message.react("⭕");
 
 });
 

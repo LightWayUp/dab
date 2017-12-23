@@ -204,18 +204,12 @@ bot.on("ready", function() {
 
 bot.on("ready", () => {
     const snacks = require('snekfetch');
-    
-	bot.user.setPresence({
-	  game: {
-		name: `<!info | Dabbing in ${bot.guilds.size} servers.`,
-		type: 0
-	  }
-	});
   snacks.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({
     server_count: bot.guilds.size
    })
+.then(() => console.log("mk"))
 });
 
 bot.on("ready", function() {

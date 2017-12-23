@@ -1,4 +1,4 @@
-<strong>&lt;o/</strong>
+# <o/
 
 A Discord bot mainly for entertainment.
 
@@ -10,4 +10,4 @@ A Discord bot mainly for entertainment.
 
 <p></p>
 
-# <o/ is licensed by the MIT License.
+<strong>&lt;o/ is licensed by the MIT License.</strong>

@@ -202,6 +202,22 @@ bot.on("ready", function() {
     console.log("<o/");
 });
 
+bot.on("ready", () => {
+    const snacks = require('snekfetch');
+    
+	bot.user.setPresence({
+	  game: {
+		name: `<!info | Dabbing in ${bot.guilds.size} servers.`,
+		type: 0
+	  }
+	});
+  snacks.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
+   .set("Authorization", process.env.DBL_TOKEN)
+   .send({
+    server_count: bot.guilds.size
+   })
+});
+
 bot.on("ready", function() {
     console.log("Server Count: " + bot.guilds.size);
     bot.user.setGame("<!info | Dabbing in " + bot.guilds.size + " servers.")

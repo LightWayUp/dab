@@ -511,7 +511,8 @@ bot.on("message", function(message) {
                      message.edit("**Pinging...**")
                          message.edit("**Pinging.**")
                              message.edit("**Pinging..**")
-                                 message.edit("<a:pingball:394121326488584192> **Pong!** " + "`" + bot.ping.toFixed() + "ms" + "`")});
+                                 message.edit("**Pong!** " + "`" + bot.ping.toFixed() + "ms" + "`")});
+            message.channel.send("<a:pingball:394121326488584192>");
             break;
         case "botstatus":
         case "botinfo":

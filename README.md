@@ -16,6 +16,6 @@ A Discord bot mainly for entertainment.
 <p>-info music (Get the list of music commands.)</p>
 <p>-info developer (Get the list of developer commands.)</p>
 
-#-
+# -
 
 <strong>&lt;o/ is licensed by the MIT License.</strong>

@@ -810,6 +810,9 @@ bot.on("message", function(message) {
         let evaa = message.content.split(" ").slice(1).join(" ");
             message.channel.sendMessage(eval(evaa));
             break;
+        case "canttouchdis":
+            message.channel.send(`<a:oyo:394378333086941193>`);
+             break;
         default:
             message.react("\❌")
     }

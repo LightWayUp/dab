@@ -24,7 +24,7 @@ function play(connection, message) {
     });
 }
 
-const PREFIX = "<!";
+const PREFIX = "<!", "<@364399994242859008>".some
 
 var fortunes = [
     "Yes",
@@ -219,12 +219,7 @@ bot.on("ready", function() {
 });
 
 bot.on("message", function(message) {
-    if (message.content.startsWith("S: ")) message.react("❌") + message.react("⭕");
-
-});
-
-bot.on("message", function(message) {
-    if (message.content.startsWith("<@364399994242859008>")) message.channel.send("Hello! To get the list of my commands type in: **<!info**!") ;
+    if (message.content.startsWith("<@364399994242859008>")) message.channel.send('**<o/** To get the list of my commands type in: **<!info**!') ;
 
 });
 

@@ -280,7 +280,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info botinfo` (Get the list of botinfo commands.)")
                 .addField("-", "`<!info rp` (Get the list of roleplay commands.)")
                 .addField("-", "`<!info music` (Get the list of music commands.)")
-                .addField("-", "`<!info developer` (Get the list of developer commands.)")
+                .addField("-", "`<!info dev` (Get the list of developer commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.author.sendEmbed(embed);
@@ -351,7 +351,7 @@ bot.on("message", function(message) {
                 .addField("-", "`<!info botinfo` (Get the list of botinfo commands.)")
                 .addField("-", "`<!info rp` (Get the list of roleplay commands.)")
                 .addField("-", "`<!info music` (Get the list of music commands.)")
-                .addField("-", "`<!info developer` (Get the list of developer commands.)")
+                .addField("-", "`<!info dev` (Get the list of developer commands.)")
                 .setDescription("Prefix: <!")
                 .setFooter("Made by Vanished#3101")
                 message.channel.sendEmbed(embed);

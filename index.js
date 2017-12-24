@@ -25,7 +25,7 @@ function play(connection, message) {
 }
 
 const PREFIX = "<!";
-const PREFIXX = "<!364399994242859008> ";
+const PREFIXX = "<@364399994242859008> ";
 
 var fortunes = [
     "Yes",

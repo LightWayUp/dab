@@ -24,7 +24,7 @@ function play(connection, message) {
     });
 }
 
-//const PREFIX = "<!", "<@364399994242859008>".some
+const PREFIX = "<!";
 
 var fortunes = [
     "Yes",
@@ -233,7 +233,7 @@ bot.on("message", function(message) {
     let defined = ``;
         defined = message.author.id;
 
-    var args = message.content.substring(("<!", "<@364399994242859008>").some.length).split(" ");
+    var args = message.content.substring(PREFIX.length).split(" ");
 
     switch (args[0].toLowerCase())  {
         //Music

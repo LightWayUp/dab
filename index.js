@@ -220,7 +220,7 @@ bot.on("ready", function() {
 });
 
 bot.on("message", function(message) {
-    if (message.content.startsWith("<@364399994242859008>")) message.channel.send('**<o/** To get the list of my commands type in: **<!info**!') ;
+    if (message.content.startsWith("<@364399994242859008> help")) message.channel.send('**<o/** To get the list of my commands type in: **<!info**!') ;
 
 });
 

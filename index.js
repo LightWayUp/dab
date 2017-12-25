@@ -308,6 +308,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!hoststatus`, `<!hostinfo` (A hoststatus command.)")
                 .addField("-", "`<!donate` (A donate command.)")
                 .addField("-", "`<!repo` (A GitHub repository command.)")
+                .addField("-", "`<!upvote` (An upvote command.)")
+                .addField("-", "`<!website` (A website command.)")
                 .addField("-", "`<!report` (A report command.)")
                 .addField("-", "`<!ping` (A ping command.)")
                 .setFooter("<o/")
@@ -382,6 +384,8 @@ bot.on("message", function(message) {
                 .addField("-", "`<!hoststatus`, `<!hostinfo` (A hoststatus command.)")
                 .addField("-", "`<!donate` (A donate command.)")
                 .addField("-", "`<!repo` (A GitHub repository command.)")
+                .addField("-", "`<!upvote` (An upvote command.)")
+                .addField("-", "`<!website` (A website command.)")
                 .addField("-", "`<!report` (A report command.)")
                 .addField("-", "`<!ping` (A ping command.)")
                 .setFooter("<o/")
@@ -542,26 +546,32 @@ bot.on("message", function(message) {
             break;
         case "donate":
             var embed = new Discord.RichEmbed()
-                .addField("<o/", "Donate to us via PayPal!")
-                .addField("PayPal Link:", "[PayPal](https://www.paypal.me/VanishedP)")
+                .addField("<o/", "Donate")
+                .addField("PayPal Link:", "[PayPal](https://paypal.me/vanishedchamber)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
         case "repo":
             var embed = new Discord.RichEmbed()
                 .addField("<o/", "Open Source Code")
-                .addField("GitHub Link:", "[GitHub](https://github.com/VanishedP/dab)")
+                .addField("GitHub Link:", "[GitHub](https://github.com/VanishedPotato/dab)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
-        case "invite":
+        case "upvote":
             var embed = new Discord.RichEmbed()
-                .addField("<o/", "Invite me to your server!")
-                .addField("Invite Link:","[Invite](https://discordbots.org/bot/364399994242859008)")
+                .addField("<o/", "Upvote")
+                .addField("Upvote Link:","[Invite](https://discordbots.org/beta/bot/364399994242859008)")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
             break;
-        
+        case "website":
+            var embed = new Discord.RichEmbed()
+                .addField("<o/", "Official Website")
+                .addField("Upvote Link:","[Invite](https://dabme.github.io/home/)")
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+            break;
         //RP
         case "cry":
         let userlj = message.mentions.users.first();

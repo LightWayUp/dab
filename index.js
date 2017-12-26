@@ -819,6 +819,15 @@ bot.on("message", function(message) {
         case "canttouchdis":
             message.channel.send(`<a:oyo:394378333086941193>`);
              break;
+        case "reboot":
+        if (message.author.id !== "267025484028706816") {
+            message.reply("This is a **Bot Owner** only command!")
+        }
+        if (message.author.id === "267025484028706816") {
+            message.channel.send("Rebooting myself... **<o/**")
+            setTimeout(function(){process.exit(1)}, 3000)
+        }
+            break;
     }
 });
 
@@ -1382,6 +1391,15 @@ bot.on("message", function(message) {
             break;
 
         //Developer
+        case "reboot":
+        if (message.author.id !== "267025484028706816") {
+            message.reply("This is a **Bot Owner** only command!")
+        }
+        if (message.author.id === "267025484028706816") {
+            message.channel.send("Rebooting myself... **<o/**")
+            setTimeout(function(){process.exit(1)}, 3000)
+        }
+            break;
         case "answer":
         if (message.author.id !== "267025484028706816") return;
         let status = args[2]

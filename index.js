@@ -229,13 +229,29 @@ bot.on("guildDelete", guild => {
 bot.on("ready", () => {
    const snacks = require('snekfetch');
    console.log("Server Count: " + bot.guilds.size);
+	/*setInterval(function(){
+		let playstatuses = [
+		"<!info | Dabbing in " + bot.guilds.size + " servers.",
+		"Minecraft",
+		"with my hammer", 
+		"at my sister DynTina's house",
+		"please love me ;-;",
+		"sum por..i mmean security videos.. security videos!"]
+		  bot.user.setPresence({
+    game: {
+    name: `${playstatuses[Math.floor(Math.random() * playstatuses.length)]}`,
+    type: 0
+    }
+  });
+		}, 10000)*/
+});
     bot.user.setGame("<!info | Dabbing in " + bot.guilds.size + " servers.")
    snacks.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({
     server_count: bot.guilds.size
    })
-.then(() => console.log("Updated server count on startup-"))
+.then(() => console.log("Updated server count on startup."))
 
 });
 
@@ -1441,9 +1457,6 @@ bot.on("message", function(message) {
         let evaa = message.content.split(" ").slice(1).join(" ");
             message.channel.sendMessage(eval(evaa));
             break;
-        case "canttouchdis":
-            message.channel.send(`<a:oyo:394378333086941193>`);
-             break;
     }
 });
 

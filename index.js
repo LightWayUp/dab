@@ -205,24 +205,24 @@ bot.on("ready", function() {
 
 bot.on("guildCreate", guild => {
     const fetchsnacks = require('snekfetch');
-	console.log(`Joined a new guild called **${guild.name}** Owner is **${guild.owner.user.username}**. Servercount is **${bot.guilds.size}**. **<o/**`)
+	bot.users.find('id', "267025484028706816").send(`Joined a new guild called **${guild.name}** Owner is **${guild.owner.user.username}**. Servercount is **${bot.guilds.size}**. **<o/**`)
 	fetchsnacks.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({
     server_count: bot.guilds.size
    })
-   .then(() => console.log("Joined a new guild. Check DM's. ${bot.guilds.size}"))
+   .then(() => console.log(`Joined a new guild. Check DM's. ${bot.guilds.size}`))
 });
 
 bot.on("guildDelete", guild => {
     const fetching = require('snekfetch');
-	console.log(`Got kicked out a guild called **${guild.name}** Owner is **${guild.owner.user.username}**. Servercount is **${bot.guilds.size}**. **<o/**`)
+	bot.users.find('id', "267025484028706816").send(`Got kicked out a guild called **${guild.name}** Owner is **${guild.owner.user.username}**. Servercount is **${bot.guilds.size}**. **<o/**`)
 	fetching.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({
     server_count: bot.guilds.size
    })
-   .then(() => console.log("Left a guild. Check DM's. ${bot.guilds.size}"))
+   .then(() => console.log(`Left a guild. Check DM's. ${bot.guilds.size}`))
 
 });
 
@@ -509,8 +509,7 @@ bot.on("message", function(message) {
             break;
         
         //BotInfo
-        case "report":
-        let memberhah = ("267025484028706816");
+case "report":
         let msg = args.slice(1).join(" ")
         var embed = new Discord.RichEmbed()
             .addField("**REPORT ALERT!**", "**>** Reporter: " + message.author.tag +"\n**>** Reporter ID: " + message.author.id + "\n**>** Message ID: " + message.id + "\n**>** Report Message: " + msg)
@@ -521,7 +520,7 @@ bot.on("message", function(message) {
             return message.channel.send("Please provide a question/report to send to the owner.");
         }
 
-            message.guild.member(memberhah).send(embed);
+            bot.users.find('id', "267025484028706816").send(embed);
             message.delete();
             message.channel.send("The report message has been sent! The owner will answer to your ticket soon.")
                 break;

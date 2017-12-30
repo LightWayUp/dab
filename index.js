@@ -517,8 +517,6 @@ bot.on("message", function(message) {
         case "work":
         let defineduser = ``;
             defineduser = message.author.id;
-        economy.updateBalance(defineduser + message.guild.id, parseInt(dice[Math.floor(Math.random() * dice.length)])).then((i) => {
-        });
         const workk = new Discord.RichEmbed()
                 .setDescription(`Work Receipt`)
                 .addField(`Worked as:`,workbot[Math.floor(Math.random() * workbot.length)])
@@ -1138,8 +1136,6 @@ bot.on("message", function(message) {
         case "work":
         let defineduser = ``;
             defineduser = message.author.id;
-        economy.updateBalance(defineduser + message.guild.id, parseInt(dice[Math.floor(Math.random() * dice.length)])).then((i) => {
-        });
         const workk = new Discord.RichEmbed()
                 .setDescription(`Work Receipt`)
                 .addField(`Worked as:`,workbot[Math.floor(Math.random() * workbot.length)])

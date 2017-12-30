@@ -205,7 +205,19 @@ bot.on("ready", function() {
 
 bot.on("guildCreate", guild => {
     const fetchsnacks = require('snekfetch');
-	bot.users.find('id', "267025484028706816").send(`Joined a new guild called **${guild.name}** Owner is **${guild.owner.user.username}**. Servercount is **${bot.guilds.size}**. **<o/**`)
+	var embed = new Discord.RichEmbed()
+        .setAuthor("Joined a new guild.", guild.iconURL, guild.iconURL)
+        .addField("Guild Info", `Name: ${guild.name}
+        \nID: ${guild.id}
+        \nOwner: ${guild.owner.user.tag}
+        \nOwner ID: ${guild.ownerID}
+        \nMember Count: ${guild.memberCount}
+        \nRoles: ${guild.roles.size}
+        \nChannel Count: ${guild.channels.size}
+        \n**-__Roles__:**\n${guild.roles.map(r => `\`${r.name}\``).join(" **|** ")}`)
+    ;
+	
+	bot.users.find('id', "267025484028706816").send(embed)
 	fetchsnacks.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({
@@ -216,7 +228,18 @@ bot.on("guildCreate", guild => {
 
 bot.on("guildDelete", guild => {
     const fetching = require('snekfetch');
-	bot.users.find('id', "267025484028706816").send(`Got kicked out a guild called **${guild.name}** Owner is **${guild.owner.user.username}**. Servercount is **${bot.guilds.size}**. **<o/**`)
+	var embed = new Discord.RichEmbed()
+        .setAuthor("Left a guild.", guild.iconURL, guild.iconURL)
+        .addField("Guild Info", `Name: ${guild.name}
+        \nID: ${guild.id}
+        \nOwner: ${guild.owner.user.tag}
+        \nOwner ID: ${guild.ownerID}
+        \nMember Count: ${guild.memberCount}
+        \nRoles: ${guild.roles.size}
+        \nChannel Count: ${guild.channels.size}
+        \n**-__Roles__:**\n${guild.roles.map(r => `\`${r.name}\``).join(" **|** ")}`)
+    ;
+	bot.users.find('id', "267025484028706816").send(embed)
 	fetching.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({

@@ -558,17 +558,36 @@ case "report":
             break;
         case "botstatus":
         case "botinfo":
+           //Boing stuff to set the seconds/minutes/hours/day/bla bla..
+            String.prototype.toHHMMSS = function () {
+            //Defines the days, hours, minutes, seconds     
+            var sec_num = parseInt(this, 10); // don't forget the second param
+            var days = Math.floor(sec_num / 86400);
+            var hours   = Math.floor(sec_num / 3600);
+            var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+            var seconds = sec_num - (hours * 3600) - (minutes * 60);
+            //Adds another digit to them if they are more than 2 digits
+            if (days    < 10) {days    = "0"+days;} 
+            if (hours   < 10) {hours   = "0"+hours;}
+            if (minutes < 10) {minutes = "0"+minutes;}
+            if (seconds < 10) {seconds = "0"+seconds;}
+            var time    = days+'d '+hours+'h '+minutes+'m '+seconds+'s';
+            return time;
+            }
+            var time = process.uptime();
+            var uptime = (time + "").toHHMMSS();
+           //Boing stuff to set the seconds/minutes/hours/day/bla bla..
             var embed = new Discord.RichEmbed()
                 .addField("Bot Info", "<o/")
-                .addField("Bot Status:", "Stable", true)
                 .addField("Memory Status:", "Stable", true)
                 .addField("GitHub Repo Status:", "Updated", true)
-                .addField("Host Status:", "Unknown", true)
+                .addField("Host Status:", "Up", true)
                 .addField("Server Count:", bot.guilds.size, true)
+	    	.addField("Uptime:", "" + uptime, true)
                 .addField("Bot Libary:", "discord.js", true)
-                .addField("Total Users:", "7893", true)
+                .addField("Total Users:", bot.users.size, true)
                 .addField("Bot Ping:", bot.ping.toFixed(), true)
-                .addField("Total Channels:", "916", true)
+                .addField("Total Channels:", bot.channels.size, true)
                 .setDescription("<o/")
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);

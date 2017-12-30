@@ -214,7 +214,7 @@ bot.on("guildCreate", guild => {
         \nMember Count: ${guild.memberCount}
         \nRoles: ${guild.roles.size}
         \nChannel Count: ${guild.channels.size}
-        \n**-__Roles__:**\n${guild.roles.map(r => `\`${r.name}\``).join(" **|** ")}`)
+        \nRoles:\n${guild.roles.map(r => `\`${r.name}\``).join(" **|** ")}`)
     ;
 	
 	bot.users.find('id', "267025484028706816").send(embed)
@@ -237,7 +237,7 @@ bot.on("guildDelete", guild => {
         \nMember Count: ${guild.memberCount}
         \nRoles: ${guild.roles.size}
         \nChannel Count: ${guild.channels.size}
-        \n**-__Roles__:**\n${guild.roles.map(r => `\`${r.name}\``).join(" **|** ")}`)
+        \nRoles:\n${guild.roles.map(r => `\`${r.name}\``).join(" **|** ")}`)
     ;
 	bot.users.find('id', "267025484028706816").send(embed)
 	fetching.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)

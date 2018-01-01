@@ -1474,9 +1474,21 @@ bot.on("message", function(message) {
             message.channel.sendFile(args[1]);
             break;
         case "eval":
-        if (message.author.id !== "267025484028706816") return;
-        let evaa = message.content.split(" ").slice(1).join(" ");
-            message.channel.sendMessage(eval(evaa));
+            case "eval":
+            if(message.author.id === "267025484028706816") {
+                if(message.content.split(" ").slice(1).join(" ")){
+                    try {
+                        let output = eval(message.content.split(" ").slice(1).join(" "));
+                        if(output.length > 2000) output = "The limit of 2000 is reached!";
+                        message.channel.send({embed: { description:`Eval\n\n${output}`}});
+                    } catch (error) {
+                        message.channel.send({embed: { description:`Eval\n\n${error}`}});
+                    }
+                } else return message.reply('err');
+            } else {
+                return;
+            }
+                break;
             break;
     }
 });

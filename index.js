@@ -870,14 +870,21 @@ case "report":
             message.channel.send("Sending...");
             message.channel.sendFile(args[1]);
             break;
-        case "eval":
-        if (message.author.id !== "267025484028706816") return;
-        let evaa = message.content.split(" ").slice(1).join(" ");
-            message.channel.sendMessage(eval(evaa));
-            break;
-        case "canttouchdis":
-            message.channel.send(`<a:oyo:394378333086941193>`);
-             break;
+            case "eval":
+            if(message.author.id === "267025484028706816") {
+                if(message.content.split(" ").slice(1).join(" ")){
+                    try {
+                        let output = eval(message.content.split(" ").slice(1).join(" "));
+                        if(output.length > 2000) output = "The limit of 2000 is reached!";
+                        message.channel.send({embed: { description:`Eval\n\n${output}`}});
+                    } catch (error) {
+                        message.channel.send({embed: { description:`Eval\n\n${error}`}});
+                    }
+                } else return message.reply('err');
+            } else {
+                return;
+            }
+                break;
         case "reboot":
         if (message.author.id !== "267025484028706816") {
             message.reply("This is a **Bot Owner** only command!")
@@ -1473,7 +1480,6 @@ bot.on("message", function(message) {
             message.channel.send("Sending...");
             message.channel.sendFile(args[1]);
             break;
-        case "eval":
             case "eval":
             if(message.author.id === "267025484028706816") {
                 if(message.content.split(" ").slice(1).join(" ")){
@@ -1489,6 +1495,14 @@ bot.on("message", function(message) {
                 return;
             }
                 break;
+		case "reboot":
+        if (message.author.id !== "267025484028706816") {
+            message.reply("This is a **Bot Owner** only command!")
+        }
+        if (message.author.id === "267025484028706816") {
+            message.channel.send("Rebooting myself... **<o/**")
+            setTimeout(function(){process.exit(1)}, 3000)
+        }
             break;
     }
 });

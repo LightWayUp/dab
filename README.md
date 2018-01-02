@@ -21,6 +21,6 @@
 -info music (Get the list of music commands.)<br />
 -info developer (Get the list of developer commands.)<br />
 
-# About
+# -
 
 <p>&lt;o/ is licensed by the MIT License.</p>

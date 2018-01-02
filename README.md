@@ -1,11 +1,16 @@
 # <o/
 
-A Discord bot mainly for entertainment.
-
-
-# Dwiskowd Boat List Widget
 <a href="https://discordbots.org/bot/364399994242859008">
-  <img src="https://discordbots.org/api/widget/364399994242859008.png" alt="Discord Bots" />
+  <img src="https://discordbots.org/api/widget/status/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
+</a>
+<a href="https://discordbots.org/bot/364399994242859008">
+  <img src="https://discordbots.org/api/widget/servers/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
+</a>
+<a href="https://discordbots.org/bot/364399994242859008">
+  <img src="https://discordbots.org/api/widget/upvotes/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
+</a>
+<a href="https://discordbots.org/bot/364399994242859008">
+  <img src="https://discordbots.org/api/widget/lib/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
 </a>
 
 <h2>Info Commands:</h2>

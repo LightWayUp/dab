@@ -14,12 +14,12 @@
 </a>
 
 # Info Commands:
-<h3>-info info (Get the list of info commands.)</h3>
-<h3>-info games (Get the list of games commands.)</h3>
-<h3>-info botinfo (Get the list of botinfo commands.)</h3>
-<h3>-info rp (Get the list of roleplay commands.)</h3>
-<h3>-info music (Get the list of music commands.)</h3>
-<h3>-info developer (Get the list of developer commands.)</h3>
+-info info (Get the list of info commands.)<br />
+-info games (Get the list of games commands.)<br />
+-info botinfo (Get the list of botinfo commands.)<br />
+-info rp (Get the list of roleplay commands.)<br />
+-info music (Get the list of music commands.)<br />
+-info developer (Get the list of developer commands.)<br />
 
 # -
 

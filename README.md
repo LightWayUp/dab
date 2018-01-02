@@ -13,7 +13,7 @@
   <img src="https://discordbots.org/api/widget/lib/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
 </a>
 
-<h1>Info Commands:</h1>
+<h2>Info Commands:</h2>
 -info info (Get the list of info commands.)<br />
 -info games (Get the list of games commands.)<br />
 -info botinfo (Get the list of botinfo commands.)<br />

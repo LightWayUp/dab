@@ -310,7 +310,11 @@ bot.on("message", function(message) {
         })
         const dispatcher = connection.playStream(stream);
             dispatcher.on('end', () => {
-            voiceChannel.leave();
+            var embed = new Discord.RichEmbed()
+                .addField(`Leaving Voice Channel`, `${title} ended.`)
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+                voiceChannel.leave()
         }).catch(e =>{
                     console.error(e);
         });
@@ -340,7 +344,13 @@ bot.on("message", function(message) {
               YTDL.getInfo(`${results[0].link}`, function(err, info) {
             })
          const dispatcher = connection.playStream(stream);
-         dispatcher.on("end", end => {voiceChannel.leave()});
+         dispatcher.on("end", end => {
+		 var embed = new Discord.RichEmbed()
+                .addField(`Leaving Voice Channel`, `${results[0].title} ended.`)
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed)
+	        voiceChannel.leave();
+	 });
        })    
     })
   }
@@ -975,7 +985,11 @@ bot.on("message", function(message) {
         })
         const dispatcher = connection.playStream(stream);
             dispatcher.on('end', () => {
-            voiceChannel.leave();
+                 var embed = new Discord.RichEmbed()
+                .addField(`Leaving Voice Channel`, `${title} ended.`)
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed)
+                voiceChannel.leave();
         }).catch(e =>{
                     console.error(e);
         });

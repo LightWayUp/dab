@@ -329,9 +329,9 @@ bot.on("message", function(message) {
       voiceChannel.leave()
             var embed = new Discord.RichEmbed()
                 .addField(`Name:`, `${results[0].title}`, true)
-                .addField(`Author:`, `${results[0].author.name}`, true)
+                /*.addField(`Author:`, `${results[0].author.name}`, true)
 	    	.addField(`Lenght:`, `${results[0].length_seconds}`, true)
-	    	.addField(`Views:`, `${results[0].view_count}`, true)
+	    	.addField(`Views:`, `${results[0].view_count}`, true)*/
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);
       voiceChannel.join()

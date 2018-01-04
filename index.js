@@ -291,6 +291,8 @@ bot.on("message", function(message) {
         if (!voiceChannel){
         return message.channel.sendMessage("You need to be in a voice channel!");
         }
+	
+	if(args[1].startsWith('https')) {
         voiceChannel.join()
         .then(connection => {
         let stream = YTDL(args.join(" "), {audioonly: true});
@@ -312,6 +314,35 @@ bot.on("message", function(message) {
                     console.error(e);
         });
         })
+	} else {
+	    var opts = {
+      maxResults: 1,
+      key: 'AIzaSyDcfmwCaQ1KGIU0qiHU8LCH22kdmOnMSAc'
+    };
+    const voiceChannel = message.member.voiceChannel;
+    let args = message.content.slice(6)
+    let name = args
+    console.log(name)
+    search(name, opts, (err, results) => {
+      if(err) return console.log(err);
+      voiceChannel.leave()
+            var embed = new Discord.RichEmbed()
+                .addField(`Name:`, `${results[0].title}`, true)
+                .addField(`Author:`, `${results[0]..author.name}`, true)
+	    	.addField(`Lenght:`, `${results[0]..length_seconds}`, true)
+	    	.addField(`Views:`, `${results[0]..view_count}`, true)
+                .setFooter("<o/")
+                message.channel.sendEmbed(embed);
+      voiceChannel.join()
+       .then(connection => {
+         const stream = yt(`${results[0].link}`, { filter : 'audioonly' });
+              yt.getInfo(`${results[0].link}`, function(err, info) {
+            })
+         const dispatcher = connection.playStream(stream);
+         dispatcher.on("end", end => {voiceChannel.leave()});
+       })    
+    })
+  }
             break;
         case "stop":
         var server = servers[message.guild.id];

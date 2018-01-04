@@ -302,7 +302,6 @@ bot.on("message", function(message) {
                 .addField(`Author:`, `${info.author.name}`, true)
 	    	.addField(`Lenght:`, `${info.length_seconds}`, true)
 	    	.addField(`Views:`, `${info.view_count}`, true)
-	    	.addField(`Rating:`, `${info.avg_rating}`, true)
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);		
         })
@@ -939,7 +938,6 @@ bot.on("message", function(message) {
                 .addField(`Author:`, `${info.author.name}`, true)
 	    	.addField(`Lenght:`, `${info.length_seconds}`, true)
 	    	.addField(`Views:`, `${info.view_count}`, true)
-	    	.addField(`Rating:`, `${info.avg_rating}`, true)
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);		
         })

@@ -297,7 +297,7 @@ bot.on("message", function(message) {
         YTDL.getInfo(args.join(" "), function(err, info) {
         const title = info.title
         console.log(`${message.author.tag}, Queued the song '${title}.'`)
-        message.channel.sendMessage('Playing **' + title + ' in the voice channel!')
+        message.channel.sendMessage('Playing **' + title + '** in the voice channel!')
         })
         const dispatcher = connection.playStream(stream);
             dispatcher.on('end', () => {

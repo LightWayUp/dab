@@ -336,8 +336,8 @@ bot.on("message", function(message) {
                 message.channel.sendEmbed(embed);
       voiceChannel.join()
        .then(connection => {
-         const stream = yt(`${results[0].link}`, { filter : 'audioonly' });
-              yt.getInfo(`${results[0].link}`, function(err, info) {
+         const stream = YTDL(`${results[0].link}`, { filter : 'audioonly' });
+              YTDL.getInfo(`${results[0].link}`, function(err, info) {
             })
          const dispatcher = connection.playStream(stream);
          dispatcher.on("end", end => {voiceChannel.leave()});

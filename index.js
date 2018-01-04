@@ -297,7 +297,11 @@ bot.on("message", function(message) {
         YTDL.getInfo(args.join(" "), function(err, info) {
         const title = info.title
         console.log(`${message.author.tag}, Queued the song '${title}.'`)
-        message.channel.sendMessage('Playing **' + title + '** in the voice channel!')
+            var embed = new Discord.RichEmbed()
+                .addField(`Name:`, `${title}`)
+                .addField(`Author>`, `${info.author.name}`)
+                .setFooter("<o/")
+                message.author.sendEmbed(embed);		
         })
         const dispatcher = connection.playStream(stream);
             dispatcher.on('end', () => {

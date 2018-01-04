@@ -3,7 +3,8 @@ const dbl = require(`discord-bot-list`)
 const ms = require("ms");
 const snekfetch = require('snekfetch');
 var Jimp = require("jimp");
-const YTDL = require("ytdl-core")
+const YTDL = require("ytdl-core");
+const search = require('youtube-search');
 
 function generatehex() {
     return '#' + Math.floor(Math.random()*16777215).toString(16);

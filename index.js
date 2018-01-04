@@ -298,8 +298,11 @@ bot.on("message", function(message) {
         const title = info.title
         console.log(`${message.author.tag}, Queued the song '${title}.'`)
             var embed = new Discord.RichEmbed()
-                .addField(`Name:`, `${title}`)
-                .addField(`Author:`, `${info.author.name}`)
+                .addField(`Name:`, `${title}`, true)
+                .addField(`Author:`, `${info.author.name}`, true)
+	    	.addField(`Lenght:`, `${info.length_seconds}`, true)
+	    	.addField(`Views:`, `${info.view_count}`, true)
+	    	.addField(`Rating:`, `${info.avg_rating}`, true)
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);		
         })
@@ -932,8 +935,11 @@ bot.on("message", function(message) {
         const title = info.title
         console.log(`${message.author.tag}, Queued the song '${title}.'`)
             var embed = new Discord.RichEmbed()
-                .addField(`Name:`, `${title}`)
-                .addField(`Author:`, `${info.author.name}`)
+                .addField(`Name:`, `${title}`, true)
+                .addField(`Author:`, `${info.author.name}`, true)
+	    	.addField(`Lenght:`, `${info.length_seconds}`, true)
+	    	.addField(`Views:`, `${info.view_count}`, true)
+	    	.addField(`Rating:`, `${info.avg_rating}`, true)
                 .setFooter("<o/")
                 message.channel.sendEmbed(embed);		
         })

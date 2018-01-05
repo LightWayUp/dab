@@ -362,7 +362,11 @@ bot.on("message", function(message) {
         message.channel.send(":x: Stopped!");
         console.log(`Stopped. User: ${message.author.tag}'`)
             break;
-        
+        case "pause":
+        message.channel.sendMessage('Paused.').then(() => {dispatcher.pause();});
+            break;
+        case "resume":
+        message.channel.sendMessage('Resumed.').then(() => {dispatcher.resume();});
         //Info
         case "dminfo":
             var embed = new Discord.RichEmbed()

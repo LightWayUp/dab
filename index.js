@@ -363,9 +363,11 @@ bot.on("message", function(message) {
         console.log(`Stopped. User: ${message.author.tag}'`)
             break;
         case "pause":
+		    const dispatcher = connection.playStream(stream);
         message.channel.sendMessage('Paused.').then(() => {dispatcher.pause();});
             break;
         case "resume":
+		    const dispatcher = connection.playStream(stream);
         message.channel.sendMessage('Resumed.').then(() => {dispatcher.resume();});
         //Info
         case "dminfo":

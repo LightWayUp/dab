@@ -362,13 +362,13 @@ bot.on("message", function(message) {
         message.channel.send(":x: Stopped!");
         console.log(`Stopped. User: ${message.author.tag}'`)
             break;
-        case "pause":
+        /*case "pause":
 		    const dispatcherr = connection.playStream(stream);
         message.channel.sendMessage('Paused.').then(() => {dispatcherr.pause();});
             break;
         case "resume":
-		    const dispatcherrr = connection.playStream(stream);
-        message.channel.sendMessage('Resumed.').then(() => {dispatcherrr.resume();});
+	    const dispatcherrr = connection.playStream(stream);
+        message.channel.sendMessage('Resumed.').then(() => {dispatcherrr.resume();});*/
         //Info
         case "dminfo":
             var embed = new Discord.RichEmbed()

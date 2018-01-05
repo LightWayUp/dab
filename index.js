@@ -5,7 +5,6 @@ const snekfetch = require('snekfetch');
 var Jimp = require("jimp");
 const YTDL = require("ytdl-core");
 const search = require('youtube-search');
-const dispatcher = connection.playStream(stream);
 
 function generatehex() {
     return '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -344,6 +343,7 @@ bot.on("message", function(message) {
          const stream = YTDL(`${results[0].link}`, { filter : 'audioonly' });
               YTDL.getInfo(`${results[0].link}`, function(err, info) {
             })
+	      const dispatcher = connection.playStream(stream);
          dispatcher.on("end", end => {
 		 var embed = new Discord.RichEmbed()
                 .addField(`Leaving Voice Channel`, `${results[0].title} ended.`)
@@ -363,10 +363,12 @@ bot.on("message", function(message) {
         console.log(`Stopped. User: ${message.author.tag}'`)
             break;
         case "pause":
-        message.channel.sendMessage('Paused.').then(() => {dispatcher.pause();});
+		    const dispatcherr = connection.playStream(stream);
+        message.channel.sendMessage('Paused.').then(() => {dispatcherr.pause();});
             break;
         case "resume":
-        message.channel.sendMessage('Resumed.').then(() => {dispatcher.resume();});
+		    const dispatcherrr = connection.playStream(stream);
+        message.channel.sendMessage('Resumed.').then(() => {dispatcherrr.resume();});
         //Info
         case "dminfo":
             var embed = new Discord.RichEmbed()

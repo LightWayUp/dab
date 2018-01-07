@@ -1571,4 +1571,4 @@ bot.on("message", function(message) {
     }
 });
 
-bot.login('token');
+bot.login(BOT_TOKEN);

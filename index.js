@@ -254,6 +254,15 @@ bot.on("ready", () => {
    const snacks = require('snekfetch');
    console.log("Server Count: " + bot.guilds.size);
    bot.user.setGame("<!info | Dabbing in " + bot.guilds.size + " servers.")
+	bot.user.setPresence({
+          status: "online",
+          activity: {
+            name: "dabs. | " + bot.guilds.size + " servers.",
+            type: 'Watching',
+            url: "https://www.twitch.tv/discorddonut/"
+          }
+        })
+
    snacks.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({

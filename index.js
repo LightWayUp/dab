@@ -355,7 +355,7 @@ bot.on("message", function(message) {
   }
             break;
 	    case "game":
-		bot.user.setPresence({
+	bot.user.setPresence({
           status: "online",
           activity: {
             name: "dabs. | " + bot.guilds.size + " servers.",

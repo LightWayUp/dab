@@ -253,6 +253,15 @@ bot.on("guildDelete", guild => {
 bot.on("ready", () => {
    const snacks = require('snekfetch');
    console.log("Server Count: " + bot.guilds.size);
+bot.user.setPresence({
+    afk: false,
+    status: 'online',
+    game: {
+        name: "dabs.",
+        type: 3,
+        url: "https://twitch.com/"
+    }
+});
    snacks.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
    .set("Authorization", process.env.DBL_TOKEN)
    .send({
@@ -355,14 +364,15 @@ bot.on("message", function(message) {
   }
             break;
 	    case "game":
-	bot.user.setPresence({
-          status: "online",
-          activity: {
-            name: "dabs. | " + bot.guilds.size + " servers.",
-            type: 'Watching',
-            url: "https://www.twitch.tv/discorddonut/"
-          }
-        })
+bot.user.setPresence({
+    afk: false,
+    status: 'online',
+    game: {
+        name: "dabs.",
+        type: 3,
+        url: "https://twitch.com/"
+    }
+});
 		    break;
         case "stop":
         var server = servers[message.guild.id];

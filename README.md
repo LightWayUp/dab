@@ -1,5 +1,8 @@
 # <o/
 
+<a href="https://discord.gg/xmNkGdc">
+  <img src="https://discordapp.com/api/guilds/358615467180556288/embed.png" alt="Discord server">
+</a>
 <a href="https://discordbots.org/bot/364399994242859008">
   <img src="https://discordbots.org/api/widget/status/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
 </a>

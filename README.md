@@ -12,6 +12,9 @@
 <a href="https://discordbots.org/bot/364399994242859008">
   <img src="https://discordbots.org/api/widget/lib/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
 </a>
+<a href="https://discord.gg/xmNkGdc">
+  <img src="https://discordapp.com/api/guilds/358615467180556288/embed.png" alt="Discord server">
+</a>
 
 <h2>Info Commands:</h2>
 -info info (Get the list of info commands.)<br />

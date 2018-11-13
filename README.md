@@ -1,29 +1,33 @@
 # <o/
 
-<a href="https://discord.gg/xmNkGdc">
-  <img src="https://discordapp.com/api/guilds/358615467180556288/embed.png" alt="Discord server">
-</a>
-<a href="https://discordbots.org/bot/364399994242859008">
-  <img src="https://discordbots.org/api/widget/status/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
-</a>
-<a href="https://discordbots.org/bot/364399994242859008">
-  <img src="https://discordbots.org/api/widget/servers/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
-</a>
-<a href="https://discordbots.org/bot/364399994242859008">
-  <img src="https://discordbots.org/api/widget/upvotes/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
-</a>
-<a href="https://discordbots.org/bot/364399994242859008">
-  <img src="https://discordbots.org/api/widget/lib/364399994242859008.svg?noavatar=true" alt="Discord Bots" />
-</a>
+## Info Commands
 
-<h2>Info Commands:</h2>
--info info (Get the list of info commands.)<br />
--info games (Get the list of games commands.)<br />
--info botinfo (Get the list of botinfo commands.)<br />
--info rp (Get the list of roleplay commands.)<br />
--info music (Get the list of music commands.)<br />
--info developer (Get the list of developer commands.)<br />
+* -info info (Get the list of info commands.)
+* -info games (Get the list of games commands.)
+* -info botinfo (Get the list of botinfo commands.)
+* -info rp (Get the list of roleplay commands.)
+* -info music (Get the list of music commands.)
+* -info developer (Get the list of developer commands.)
 
-# -
+## License
+This project is licensed under [MIT License](/LICENSE).
 
-<p>&lt;o/ is licensed by the MIT License.</p>
+> Copyright (c) 2018 vanishalways
+> 
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+> 
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+> 
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.

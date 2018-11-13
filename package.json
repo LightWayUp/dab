@@ -4,11 +4,11 @@
   "description": "HEH",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No test to run\" && exit 0",
     "start": "node index.js"
   },
-  "author": "Vanished#3101",
-  "license": "ISC",
+  "author": "Vanished#1111",
+  "license": "MIT",
   "dependencies": {
     "discord-bot-list": "^1.0.1",
     "ms": "^2.0.0",
